@@ -11,5 +11,5 @@ int main()
 	{
 		printf("ÊÇÆæÊı");
 	}
-	return 0;
+	return 0
 }
