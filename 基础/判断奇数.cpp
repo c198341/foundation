@@ -11,5 +11,5 @@ int main()
 	{
 		printf("is a ch");
 	}
-	return 0;//注意细节
+	return 0;//为什么不确认
 }
