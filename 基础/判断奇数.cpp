@@ -5,11 +5,11 @@ int main()
 	scanf_s("%d", &a);
 	if (a % 2 == 0)
 	{
-		printf("不是奇数");
+		printf("is not a ch ");
 	}
 	else
 	{
-		printf("是奇数");
+		printf("is a ch");
 	}
 	return 0
 }
