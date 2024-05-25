@@ -1,2 +1,2 @@
 ﻿  判断奇数.cpp
-  基础.vcxproj -> E:\Meitu\foundation\基础\Debug\基础.exe
+E:\Meitu\foundation\基础\判断奇数.cpp(15,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
