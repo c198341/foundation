@@ -11,5 +11,5 @@ int main()
 	{
 		printf("is a ch");
 	}
-	return 0;//为什么不确认
+	return 0;//已确认。可执行
 }
