@@ -69,7 +69,7 @@ int main()
 	//int b = 5;
 	//int c = a ^ b;
 	//printf("%d\n", c);*/
-	
+
 	///*int a;
 	//int b;
 	//int c;
@@ -156,13 +156,44 @@ int main()
 //int ch = 0;
 //while ((ch = getchar()) != EOF)
 //putchar(ch);
-char ch = '\0';
-while ((ch = getchar()) != EOF)
-{
-	if (ch < '0' || ch>'9')
-		continue;
-	putchar(ch);
-	putchar('\n');
-}
+//char ch = '\0';
+//while ((ch = getchar()) != EOF)
+//{
+//	if (ch < '0' || ch>'9')
+//		continue;
+//	putchar(ch);
+//	putchar('\n');
+//}
+//int i=0;
+//for (i = 1; i <= 10; i++)
+//{
+//	if (i == 5)
+//		continue;// break;
+//	printf("%d ", i);
+//}
+//int x,y;
+//for (x = 0, y = 0; x < 2 && y < 5; ++x, y++)
+//{
+//	printf("hehe\n");
+//}
+//int k = 0;
+//for (; i < 10; i++)
+//{
+//	for (; j < 10; j++)
+//	{
+//		printf("hehe\n");
+//		k++;
+//	}
+//}
+//printf("%d\n",k);
+	int i = 0;
+	int k = 0;
+	for (i = 0, k = 0; k = 0; i++, k++)
+	{
+		printf("%d\n", k);
+		k++;
+		printf("%d\n", k);
+	}
+	printf("%d\n", k);
 	return 0;
 }
