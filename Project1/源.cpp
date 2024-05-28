@@ -3,6 +3,7 @@
 #define MAX(x,y)(x>y?x:y)
 #include <stdio.h>
 #include <string.h>
+extern int jc(int);
 //extern int add(int, int);
 ////int cp(int n1, int n2)
 ////{
@@ -186,14 +187,52 @@ int main()
 //	}
 //}
 //printf("%d\n",k);
-	int i = 0;
-	int k = 0;
-	for (i = 0, k = 0; k = 0; i++, k++)
-	{
-		printf("%d\n", k);
-		k++;
-		printf("%d\n", k);
-	}
-	printf("%d\n", k);
+	///*int i = 0;
+	//int k = 0;
+	//for (i = 0, k = 0; k = 0; i++, k++)
+	//{
+	//	printf("%d\n", k);
+	//	k++;
+	//	printf("%d\n", k);
+	//}
+	//printf("%d\n", k);*/
+//int i = 10;
+//do
+//{
+//	if (5 == i)
+//		break;
+//	printf("%d\n", i);
+//} while (i < 10);
+//int i = 10;
+//do
+//{
+//	if (5 == i)
+//		continue;
+//	printf("%d\n", i);
+//} while (i < 10);
+//int i, n;// Çón!
+//int a=1;
+//scanf("%d", &n);
+//if (0 == n)
+//{
+//	printf("1");
+//}
+//
+//for (i = 1; i <= n; i++)
+//{
+//	if (i == n)
+//	{
+//		a = a * i;
+//		printf("%d", a);
+//	}
+//	a = a * i;
+//}
+int jsq = 1;//1!+2!+...10!
+int sum = 0;
+for (jsq = 1; jsq <11; jsq++)
+{
+	sum = sum + jc(jsq);
+}
+printf("%d\n", sum);
 	return 0;
 }
