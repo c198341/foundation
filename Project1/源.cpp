@@ -46,10 +46,10 @@ int main()
 	//printf("%d\n", strlen("c:\test\628\test.c"));
 	//printf("%c\n",'\63\63');*/
 	///*int line = 0;
-	//printf("¼ÓÈë±ÈÌØ\n");
+	//printf("åŠ å…¥æ¯”ç‰¹\n");
 	//while (line <= 10)
 	//{
-	//	printf("¼ÌĞøÇÃ´úÂë:%d\n",line);
+	//	printf("ç»§ç»­æ•²ä»£ç :%d\n",line);
 	//		line++;
 	//}
 	//printf("good offer");*/
@@ -76,7 +76,7 @@ int main()
 	//int c;
 	//scanf("%d %d", &a, &b);
 	//c = cp(a,b);
-	//printf("×î´óÖµÊÇ£º%d", c);
+	//printf("æœ€å¤§å€¼æ˜¯ï¼š%d", c);
 	///*register int i = 0;
 	//int arr[10] = { 0 };
 	//for (i = 0; i <= 9; i++)
@@ -210,7 +210,7 @@ int main()
 //		continue;
 //	printf("%d\n", i);
 //} while (i < 10);
-//int i, n;// Çón!
+//int i, n;// æ±‚n!
 //int a=1;
 //scanf("%d", &n);
 //if (0 == n)
@@ -234,5 +234,5 @@ for (jsq = 1; jsq <11; jsq++)
 	sum = sum + jc(jsq);
 }
 printf("%d\n", sum);
-	return 0;
+	return 0;//ok
 }
