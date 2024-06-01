@@ -227,12 +227,39 @@ int main()
 //	}
 //	a = a * i;
 //}
-int jsq = 1;//1!+2!+...10!
-int sum = 0;
-for (jsq = 1; jsq <11; jsq++)
+//int jsq = 1;//1!+2!+...10!
+//int sum = 0;
+//for (jsq = 1; jsq <11; jsq++)
+//{
+//	sum = sum + jc(jsq);
+//}
+//printf("%d\n", sum);
+int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+int t = 10;
+int left=0;
+int right = sizeof(arr)/sizeof(arr[0])-1;
+int mid = (left + right) / 2;
+int num;
+for (num = 0; num < 5;num++)
 {
-	sum = sum + jc(jsq);
+	mid = (left + right) / 2;
+	if (t == arr[mid])
+	{
+		break;
+	}
+	else if (t > arr[mid])
+	{
+		left = mid + 1;
+	}
+	else
+	{
+		right = mid - 1;
+	}
+	
 }
-printf("%d\n", sum);
-	return 0;//ok
+if (left <= right)
+    printf("find,biao is %d\n", mid);
+else
+    printf("can not find\n");
+	return 0;
 }
