@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+int main()
+{
+	//welcome to bite!!!
+	//##################
+	//char a[] = "welcome to xiaobai";
+	//char b[] = "##################";
+	//int n = strlen(a);
+	////printf("%d\n", n);
+	//int left = 0;
+	//int right = n - 1;
+	//printf("%s\n", b);
+	//while (left <= right)
+	//{		
+	//	b[left] = a[left];
+	//	b[right] = a[right];
+	//	left++;
+	//	right--;
+	//	printf("%s\n", b);
+	//	Sleep(1000);
+	//} 
+	int i= 1;
+    char a;
+	for (i= 1; i <=3; i++)
+	{
+	    scanf("%c",&a);
+		if(strcmp(&a,"a")==0)
+           {
+		       printf("%s\n","right");
+			   break;
+            }
+		else
+		{
+		    printf("wrong\n");
+		}
+
+	}
+	if(i==4)
+	printf("exit\n");
+	return 0;
+}
