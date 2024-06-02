@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
-int main()
-{
+//int main()
+//{
 	//welcome to bite!!!
 	//##################
 	//char a[] = "welcome to xiaobai";
@@ -22,23 +22,23 @@ int main()
 	//	printf("%s\n", b);
 	//	Sleep(1000);
 	//} 
-	int i= 1;
-    char a[20];
-	for (i= 1; i <=3; i++)
-	{
-	    scanf("%s",a);
-		if((strcmp(a,"123"))==0)
-           {
-		       printf("%s\n","right");
-			   break;
-            }
-		else
-		{
-		    printf("wrong\n");
-		}
+	//int i= 1;
+    //char a[20];
+	//for (i= 1; i <=3; i++)
+	//{
+	  //  scanf("%s",a);
+	//	if((strcmp(a,"123"))==0)
+      //     {
+		//       printf("%s\n","right");
+		//	   break;
+         //   }
+		//else
+		//{
+		//    printf("wrong\n");
+		//}
 
-	}
-	if(i==4)
-	printf("exit\n");
-	return 0;
-}
+	//}
+	//if(i==4)
+	//printf("exit\n");
+	//return 0;
+//}
