@@ -73,12 +73,12 @@ int main()
 		for (j = 2; j <= (i-1); j++)
 		{
 			if (i % j == 0)
-			{
 				break;
-			}
-			printf("%d ", i);
+			
 		}
-		
+		if(j==i)
+			printf("%d ", i);
+	
 	}
 	return 0;
 }
