@@ -66,15 +66,19 @@ int main()
 	//	}
 	//} 
 	//printf("%d\n", c);
+	int i;
+	int j;
 	for (i = 100; i <= 200; i++)
 	{
-		for (j = 2; j <= a-1; j++)
+		for (j = 2; j <= (i-1); j++)
 		{
-			if (a % j == 0)
+			if (i % j == 0)
 			{
 				break;
 			}
+			printf("%d ", i);
 		}
+		
 	}
 	return 0;
 }
