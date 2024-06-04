@@ -66,19 +66,55 @@ int main()
 	//	}
 	//} 
 	//printf("%d\n", c);
-	int i;
-	int j;
-	for (i = 100; i <= 200; i++)
-	{
-		for (j = 2; j <= (i-1); j++)
-		{
-			if (i % j == 0)
-				break;
-			
-		}
-		if(j==i)
-			printf("%d ", i);
-	
+	///*int i;
+	//int j;
+	//for (i = 100; i <= 200; i++)
+	//{
+	//	for (j = 2; j <= (i-1); j++)
+	//	{
+	//		if (i % j == 0)
+	//			break;
+	//		
+	//	}
+	//	if(j==i)
+	//		printf("%d ", i);
+	//
+	//}*/
+	///*int i;
+	//i = (-4) % 3;
+	//printf("%d\n", i);*/
+	//int a = 0, b = 0;
+	//for (a = 1, b = 1; a <= 100; a++)
+	//{
+	//	if (b >= 20)
+	//		break;
+	//	if (b % 3 == 1)
+	//	{
+	//		b = b + 3;
+	//		continue;
+	//	}
+	//	b = b - 5;
+	//}
+	//printf("%d\n", a);
+	///*int i = 9;
+	//int j = 0;
+	//for (i = 1; i <= 99; i++)
+	//{
+	//	if (i % 10 == 9)
+	//		j++;
+	//	if (i / 10 == 9)
+	//		j++;
+	//}
+	//printf("%d\n", j);*/
+    float sum = 0;
+	int i = 1;
+    for (i = 1; i <= 100; i++)
+    {
+		if (i % 2 == 1)
+			sum = 1 / (float)i + sum;
+		else
+			sum = -1 / (float)i + sum;
 	}
+	printf("%f\n", sum);
 	return 0;
 }
