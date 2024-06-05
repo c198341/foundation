@@ -1,3 +1,4 @@
 ﻿  作业.cpp
-D:\驱动精灵搬家目录\foundation\Project1\作业.cpp(142,10): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“int”
-  Project1.vcxproj -> D:\驱动精灵搬家目录\foundation\Project1\Debug\Project1.exe
+E:\Meitu\foundation\Project1\作业.cpp(166,14): error C2664: “int jiayi(int *)”: 无法将参数 1 从“int”转换为“int *”
+E:\Meitu\foundation\Project1\作业.cpp(166,11): message : 从整型强制转换为指针类型要求 reinterpret_cast、C 样式强制转换或函数样式强制转换
+E:\Meitu\foundation\Project1\作业.cpp(7,5): message : 参见“jiayi”的声明

@@ -4,6 +4,10 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <time.h>
+int jiayi(int* p)
+{
+	*p = *p + 1;
+}
 int main()
 {
 	///*int d[3] = { 100,1,8 };
@@ -135,27 +139,31 @@ int main()
 //		}
 //		printf("\n");
 //	}
-     int t = rand() % 100;
-	 int i=0;
-	 while (1)
-	 {
-		 scanf("%d", i);
-		 if (i == t)
-		 {
-			 printf("right,the num. is %d\n", t);
-			 break;
-		 }
-		 else if (i < t)
-		 {
-			 printf("more\n");
-			 continue;
-		 }
-		 else
-		 {
-			 printf("less\n");
-			 continue;
-		 }
-	 }
-	 
+  ///*   srand(time(NULL));
+  //   int t =rand() % 100;
+	 //printf("%d\n", t);
+	 //int i=0;
+	 //while (1)
+	 //{
+		// scanf("%d", &i);
+		// if (i == t)
+		// {
+		//	 printf("right,the num. is %d\n", t);
+		//	 break;
+		// }
+		// else if (i < t)
+		// {
+		//	 printf("more\n");
+		//	 continue;
+		// }
+		// else
+		// {
+		//	 printf("less\n");
+		//	 continue;
+		// }
+	 //}*/
+int num = 0;
+num=jiayi(num);
+printf("%d\n", num);
      return 0;
 }
