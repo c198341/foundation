@@ -1,2 +1,3 @@
 ﻿  作业.cpp
-  Project1.vcxproj -> E:\Meitu\foundation\Project1\Debug\Project1.exe
+D:\驱动精灵搬家目录\foundation\Project1\作业.cpp(142,10): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“int”
+  Project1.vcxproj -> D:\驱动精灵搬家目录\foundation\Project1\Debug\Project1.exe

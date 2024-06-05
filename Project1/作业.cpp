@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
+#include <stdlib.h>
+#include <time.h>
 int main()
 {
 	///*int d[3] = { 100,1,8 };
@@ -106,15 +108,54 @@ int main()
 	//		j++;
 	//}
 	//printf("%d\n", j);*/
-    float sum = 0;
-	int i = 1;
-    for (i = 1; i <= 100; i++)
-    {
-		if (i % 2 == 1)
-			sum = 1 / (float)i + sum;
-		else
-			sum = -1 / (float)i + sum;
-	}
-	printf("%f\n", sum);
-	return 0;
+ //  /* float sum = 0;
+	//int i = 1;
+ //   for (i = 1; i <= 100; i++)
+ //   {
+	//	if (i % 2 == 1)
+	//		sum = 1 / (float)i + sum;
+	//	else
+	//		sum = -1 / (float)i + sum;
+	//}
+	//printf("%f\n", sum);*/
+//int a[10] = { 1,5,4,9,4,3,-12,3,6,8 };
+//int max=a[0],i;
+//for (i = 1; i < 10; i++)
+//{
+//	if (a[i] > max)
+//		max = a[i];
+//}
+//printf("the max is %d\n", max);
+//int i, j;
+//    for (i = 1; i <= 9; i++)
+//    {
+//        for (j = 1; j <= i; j++)
+//		{
+//			printf("%d*%d=%-2d  ",j, i, j * i);
+//		}
+//		printf("\n");
+//	}
+     int t = rand() % 100;
+	 int i=0;
+	 while (1)
+	 {
+		 scanf("%d", i);
+		 if (i == t)
+		 {
+			 printf("right,the num. is %d\n", t);
+			 break;
+		 }
+		 else if (i < t)
+		 {
+			 printf("more\n");
+			 continue;
+		 }
+		 else
+		 {
+			 printf("less\n");
+			 continue;
+		 }
+	 }
+	 
+     return 0;
 }
