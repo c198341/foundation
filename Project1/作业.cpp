@@ -7,6 +7,7 @@
 int jiayi(int* p)
 {
 	*p = *p + 1;
+	return *p;
 }
 int main()
 {
@@ -162,8 +163,23 @@ int main()
 		//	 continue;
 		// }
 	 //}*/
-int num = 0;
-num=jiayi(num);
-printf("%d\n", num);
+//for (j; j <= sqrt(n); j++)
+//{
+//	if (n % j == 0)
+//	{
+//		return 0;
+//	}
+//		return 1;
+//}
+//int num = 0;
+//int i = 1;
+//for (i = 1; i <= 3000; i++)
+//{
+//    num=jiayi(&num);
+//}
+//printf("%d\n", num);
+int l;
+printf("%d\n", l=strlen("abc"));
      return 0;
+
 }
