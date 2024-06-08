@@ -12,7 +12,6 @@
 //	}
 //	return 1;
 //}
-<<<<<<< HEAD
 //int qb(int x)
 //{
 //	if (x<=2)
@@ -36,15 +35,4 @@ int main()
 	b = a ^ b;
 	a = a ^ b;
 	printf("a=%d b=%d\n", a, b);
-=======
-int main()
-{
-	//int i=5;
-	//int j;
-	//j = jiecheng(i);
-	//printf("%d\n", j);
-	int i = 5;
-	int a[6] = {0};
->>>>>>> 3a1332515d9ec60ed13bea5ad9feacd5961dd259
-	return 0;
 }
