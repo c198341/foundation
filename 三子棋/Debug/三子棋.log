@@ -1,0 +1,20 @@
+﻿  game.c
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(3,6): error C2085: “displayboard”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(3,6): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(4,6): error C2085: “playermove”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(4,6): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(5,5): error C2085: “computermove”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(5,5): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(6,6): error C2085: “isfull”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(6,6): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(7,1): error C2085: “iswin”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\game.c(7,1): fatal error C1004: 发现意外的文件尾
+  test.c
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(3,8): warning C4013: “printf”未定义；假设外部返回 int
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(6,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(5,2): warning C4550: 表达式计算为缺少参数列表的函数
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(9,5): error C2085: “test”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(9,5): error C2143: 语法错误: 缺少“;”(在“类型”的前面)
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(10,1): error C2085: “main”: 不在形参表中
+D:\驱动精灵搬家目录\foundation\三子棋\test.c(10,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+  正在生成代码...

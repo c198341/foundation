@@ -1,0 +1,6 @@
+void initboard()
+void displayboard()
+void playermove()
+void computermove()
+int isfull()
+char iswin()

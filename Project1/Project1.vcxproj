@@ -140,15 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="practise" />
-    <ClCompile Include="三子棋main.cpp" />
-    <ClCompile Include="三子棋子程序.cpp" />
     <ClCompile Include="作业.cpp" />
     <ClCompile Include="源.cpp" />
     <ClCompile Include="源1.cpp" />
     <ClCompile Include="递归.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="三子棋.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
