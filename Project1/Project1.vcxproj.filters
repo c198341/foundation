@@ -30,5 +30,16 @@
     <ClCompile Include="递归.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="三子棋子程序.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="三子棋main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="三子棋.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

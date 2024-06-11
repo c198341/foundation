@@ -12,13 +12,14 @@
 //	}
 //	return 1;
 //}
-int main()
-{
-	//int i=5;
-	//int j;
-	//j = jiecheng(i);
-	//printf("%d\n", j);
-	int i = 5;
-	int a[6] = {0};
-	return 0;
-}
+//int main()
+//{
+//	//int i=5;
+//	//int j;
+//	//j = jiecheng(i);
+//	//printf("%d\n", j);
+//	///*int i = 5;
+//	//int a[6] = {0};*/
+//
+//	return 0;
+//}
