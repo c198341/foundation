@@ -7,9 +7,28 @@ void initboard(char a[row][col],int row,int col)
 }
 void displayboard(char a[row][col], int row, int col)
 {
-https://blog.csdn.net/weixin_74531333/article/details/129906421
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+		{
+			printf(" %c |", a[i][j]);
+			if (j == (col - 1))
+			{
+				printf("\n");
+			}
+		}
+		if (i != (row - 1))
+			printf("-----------\n");
+	}
 }
-void playermove()
+void playermove(char a[row][col], int row, int col)
+{
+	int i, j;
+
+	scanf("%d,%d", &i, &j);
+}
 void computermove()
 int isfull()
 char iswin()
