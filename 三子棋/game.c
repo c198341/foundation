@@ -26,8 +26,14 @@ void displayboard(char a[row][col], int row, int col)
 void playermove(char a[row][col], int row, int col)
 {
 	int i, j;
-
-	scanf("%d,%d", &i, &j);
+	do
+	{
+		printf("input your position:");
+		scanf("%d,%d", &i, &j);
+		if (i >= row || j >= col)
+			printf("wrong position,input again:");
+	}
+	
 }
 void computermove()
 int isfull()
