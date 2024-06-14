@@ -26,15 +26,36 @@ void displayboard(char a[row][col], int row, int col)
 void playermove(char a[row][col], int row, int col)
 {
 	int i, j;
-	do
+    while (1)
 	{
 		printf("input your position:");
 		scanf("%d,%d", &i, &j);
-		if (i >= row || j >= col)
+		if (i > row || j > col)
+		{
 			printf("wrong position,input again:");
+			continue;
+		}
+		else
+		{
+			a[i - 1][j - 1] = "*";
+			displayboard(a[row][col], row, col);
+		}
 	}
-	
 }
-void computermove()
+void computermove(char a[row][col], int row, int col)
+{
+	int i=srand(unsigned int time(NULL))%3;
+	int j = srand(unsigned int time(NULL)) % 3;
+	if (i > row || j > col)
+	{
+		printf("wrong position,input again:");
+		continue;
+	}
+	else
+	{
+		a[i - 1][j - 1] = "*";
+		displayboard(a[row][col], row, col);
+	}
+}
 int isfull()
 char iswin()

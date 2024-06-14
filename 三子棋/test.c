@@ -37,3 +37,4 @@ int main()
 	test();
 	return 0;
 }
+//为什么playermove程序中不加上computermove？
