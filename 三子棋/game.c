@@ -40,7 +40,7 @@ void playermove(char a[ROW][COL], int row, int col)
 		else
 		{
 			a[i - 1][j - 1] = '*';
-			displayboard(a[ROW][COL], row, col);
+			displayboard(a, row, col);
 		}
 	}
 }
@@ -56,7 +56,7 @@ void computermove(char a[ROW][COL], int row, int col)
 		if (a[i][j] != ' ')
 		{
 			a[i][j] = '#';
-			displayboard(a[ROW][COL], row, col);
+			displayboard(a, row, col);
 			break;
 		}
 	}
@@ -105,7 +105,7 @@ char iswin(char a[ROW][COL], int row, int col)
 		return a[0][0];
 	if (a[0][2] == a[1][1] && a[1][1] == a[2][0] && a[0][2] == '#')
 		return a[0][2];
-	if (isfull(a[ROW][COL], row, col))
+	if (isfull(a, row, col))
 		return 'q';
 	else
 		return 'c';

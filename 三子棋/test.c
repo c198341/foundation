@@ -9,17 +9,17 @@ void menu()//¥Ú”°±ÌÕ∑
 void game()
 {
 	char a[ROW][COL] = { ' ' };
-	initboard(a[ROW][COL],ROW,COL);
-	displayboard(a[ROW][COL],ROW,COL);
+	initboard(a,ROW,COL);
+	displayboard(a,ROW,COL);
 }
 void test()
 {
 	menu();
 	printf("please input:");
 	int input = 0;
-	scanf("%d",&input);
 	do
 	{
+		scanf("%d", &input);
 		switch (input)
 		{
 		case 0:
