@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void initboard(char a[row][col], int row, int col);
-void displayboard(char a[row][col], int row, int col);
-void playermove();
-void computermove();
-char iswin();
+void initboard(char a[ROW][COL], int row, int col);
+void displayboard(char a[ROW][COL], int row, int col);
+void playermove(char a[ROW][COL], int row, int col);
+void computermove(char a[ROW][COL], int row, int col);
+char iswin(char a[ROW][COL], int row, int col);

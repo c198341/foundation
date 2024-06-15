@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include "game.h"
 void menu()//打印表头
 {
 	printf("********************\n");
@@ -6,30 +8,33 @@ void menu()//打印表头
 }
 void game()
 {
-	char a[row][col] = { 0 };
-	intiboard(a[row][col],row,col);
-	displayboard(a[row][col], row, col);
+	char a[ROW][COL] = { ' ' };
+	initboard(a[ROW][COL],ROW,COL);
+	displayboard(a[ROW][COL],ROW,COL);
 }
 void test()
 {
 	menu();
-	printf("please input:")
-	int input=0;
+	printf("please input:");
+	int input = 0;
 	scanf("%d",&input);
 	do
 	{
-		switch 0:
+		switch (input)
 		{
-            printf("exit the game");
-		    break;
+		case 0:
+		{
+			printf("exit the game\n");
+			break;
 		}
-		switch 1 :
+		case 1:
 		{
-			printf("welcome");
+			printf("welcome\n");
 			game();
 		}
 		default:
-			printf("wrong number,input again!");
+			printf("wrong number,input again!\n");
+		}
 	} while (input);
 }
 int main()
@@ -38,3 +43,4 @@ int main()
 	return 0;
 }
 //为什么playermove程序中不加上computermove？
+// https://blog.csdn.net/weixin_74531333/article/details/129906421?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171844126316800222880617%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171844126316800222880617&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-129906421-null-null.142^v100^pc_search_result_base3&utm_term=%E4%B8%89%E5%AD%90%E6%A3%8B%20c%E8%AF%AD%E8%A8%80&spm=1018.2226.3001.4187
