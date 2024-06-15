@@ -8,17 +8,35 @@ void menu()//¥Ú”°±ÌÕ∑
 }
 void game()
 {
+	char ret = 0;
 	char a[ROW][COL] = { ' ' };
 	initboard(a,ROW,COL);
 	displayboard(a,ROW,COL);
+	while (1)
+	{
+		playermove(a, ROW, COL);
+		computermove(a, ROW, COL);
+		ret = iswin(a, ROW, COL);
+		if (ret == '*')
+		{
+			printf("you win!");
+			break;
+		}
+		else if (ret == '#')
+		{
+			printf("computer win!");
+			break;
+		}
+			
+	}
 }
 void test()
 {
-	menu();
-	printf("please input:");
 	int input = 0;
 	do
 	{
+		menu();
+		printf("please input:");
 		scanf("%d", &input);
 		switch (input)
 		{
@@ -31,6 +49,7 @@ void test()
 		{
 			printf("welcome\n");
 			game();
+			break;
 		}
 		default:
 			printf("wrong number,input again!\n");
