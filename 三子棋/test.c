@@ -15,19 +15,34 @@ void game()
 	while (1)
 	{
 		playermove(a, ROW, COL);
-		computermove(a, ROW, COL);
+		//displayboard(a, ROW, COL);
 		ret = iswin(a, ROW, COL);
-		if (ret == '*')
+		if (ret != 'c')
 		{
-			printf("you win!");
 			break;
 		}
-		else if (ret == '#')
+		computermove(a, ROW, COL);
+		displayboard(a, ROW, COL);
+		ret = iswin(a, ROW, COL);
+		if (ret != 'c')
 		{
-			printf("computer win!");
 			break;
 		}
-			
+	}
+	if (ret == '*')
+	{
+		displayboard(a, ROW, COL);
+		printf("you win\n");
+	}
+	if (ret == '#')
+	{
+		displayboard(a, ROW, COL);
+		printf("computer win\n");
+	}
+	if (ret == 'q')
+	{
+		displayboard(a, ROW, COL);
+		printf("Æ½¾Ö\n");
 	}
 }
 void test()

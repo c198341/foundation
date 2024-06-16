@@ -1,3 +1,4 @@
-﻿  test.c
-D:\驱动精灵搬家目录\foundation\三子棋\test.c(30,9): warning C4013: “isfull”未定义；假设外部返回 int
+﻿  game.c
+  test.c
+  正在生成代码...
   三子棋.vcxproj -> D:\驱动精灵搬家目录\foundation\三子棋\Debug\三子棋.exe

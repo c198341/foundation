@@ -33,17 +33,19 @@ void playermove(char a[ROW][COL], int row, int col)
     while (1)
 	{
 		printf("input your position:");
-		scanf("%d,%d", &i, &j);
-		if (i > row || j > col)
+		scanf("%d %d", &i, &j);
+		if (i >= 1 && i <= row && j >= 1 && j <= col)
 		{
-			printf("wrong position,input again:");
-			continue;
+			if (a[i - 1][j - 1] == ' ')
+			{
+				a[i - 1][j - 1] = '*';
+				break;
+			}
+			else
+				printf("bei zhan yong\n");
 		}
 		else
-		{
-			a[i - 1][j - 1] = '*';
-			displayboard(a, row, col);
-		}
+			printf("wrong position,input again£¡\n");
 	}
 }
 void computermove(char a[ROW][COL], int row, int col)
@@ -55,10 +57,9 @@ void computermove(char a[ROW][COL], int row, int col)
 	{
 		i = rand() % row;
 		j = rand() % col;
-		if (a[i][j] != ' ')
+		if (a[i][j] == ' ')
 		{
 			a[i][j] = '#';
-			displayboard(a, row, col);
 			break;
 		}
 	}
@@ -68,7 +69,7 @@ int isfull(char a[ROW][COL], int row, int col)
 	int i, j;
 	for(i=0;i<row;i++)
 		for(j=0;j<col;j++)
-			if (a[i][j] != ' ')
+			if (a[i][j] == ' ')
 			{
 				return 0;
 			}
