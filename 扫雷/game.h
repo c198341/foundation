@@ -11,4 +11,4 @@
 void initboard(char a[ROWS][COLS], int row, int col, char set);
 void showboard(char a[ROWS][COLS], int row, int col);
 void setmine(char a[ROWS][COLS], int row, int col, int count);
-void findmine(char a[ROWS][COLS],char b[ROWS][COLS],int biaoji);
+void findmine(char a[ROWS][COLS],char b[ROWS][COLS],int row,int col);
