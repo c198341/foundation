@@ -44,40 +44,37 @@ void setmine(char a[ROWS][COLS], int row, int col, int count)
 }
 int get_mine_count(char mine[ROWS][COLS], int i, int j)
 {
-	return mine[i - 1][j - 1] + mine[i - 1][j] + mine[i - 1][j - 1] +
+	return (mine[i - 1][j - 1] + mine[i - 1][j] + mine[i - 1][j + 1] +
 		mine[i][j - 1] + mine[i][j + 1] +
-		mine[i + 1][j - 1] + mine[i + 1][j] + mine[i + 1][j + 1];
+		mine[i + 1][j - 1] + mine[i + 1][j] + mine[i + 1][j + 1]-8*'0');	
 }
 void findmine(char a[ROWS][COLS], char b[ROWS][COLS], int row,int col)
 {
-	int i, j;
-	int count;
-	while (1)
+	int i = 0;
+	int j = 0;
+	int count=0;
+	while (count<row*col-EASY_COUNT)
 	{
-		printf("input mine's position:>\n");
+		printf("input mine's position:>");
 		scanf("%d %d", &i, &j);
 		if (i >= 1 && i <= 9 && j >= 1 && j <= 9)
 		{
 			if (a[i][j] == '1')
-				printf("mine!!! you die.\n");
+			{
+				printf("mine! you die!\n");
+				showboard(a, ROW, COL);
+				break;
+			}
 			else
 			{
 				count = get_mine_count(a, i, j);
-				printf("%d", count);
+				printf("%d\n", count);
+				b[i][j] = count + '0';
+				showboard(b, ROWS, COLS);
+				count++;
 			}
 		}
 		else
-			printf("wrong position.input again:>");
+			printf("wrong position.input again:>\n");
 	}
-}
-void game()
-{
-	char mine[ROWS][COLS] = { '0' };
-	char find[ROWS][COLS] = { '*' };
-	initboard(mine, ROWS, COLS, '0');
-	initboard(find, ROWS, COLS, '*');
-	showboard(find, ROWS, COLS);
-	setmine(mine, ROWS, COLS, EASY_COUNT);
-	//showboard(mine, ROWS, COLS);显示无误，则作为说明
-	findmine(mine, find, EASY_COUNT);
 }
