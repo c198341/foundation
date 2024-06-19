@@ -79,6 +79,6 @@ void findmine(char a[ROWS][COLS], char b[ROWS][COLS], int row,int col)
 		else
 			printf("wrong position.input again:>\n");
 	}
-	if (win == EASY_COUNT)
+	if (win == row * col - EASY_COUNT)
 		printf("find all the mines!\n");
 }

@@ -15,7 +15,7 @@ void game()
 	initboard(find, ROWS, COLS, '*');
 	showboard(find, ROWS, COLS);
 	setmine(mine, ROWS, COLS, EASY_COUNT);
-	//showboard(mine, ROWS, COLS);//显示无误，则作为说明
+	showboard(mine, ROWS, COLS);//显示无误，则作为说明
 	findmine(mine, find, ROW, COL);
 }
 void test()
