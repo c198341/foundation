@@ -4,7 +4,7 @@
 #define COL 9
 #define ROWS ROW+2
 #define COLS COL+2
-#define EASY_COUNT 10
+#define EASY_COUNT 71
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

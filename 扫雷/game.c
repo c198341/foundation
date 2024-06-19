@@ -4,8 +4,8 @@ void initboard(char a[ROWS][COLS], int row, int col, char set)
 {
 	int i = 0;
 	int j = 0;
-	for(i=0;i<=ROWS;i++)
-		for (j = 0; j <= COLS;j++)
+	for(i=0;i<ROWS;i++)
+		for (j = 0; j < COLS;j++)
 		{
 			a[i][j] = set;
 		}
@@ -44,6 +44,7 @@ void setmine(char a[ROWS][COLS], int row, int col, int count)
 }
 static int get_mine_count(char mine[ROWS][COLS], int x, int y)
 {
+	printf("%c\n", mine[x - 1][y - 1]);
 	return ((mine[x - 1][y - 1] + mine[x - 1][y] + mine[x - 1][y + 1] +
 		mine[x][y - 1] + mine[x][y + 1] +
 		mine[x + 1][y - 1] + mine[x + 1][y] + mine[x + 1][y + 1])-(8*'0'));
