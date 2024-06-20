@@ -2,16 +2,28 @@
 #include <stdio.h>
 int main()
 {
-	int num=-1;
-	int count = 0;
-	while (num)
+	///*int num=-1;
+	//int count = 0;
+	//while (num)
+	//{
+	//	if (num % 2 == 1)
+	//	{
+	//		count++;
+	//	}
+	//	num = num / 2;
+	//}
+	//printf("%d\n", count);*/
+	int num =15;
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < 32; i++)
 	{
-		if (num % 2 == 1)
+		if (1 == (num & 1) % 2)
 		{
-			count++;
+			j++;
 		}
-		num = num / 2;
+		num = num >> 1;
 	}
-	printf("%d\n", count);
+	printf("%d", j);
 	return 0;
 }
