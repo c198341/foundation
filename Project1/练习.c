@@ -2,16 +2,16 @@
 #include <stdio.h>
 int main()
 {
-	int num=6;
+	int num=-1;
 	int count = 0;
 	while (num)
 	{
 		if (num % 2 == 1)
 		{
 			count++;
-			num = num / 2;
 		}
+		num = num / 2;
 	}
-	printf("%d", count);
+	printf("%d\n", count);
 	return 0;
 }
