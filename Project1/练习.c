@@ -32,14 +32,17 @@ int main()
 	//}
 	//printf("%d", j);*/
 
-	struct stu s1 = { "zhang",20,"20240110" };
-	struct stu* ps = &s1;
-	printf("%s\n", s1.name);
-	printf("%d\n", s1.age);
-	printf("%s\n", s1.id);
-	printf("%s\n", (*ps).name);
-	printf("%d\n", (*ps).age);
-	printf("%s\n", (*ps).id);
-	printf("%s\n", ps->name);
+	///*struct stu s1 = { "zhang",20,"20240110" };
+	//struct stu* ps = &s1;
+	//printf("%s\n", s1.name);
+	//printf("%d\n", s1.age);
+	//printf("%s\n", s1.id);
+	//printf("%s\n", (*ps).name);
+	//printf("%d\n", (*ps).age);
+	//printf("%s\n", (*ps).id);
+	//printf("%s\n", ps->name);*/
+	int c = 1;
+	int b = c + --c;
+	printf("%d", b);
 	return 0;
 }
