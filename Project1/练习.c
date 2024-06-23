@@ -41,6 +41,7 @@ int main()
 	//printf("%d\n", (*ps).age);
 	//printf("%s\n", (*ps).id);
 	//printf("%s\n", ps->name);*/
+<<<<<<< HEAD
 	int a[3] = {1,2,100};
 	int* pa = &a[0];
 	int* ceshi = NULL;
@@ -49,5 +50,13 @@ int main()
 	ceshi= &a[2];
 	**ppa = *ceshi;
 	printf("%d\n", *pa);
+=======
+	///*int c = 1;
+	//int b = c + --c;
+	//printf("%d", b);*/
+	int a =0x11223344;
+	int* pa = &a;
+	*pa = 0;
+>>>>>>> ce9cac0403a115592d514259686637d3474199d0
 	return 0;
 }
