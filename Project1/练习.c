@@ -41,8 +41,11 @@ int main()
 	//printf("%d\n", (*ps).age);
 	//printf("%s\n", (*ps).id);
 	//printf("%s\n", ps->name);*/
-	int c = 1;
-	int b = c + --c;
-	printf("%d", b);
+	///*int c = 1;
+	//int b = c + --c;
+	//printf("%d", b);*/
+	int a =0x11223344;
+	int* pa = &a;
+	*pa = 0;
 	return 0;
 }
