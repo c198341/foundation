@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-struct stu
-{
-	char name[20];
-	int age;
-	char id[10];
-};
+//struct stu
+//{
+//	char name[20];
+//	int age;
+//	char id[10];
+//};
 int main()
 {
 	///*int num=-1;
@@ -32,14 +32,22 @@ int main()
 	//}
 	//printf("%d", j);*/
 
-	struct stu s1 = { "zhang",20,"20240110" };
-	struct stu* ps = &s1;
-	printf("%s\n", s1.name);
-	printf("%d\n", s1.age);
-	printf("%s\n", s1.id);
-	printf("%s\n", (*ps).name);
-	printf("%d\n", (*ps).age);
-	printf("%s\n", (*ps).id);
-	printf("%s\n", ps->name);
+	///*struct stu s1 = { "zhang",20,"20240110" };
+	//struct stu* ps = &s1;
+	//printf("%s\n", s1.name);
+	//printf("%d\n", s1.age);
+	//printf("%s\n", s1.id);
+	//printf("%s\n", (*ps).name);
+	//printf("%d\n", (*ps).age);
+	//printf("%s\n", (*ps).id);
+	//printf("%s\n", ps->name);*/
+	int a[3] = {1,2,100};
+	int* pa = &a[0];
+	int* ceshi = NULL;
+	int** ppa = &pa;
+	printf("%d\n", **ppa);
+	ceshi= &a[2];
+	**ppa = *ceshi;
+	printf("%d\n", *pa);
 	return 0;
 }
