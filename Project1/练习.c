@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define NUM 5
 #include <stdio.h>
 //struct stu
 //{
@@ -6,6 +7,21 @@
 //	int age;
 //	char id[10];
 //};
+//void reverse(int arr[10],int mount)
+//{
+//	int i = 0;
+//	int j = mount-1;
+//	int count = 0;
+//	int r= 0;
+//	for (count = 0; count <mount / 2;count++ )
+//	{
+//		r = arr[i];
+//		arr[i] = arr[j];
+//		arr[j] = r;
+//		i++;
+//		j--;
+//	}
+//}
 int main()
 {
 	///*int num=-1;
@@ -41,22 +57,48 @@ int main()
 	//printf("%d\n", (*ps).age);
 	//printf("%s\n", (*ps).id);
 	//printf("%s\n", ps->name);*/
-<<<<<<< HEAD
-	int a[3] = {1,2,100};
-	int* pa = &a[0];
-	int* ceshi = NULL;
-	int** ppa = &pa;
-	printf("%d\n", **ppa);
-	ceshi= &a[2];
-	**ppa = *ceshi;
-	printf("%d\n", *pa);
-=======
+	///*int a[3] = {1,2,100};
+	//int* pa = &a[0];
+	//int* ceshi = NULL;
+	//int** ppa = &pa;
+	//printf("%d\n", **ppa);
+	//ceshi= &a[2];
+	//**ppa = *ceshi;
+	//printf("%d\n", *pa);*/
 	///*int c = 1;
 	//int b = c + --c;
 	//printf("%d", b);*/
-	int a =0x11223344;
-	int* pa = &a;
-	*pa = 0;
->>>>>>> ce9cac0403a115592d514259686637d3474199d0
+	//int a =0x11223344;
+	//int* pa = &a;
+	//*pa = 0;
+	//int arr[10] = {0,1,2,3,4,5,6,7,8,9};
+	//int i = 0;
+	//int mount = 0;
+	//for (i = 0; i < 10; i++)
+	//{
+	//	printf("%d ", arr[i]);
+	//}
+	//printf("\n");
+	//mount = sizeof(arr) / sizeof(arr[0]);
+	//reverse(arr,mount);
+	//for (i = 0; i < mount; i++)
+	//{
+	//	printf("%d ", arr[i]);
+	//}
+	int a[NUM] = { 1,2,3,4,5 };
+	int b[NUM] = { 6,7,8,9,10 };
+	int i = 0;
+	int tmp = 0;
+	for (i = 0; i < NUM; i++)
+	{
+		tmp = a[i];
+		a[i] = b[i];
+		b[i] = tmp;
+	}
+	for (i = 0; i < NUM; i++)
+		printf("%d ", a[i]);
+	printf("\n");
+	for (i = 0; i < NUM; i++)
+		printf("%d ", b[i]);
 	return 0;
 }
