@@ -22,6 +22,14 @@
 //		j--;
 //	}
 //}
+void print(int* pa)
+{
+	int i = 0;
+	for (i = 0; i < 6; i++)
+	{
+		printf("%d ", *(pa + i));
+	}
+}
 int main()
 {
 	///*int num=-1;
@@ -47,7 +55,6 @@ int main()
 	//	num = num >> 1;
 	//}
 	//printf("%d", j);*/
-
 	///*struct stu s1 = { "zhang",20,"20240110" };
 	//struct stu* ps = &s1;
 	//printf("%s\n", s1.name);
@@ -112,20 +119,35 @@ int main()
 	//		num++;
 	//	}
 	//	c=c >> 1;
-
 	//}
 	//printf("num=%d\n", num);
-	int i = 13;
-	int j = 0;
-	int num = 0;
-	//scanf("%d", &i);
-	for (j = 0; j < 32; j++)
-	{
-		if ((unsigned)i % 2 == 1)
-			num++;
-		i = i >> 1;
-
-	}
-	printf("num=%d\n", num);
+	//int i = 13;
+	//int j = 0;
+	//int num = 0;
+	////scanf("%d", &i);
+	//for (j = 0; j < 32; j++)
+	//{
+	//	if ((unsigned)i % 2 == 1)
+	//		num++;
+	//	i = i >> 1;
+	//}
+	//printf("num=%d\n", num);
+ //   /*int i = 1;
+	//unsigned int j;
+	//scanf("%d", &j);
+	//for (i = 1; i <= 32; i=i+2)
+	//{
+	//	printf("%d ", (j>>(i-1)) % 2);
+	//}
+	//printf("\n");
+	//for (i = 2; i <= 32; i = i + 2)
+	//{
+	//	printf("%d ", (j >> (i - 1)) % 2);
+	//}
+	//printf("\n");*/
+    int arr[6] = { 1,2,3,4,5 ,5};
+	int* pa = &arr[0];
+	print(pa);
+	printf("\n");
 	return 0;
 }
