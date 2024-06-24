@@ -115,15 +115,16 @@ int main()
 
 	//}
 	//printf("num=%d\n", num);
-	int i = -1;
+	int i = 13;
 	int j = 0;
 	int num = 0;
-	scanf("%d", &i);
+	//scanf("%d", &i);
 	for (j = 0; j < 32; j++)
 	{
-		if (i % 2 == 1)
+		if ((unsigned)i % 2 == 1)
 			num++;
 		i = i >> 1;
+
 	}
 	printf("num=%d\n", num);
 	return 0;
