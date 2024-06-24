@@ -84,21 +84,47 @@ int main()
 	//for (i = 0; i < mount; i++)
 	//{
 	//	printf("%d ", arr[i]);
+	////}
+	//int a[NUM] = { 1,2,3,4,5 };
+	//int b[NUM] = { 6,7,8,9,10 };
+	//int i = 0;
+	//int tmp = 0;
+	//for (i = 0; i < NUM; i++)
+	//{
+	//	tmp = a[i];
+	//	a[i] = b[i];
+	//	b[i] = tmp;
 	//}
-	int a[NUM] = { 1,2,3,4,5 };
-	int b[NUM] = { 6,7,8,9,10 };
-	int i = 0;
-	int tmp = 0;
-	for (i = 0; i < NUM; i++)
+	//for (i = 0; i < NUM; i++)
+	//	printf("%d ", a[i]);
+	//printf("\n");
+	//for (i = 0; i < NUM; i++)
+	//	printf("%d ", b[i]);
+	//int i = 1999;
+	//int j = 2299;
+	//int c =i^j;
+	//int count = 0;
+	//int num = 0;
+	//for (count = 0; count < 32; count++)
+	//{
+	//	if (c % 2 == 1)
+	//	{
+	//		num++;
+	//	}
+	//	c=c >> 1;
+
+	//}
+	//printf("num=%d\n", num);
+	int i = -1;
+	int j = 0;
+	int num = 0;
+	scanf("%d", &i);
+	for (j = 0; j < 32; j++)
 	{
-		tmp = a[i];
-		a[i] = b[i];
-		b[i] = tmp;
+		if (i % 2 == 1)
+			num++;
+		i = i >> 1;
 	}
-	for (i = 0; i < NUM; i++)
-		printf("%d ", a[i]);
-	printf("\n");
-	for (i = 0; i < NUM; i++)
-		printf("%d ", b[i]);
+	printf("num=%d\n", num);
 	return 0;
 }
