@@ -1,6 +1,20 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define NUM 5
 #include <stdio.h>
+void print_table(int i)
+{
+	int j = 0;
+	int row = 0;
+	for (j = 1; j <= i; j++)
+	{
+		for (row = 1; row <= j; row++)
+		{
+			printf("%d*%d=%d ", row, j, row * j);
+		}
+		printf("\n");
+	}
+		
+}
 //struct stu
 //{
 //	char name[20];
@@ -22,14 +36,14 @@
 //		j--;
 //	}
 //}
-void print(int* pa)
-{
-	int i = 0;
-	for (i = 0; i < 6; i++)
-	{
-		printf("%d ", *(pa + i));
-	}
-}
+//void print(int* pa)
+//{
+//	int i = 0;
+//	for (i = 0; i < 6; i++)
+//	{
+//		printf("%d ", *(pa + i));
+//	}
+//}
 int main()
 {
 	///*int num=-1;
@@ -145,9 +159,12 @@ int main()
 	//	printf("%d ", (j >> (i - 1)) % 2);
 	//}
 	//printf("\n");*/
-    int arr[6] = { 1,2,3,4,5 ,5};
-	int* pa = &arr[0];
-	print(pa);
-	printf("\n");
+ //   int arr[6] = { 1,2,3,4,5 ,5};
+	//int* pa = &arr[0];
+	//print(pa);
+	//printf("\n");
+    int i = 0;
+	scanf("%d", &i);
+	print_table(i);
 	return 0;
 }
