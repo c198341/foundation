@@ -224,7 +224,45 @@
 //	printf("%s\n", arr);
 //	return 0;
 //}
+//int digitsum(int i)
+//{
+//	if (i / 10 == 0)
+//	{
+//		return i % 10;
+//	}
+//	else
+//	{
+//		return digitsum(i/10)+i%10;
+//	}
+//}
+//int main()
+//{
+//	int i = 0;
+//	int sum = 0;
+//	scanf("%d", &i);
+//	sum=digitsum(i);
+//	printf("sum=%d\n", sum);
+//}
+double fang(int n,int k)
+{
+	if (k == 0)
+		return 1;
+	else if (k < 0)
+	{
+		return 1 / (fang(n, (-k-1)) * n);
+	}
+	if (k == 1)
+		return n;
+	else
+	{
+		return fang(n, k-1)*n;
+	}
+}
 int main()
 {
-	int 
+	int n,k;
+	scanf("%d %d", &n,&k);
+	double s=fang(n,k);
+	printf("%lf\n", s);
+	return 0;
 }
