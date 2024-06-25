@@ -168,14 +168,63 @@
 //	print_table(i);
 //	return 0;
 //}
-void print_a(int i)
-{
-
-}
+//void print_a(int i)
+//{
+//	if (i < 0)
+//		i = i * (-1);
+//	if (i / 10== 0)
+//	{
+//		printf("%d ", i % 10); 
+//	}
+//	else
+//	{
+//		print_a(i / 10);
+//		printf("%d ", i % 10);
+//	}
+//}
+//int main()
+//{
+//	int i = 0;
+//	scanf("%d", &i);
+//	print_a(i);
+//	return 0;
+////}
+//void reverse_string(char* string)
+//{
+	//if (*string=='\0')
+	//{
+	//	printf("after reverse:"); 
+	//}
+	//else
+	//{
+	//	reverse_string((string+1));
+	//	printf("%c ", *string);
+	//}
+	//int i = 0;
+	//char tmp = 'a';
+	//while ((*string) != '\0')
+	//{
+	//		i++;
+	//		string++;
+	//} 
+	//string = string - i;
+	//if ((*string) != '\0')
+	//{
+	//	tmp = *string;
+	//	*string = *(string + i - 1);
+	//	*(string + i - 1) ='\0';
+	//	reverse_string(string + 1);
+	//	*(string + i - 1) = tmp;
+	//}
+//}
+//int main()
+//{
+//	char arr[] = "abcdefg";
+//	reverse_string(arr);
+//	printf("%s\n", arr);
+//	return 0;
+//}
 int main()
 {
-	int i = 0;
-	scanf("%d", &i);
-	print_a(i);
-	return 0;
+	int 
 }
