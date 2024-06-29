@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define NUM 5
 #include <stdio.h>
+#include <assert.h>
 //void print_table(int i)
 //{
 //	int j = 0;
@@ -243,26 +244,72 @@
 //	sum=digitsum(i);
 //	printf("sum=%d\n", sum);
 //}
-double fang(int n,int k)
+//double fang(int n,int k)
+//{
+//	if (k == 0)
+//		return 1;
+//	else if (k < 0)
+//	{
+//		return 1 / (fang(n, (-k-1)) * n);
+//	}
+//	if (k == 1)
+//		return n;
+//	else
+//	{
+//		return fang(n, k-1)*n;
+//	}
+//}
+//int main()
+//{
+//	int n,k;
+//	scanf("%d %d", &n,&k);
+//	double s=fang(n,k);
+//	printf("%lf\n", s);
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int arr[10] = { 0 };
+//	printf("%p\n", &i);
+//	printf("%p\n", &arr);
+//	for (i = 0; i <= 12; i++)
+//	{
+//		arr[i] = 0;
+//		printf("hehe\n");
+//	}
+//	return 0;
+//}
+//void my_strcpy(char* dest, char* src)
+//{
+//	assert (dest != NULL);
+//	assert(src != NULL);
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//}
+//int main()
+//{
+//	char arr1[] = "hello";
+//	char arr2[] = "bit";
+//	my_strcpy(arr1, NULL);
+//	printf("%s", arr1);
+//	return 0;
+//}
+int my_strlen(const char* p)
 {
-	if (k == 0)
-		return 1;
-	else if (k < 0)
+	int i = 0;
+	assert(*p !=NULL);
+	while (*p++ != '\0')
 	{
-		return 1 / (fang(n, (-k-1)) * n);
+		i++;
 	}
-	if (k == 1)
-		return n;
-	else
-	{
-		return fang(n, k-1)*n;
-	}
+	return i;
 }
 int main()
 {
-	int n,k;
-	scanf("%d %d", &n,&k);
-	double s=fang(n,k);
-	printf("%lf\n", s);
+	char a[] = "\0";
+	printf("%d\n",my_strlen(a));
 	return 0;
 }

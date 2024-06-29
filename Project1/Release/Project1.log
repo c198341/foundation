@@ -1,0 +1,12 @@
+﻿  practise
+  作业.cpp
+  源.cpp
+D:\驱动精灵搬家目录\foundation\Project1\源.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  源1.cpp
+  递归.cpp
+  练习.c
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  Project1.vcxproj -> D:\驱动精灵搬家目录\foundation\Project1\Release\Project1.exe
