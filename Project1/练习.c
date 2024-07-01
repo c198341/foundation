@@ -327,20 +327,30 @@ void gen(double a, double b, double c)
 	double genhao = b * b - 4 * a * c;
 	if (genhao < 0)
 	{
-		printf("wu shi gen\n"); 
+		printf("you xu gen:\n");
+		if (b == 0)
+		{
+			printf("xu gen=0.00+%lfi,0.00-%lfi", sqrt(-genhao) / (2 * a),  sqrt(-genhao) / (2 * a));
+		}
+		else
+		{
+			printf("xu gen=%lf+%lfi,%lf-%lfi", -b / (2 * a), sqrt(-genhao) / (2 * a), -b / (2 * a), sqrt(-genhao) / (2 * a));
+		}
 	}
 	else 
 	{
 		genhao = sqrt(genhao);
-		printf("gen=%lf,%lf", (-b + genhao) / (2 * a), (-b - genhao) / (2 * a));
+		printf("shi gen=%lf,%lf", (-b + genhao) / (2 * a), (-b - genhao) / (2 * a));
 	}
 }
 int main()
 {
 	double a, b, c;
-	printf("input:\n");
-
-	scanf("%lf%lf%lf", &a, &b, &c);
+	do
+	{
+		printf("input:\n");
+		scanf("%lf%lf%lf", &a, &b, &c);
+	} while (a == 0);
 	gen(a, b, c);
 	return 0;
 }
