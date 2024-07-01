@@ -2,6 +2,7 @@
 #define NUM 5
 #include <stdio.h>
 #include <assert.h>
+#include <math.h>
 //void print_table(int i)
 //{
 //	int j = 0;
@@ -297,19 +298,49 @@
 //	printf("%s", arr1);
 //	return 0;
 //}
-int my_strlen(const char* p)
+//int my_strlen(const char* p)
+//{
+//	int i = 0;
+//	assert(*p !=NULL);
+//	while (*p++ != '\0')
+//	{
+//		i++;
+//	}
+//	return i;
+//}
+//int main()
+//{
+//	char a[] = "\0";
+//	printf("%d\n",my_strlen(a));
+//	return 0;
+//}
+//int main()
+//{
+//	char a = -1;
+//	signed char b = -1;
+//	unsigned char c = -1;
+//	printf("a=%d,b=%d,c=%d\n", a, b, c);
+//	return 0;
+//}
+void gen(double a, double b, double c)
 {
-	int i = 0;
-	assert(*p !=NULL);
-	while (*p++ != '\0')
+	double genhao = b * b - 4 * a * c;
+	if (genhao < 0)
 	{
-		i++;
+		printf("wu shi gen\n"); 
 	}
-	return i;
+	else 
+	{
+		genhao = sqrt(genhao);
+		printf("gen=%lf,%lf", (-b + genhao) / (2 * a), (-b - genhao) / (2 * a));
+	}
 }
 int main()
 {
-	char a[] = "\0";
-	printf("%d\n",my_strlen(a));
+	double a, b, c;
+	printf("input:\n");
+
+	scanf("%lf%lf%lf", &a, &b, &c);
+	gen(a, b, c);
 	return 0;
 }
