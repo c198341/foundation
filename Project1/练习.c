@@ -322,35 +322,52 @@
 //	printf("a=%d,b=%d,c=%d\n", a, b, c);
 //	return 0;
 //}
-void gen(double a, double b, double c)
-{
-	double genhao = b * b - 4 * a * c;
-	if (genhao < 0)
-	{
-		printf("you xu gen:\n");
-		if (b == 0)
-		{
-			printf("xu gen=0.00+%lfi,0.00-%lfi", sqrt(-genhao) / (2 * a),  sqrt(-genhao) / (2 * a));
-		}
-		else
-		{
-			printf("xu gen=%lf+%lfi,%lf-%lfi", -b / (2 * a), sqrt(-genhao) / (2 * a), -b / (2 * a), sqrt(-genhao) / (2 * a));
-		}
-	}
-	else 
-	{
-		genhao = sqrt(genhao);
-		printf("shi gen=%lf,%lf", (-b + genhao) / (2 * a), (-b - genhao) / (2 * a));
-	}
-}
+//void gen(double a, double b, double c)
+//{
+//	double genhao = b * b - 4 * a * c;
+//	if (genhao < 0)
+//	{
+//		printf("you xu gen:\n");
+//		if (b == 0)
+//		{
+//			printf("xu gen=0.00+%lfi,0.00-%lfi", sqrt(-genhao) / (2 * a),  sqrt(-genhao) / (2 * a));
+//		}
+//		else
+//		{
+//			printf("xu gen=%lf+%lfi,%lf-%lfi", -b / (2 * a), sqrt(-genhao) / (2 * a), -b / (2 * a), sqrt(-genhao) / (2 * a));
+//		}
+//	}
+//	else 
+//	{
+//		genhao = sqrt(genhao);
+//		printf("shi gen=%lf,%lf", (-b + genhao) / (2 * a), (-b - genhao) / (2 * a));
+//	}
+//}
+//int main()
+//{
+//	double a, b, c;
+//	do
+//	{
+//		printf("input:\n");
+//		scanf("%lf%lf%lf", &a, &b, &c);
+//	} while (a == 0);
+//	gen(a, b, c);
+//	return 0;
+//}
+//int main()
+//{
+//	char c1 = 'C', c2 = 'h', c3 = 'i', c4 = 'n', c5 = 'a';
+//	c1 = c1 + 4;
+//	c2 = c2 + 4;
+//	c3 = c3 + 4;
+//	c4 = c4 + 4;
+//	c5 = c5 + 4;
+//	printf("%c%c%c%c%c\n", c1, c2, c3, c4, c5);
+//	return 0;
+//}
 int main()
 {
-	double a, b, c;
-	do
-	{
-		printf("input:\n");
-		scanf("%lf%lf%lf", &a, &b, &c);
-	} while (a == 0);
-	gen(a, b, c);
+	float x = 2.5, y = 4.7;
+	int a=
 	return 0;
 }
