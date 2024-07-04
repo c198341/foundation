@@ -367,7 +367,6 @@
 //}
 int main()
 {
-	float x = 2.5, y = 4.7;
-	int a=
+	printf("%5.3s\n", "COMPUTER");
 	return 0;
 }
