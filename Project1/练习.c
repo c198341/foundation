@@ -365,8 +365,101 @@
 //	printf("%c%c%c%c%c\n", c1, c2, c3, c4, c5);
 //	return 0;
 //}
+//int main()
+//{
+//	printf("%5.3s\n", "COMPUTER");
+//	return 0;
+//}
+//int main()
+//{
+//	float x, y;
+//	scanf(" %f %e", &x, &y);
+//	printf("%f %f", x, y);
+//	return 0;
+//}
+//int main()
+//{
+//	float r, h;
+//	float pai = 3.141;
+//	scanf("%f %f", &r, &h);
+//	printf("%.2f//zhou chang\n", 2 * pai * r);
+//	printf("%.2f//yuan mian ji\n", pai * r*r);
+//	printf("%.2f//圆球表面积\n", 4 * pai * r*r);
+//	printf("%.2f//圆球体积\n", 4 * pai * r*r*r/3);
+//	printf("%.2f//圆柱体积\n", pai * r*r*h);
+//}
+//int main()
+//{
+//	float f=0, c;
+//	scanf("%f", &f);
+//	c = 5 * (f - 32) / 9;
+//	printf("%.2f//c shi she shi du\n", c);
+//}
+//int main()
+//{
+//	char c1, c2;
+//	c1 = getchar();
+//	c2 = getchar();
+//	putchar(c1);
+//	putchar(c2);
+//	printf("%c\n", c2);
+//	return 0;
+//}
+//int main()
+//{
+//	float x;
+//	scanf("%f", &x);
+//	if (x < 1)
+//		printf("%f\n", x);
+//	if (x >= 1 && x < 10)
+//		printf("%f\n", 2.0 * x - 1.0);
+//	if (x >= 10)
+//		printf("%f\n", 3.0 * x - 11.0);
+//	return 0;
+//}
+//int main()
+//{
+//	unsigned int i;
+//	int j = 0,k=0;
+//	scanf("%d", &i);
+//	while (i > 99999 || i<=0)
+//	{
+//		printf("不是五位正整数\n");
+//		scanf("%d", &i);
+//	}
+//	if (i / 10000 != 0)
+//	{
+//		printf("5 wei\n");
+//		j = 5;
+//	}
+//	else if (i / 1000 != 0)
+//	{
+//		printf("4 wei\n");
+//		j = 4;
+//	}
+//	else if (i / 100 != 0)
+//	{
+//		printf("3 wei\n");
+//		j = 3;
+//	}
+//	else if (i / 10 != 0)
+//	{
+//		printf("2 wei\n");
+//		j = 2;
+//	}
+//	else
+//	{
+//		printf("1 wei\n");
+//		j = 1;
+//	}
+//	for (k = 0; k < j; k++)
+//	{
+//		printf("%d ", i % 10);
+//		i = i / 10;
+//	}
+//	return 0;
+//}
 int main()
 {
-	printf("%5.3s\n", "COMPUTER");
-	return 0;
+
 }
