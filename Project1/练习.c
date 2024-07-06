@@ -479,25 +479,39 @@
 //	if (i > 1000000)
 //		printf("bonus is %f\n", 0.1 * 100000 + 100000 * 0.075 + 200000 * 0.05 + 200000*0.03+400000*0.015+(i-1000000.0)*0.01);
 //	return 0;
+////}
+//int main()
+//{
+//	double bonus=0, b1, b2, b4, b6, b10;
+//	double i;
+//	int c;
+//	b1 = 0.1 * 100000;
+//	b2 = b1 + 100000 * 0.075;
+//	b4 = b2 + 200000 * 0.05;
+//	b6 = b4 + 200000 * 0.03;
+//	b10 = b6 + 400000 * 0.015;
+//	scanf("%lf", &i);
+//	c = i / 100000.0;
+//	if (c>10)
+//		c = 10;
+//	switch (c)
+//	{
+//	case 0:bonus = i * 0.1; break;
+//	case 1:bonus = b1 + (i - 100000.0) * 0.075; break;
+//	case 2:
+//	case 3:bonus = b2 + (i - 200000.0) * 0.05; break;
+//	case 4:
+//	case 5:bonus = b4 + (i - 400000.0) * 0.03; break;
+//	case 6:
+//	case 7:
+//	case 8:
+//	case 9:bonus = b6 + (i - 600000.0) * 0.015; break;
+//	case 10:bonus = b10 + (i - 1000000.0) * 0.01;
+//	}
+//	printf("bonus is %.2lf", bonus);
+//	return 0;
 //}
 int main()
 {
-	float bonus, b1, b2, b4, b6, b10;
-	float i;
-	int c;
-	b1 = 0.1 * 100000;
-	b2 = b1 + 100000 * 0.075;
-	b4 = b2 + 200000 * 0.05;
-	b6 = b4 + 200000 * 0.03;
-	b10 = b6 + 400000 * 0.015;
-	scanf("%f", &i);
-	c = i / 100000.0;
-	if (c>10)
-		c = 10;
-	switch (c)
-	{
-	case 0:printf("%f", i*0.1); break;
-	case 1:printf("%f", i * 0.1); break;
-	}
-	return 0;
+
 }
