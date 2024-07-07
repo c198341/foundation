@@ -511,6 +511,42 @@
 //	printf("bonus is %.2lf", bonus);
 //	return 0;
 //}
+//int main()
+//{
+//	int arr[4];
+//	int i,j,k;
+//	for (i = 0; i < 4; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	for(j=0;j<3;j++)
+//		for (i =j+1; i < 4; i++)
+//		{
+//			if (arr[j] > arr[i])
+//			{
+//				k = arr[j];
+//				arr[j] = arr[i];
+//				arr[i] = k;
+//			}
+//		}
+//	for (i = 0; i < 4; i++)
+//		printf("%d ", arr[i]);
+//	printf("\n");
+//}
+//int main()
+//{
+//	float x, y;
+//	double r;
+//	scanf("%f%f", &x, &y);
+//	x = fabs(x);
+//	y = fabs(y);
+//	r = sqrt((x - 2.0) * (x - 2.0) + (y - 2.0) * (y - 2.0));
+//	if (r <= 1.0)
+//		printf("10m\n");
+//	else
+//		printf("0m\n");
+//	return 0;
+//}
 int main()
 {
 
