@@ -547,7 +547,60 @@
 //		printf("0m\n");
 //	return 0;
 //}
+//int main()
+//{
+//	int a=0, b=0;
+//	int k = 0,i=0,j=0;
+//	while (a == 0 || b == 0)
+//	{
+//		scanf("%d%d", & a, &b);
+//	}
+//	if (a > b)
+//	{
+//		k = a;
+//		a = b;
+//		b = k;
+//	}
+//	k = 1;
+//	while (k <= a)
+//	{
+//		if (a % k == 0 && b % k == 0)
+//			i = k;
+//		k++;
+//	}
+//	j = a *( b / i);
+//	printf("最大公约数为%d，最小公倍数为%d\n", i, j);
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[] = "t 1 \t";
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0,zm=0,kg=0,sx=0,qt=0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		if (arr[i] == '\0')
+//			break;
+//		else if(arr[i] >= 'A' && arr[i] <= 'z')
+//			zm++;
+//		else if (arr[i] == ' ')
+//			kg++;
+//		else if (arr[i] >= '1' && arr[i] <= '9')
+//			sx++;
+//		else
+//			qt++;
+//	}
+//	printf("zi mu:%d\nkong ge:%d\nshu zi:%d\nqi ta:%d\n",zm,kg,sx,qt);
+//}
 int main()
 {
-
+	int n,i,a;
+	long sn=0;
+	scanf("%d%d", &n,&a);
+	for (i = 0; i < n;i++)
+	{
+		a = a * i * 10 + a;
+		sn = sn + a;
+	}
+	printf("%ld", sn);
 }
