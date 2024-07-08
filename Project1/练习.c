@@ -592,15 +592,38 @@
 //	}
 //	printf("zi mu:%d\nkong ge:%d\nshu zi:%d\nqi ta:%d\n",zm,kg,sx,qt);
 //}
+//int main()
+//{
+//	int n,i,a,k;
+//	long sn=0;
+//	scanf("%d%d", &n,&a);
+//	if (n == 1)
+//		sn = a;
+//	else
+//	{
+//		sn = a;
+//		k = a;
+//		for (i = 1; i < n; i++)
+//		{
+//			a = a * 10 + k;	
+//			sn = sn + a;
+//		}
+//	}
+//	printf("%ld", sn);
+//}
 int main()
 {
-	int n,i,a;
-	long sn=0;
-	scanf("%d%d", &n,&a);
-	for (i = 0; i < n;i++)
+	int i;
+	long k=0,j,s;
+	for (i = 1; i <= 20; i++)
 	{
-		a = a * i * 10 + a;
-		sn = sn + a;
+		s = 1;
+		for (j = 1; j <= i; j++)
+		{
+			s = j * s;
+		}
+		k = k + s;
 	}
-	printf("%ld", sn);
+	printf("%ld\n", k);
+	return 0;
 }
