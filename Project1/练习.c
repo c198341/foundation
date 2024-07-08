@@ -611,19 +611,48 @@
 //	}
 //	printf("%ld", sn);
 //}
+//int main()
+//{
+//	int i;
+//	double k=0,j,s=1;
+//	for (i = 1; i <= 20; i++)
+//	{
+//		s = i * s;
+//		k = k + s;
+//	}
+//	printf("%lf\n", k);
+//	return 0;
+//}
+//int main()
+//{
+//	float k = 1.0,sum=0.0;
+//	float i = 0;
+//	for (i = 1; i <= 100; i++)
+//		sum = sum + i;
+//	for (i = 1; i <= 50; i++)
+//		sum = sum + i * i;
+//	for (i = 1.0; i <= 10; i++)
+//		sum = sum + 1 / i;
+//	printf("%8.2f", sum);
+//	return 0;
+//}
+//int main()
+//{
+//	int a, b, c, k,j;
+//	for (k = 100; k <= 999; k++)
+//	{
+//		a = k % 10;
+//		j = k / 10;
+//		b = j % 10;
+//		c = j / 10;
+//		if (a * a * a + b * b * b + c * c * c == k)
+//			printf("%d ", k);
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i;
-	long k=0,j,s;
-	for (i = 1; i <= 20; i++)
-	{
-		s = 1;
-		for (j = 1; j <= i; j++)
-		{
-			s = j * s;
-		}
-		k = k + s;
-	}
-	printf("%ld\n", k);
-	return 0;
+	int i, j;
+	for(i=1;i<=1000;i++)
+
 }
