@@ -650,25 +650,49 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	int i, j,k=0;
+//	for (i = 1; i <= 1000; i++)
+//	{
+//		k = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			if ((i % j == 0) && (i != j))
+//				k = j + k;
+//		}
+//		if (i == k)
+//		{
+//			printf("%d its factors are ", i);
+//			for (j = 1; j < i; j++)
+//				if (i % j == 0)
+//				{
+//					if(j==1)
+//						printf(" %d", j);
+//					else
+//						printf(",%d", j);
+//				}
+//					
+//				
+//		}
+//		if (i == k)
+//			printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i, j,k=0;
-	for (i = 1; i <= 1000; i++)
+	int i = 1;
+	float j=2, k=1;
+	float sum = 0;
+	for (i = 1; i <= 20; i++)
 	{
-		k = 0;
-		for (j = 1; j <= i; j++)
-		{
-			if (i % j == 0 && i != j)
-				k = j + k;
-		}
-		if (i == k)
-		{
-			printf("%d its factors are ", i);
-			for (j = 1; j < i; j++)
-				if (i % j == 0)
-					printf("%d,", j);
-		}
-		printf("\n");
+		if (i == 1)
+			sum = sum + j / k;
+		else if (i == 2)
+			sum = sum + (j++) / (k++);
+		else 
+			sum=sum+
+
 	}
-	return 0;
 }
