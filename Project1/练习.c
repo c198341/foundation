@@ -652,9 +652,23 @@
 //}
 int main()
 {
-	int i, j;
+	int i, j,k=0;
 	for (i = 1; i <= 1000; i++)
-		for (j = 1; j < i; j++)
-			if (i % j == 0)
-				k=j + k;
+	{
+		k = 0;
+		for (j = 1; j <= i; j++)
+		{
+			if (i % j == 0 && i != j)
+				k = j + k;
+		}
+		if (i == k)
+		{
+			printf("%d its factors are ", i);
+			for (j = 1; j < i; j++)
+				if (i % j == 0)
+					printf("%d,", j);
+		}
+		printf("\n");
+	}
+	return 0;
 }
