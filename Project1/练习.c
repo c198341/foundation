@@ -683,16 +683,24 @@
 int main()
 {
 	int i = 1;
-	float j=2, k=1;
+	float j, k;
 	float sum = 0;
 	for (i = 1; i <= 20; i++)
 	{
 		if (i == 1)
-			sum = sum + j / k;
+		{
+			sum = sum + 2.0;
+			j = 2.0;
+		}
 		else if (i == 2)
-			sum = sum + (j++) / (k++);
-		else 
-			sum=sum+
+		{
+			sum = sum + 1.5;
+			k = 1.5;
+		}
+		else
+		{
+			sum = sum + k;
 
+		}	
 	}
 }
