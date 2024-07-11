@@ -680,27 +680,42 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	int i = 1;
+//	float j=2, k=1,m=0;
+//	float sum = 0;
+//	for (i = 1; i <= 20; i++)
+//	{
+//		if (i == 1)
+//		{
+//			m = j / k;
+//			sum = sum + m;
+//			m = j;
+//			j = j+k;
+//			k = m;
+//		}
+//		else if (i == 2)
+//		{
+//			m = j / k;
+//			sum = sum + j/k;
+//			m = j;
+//			j = j + k;
+//			k=m;
+//		}
+//		else
+//		{
+//			m = j / k;
+//			sum = sum + j/k;
+//			m = j;
+//			j = j + k;
+//			k = m;
+//		}	
+//	}
+//	printf("%f", sum);
+//	return 0;
+//}
 int main()
 {
-	int i = 1;
-	float j, k;
-	float sum = 0;
-	for (i = 1; i <= 20; i++)
-	{
-		if (i == 1)
-		{
-			sum = sum + 2.0;
-			j = 2.0;
-		}
-		else if (i == 2)
-		{
-			sum = sum + 1.5;
-			k = 1.5;
-		}
-		else
-		{
-			sum = sum + k;
-
-		}	
-	}
+	float i
 }
