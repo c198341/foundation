@@ -715,16 +715,30 @@
 //	printf("%f", sum);
 //	return 0;
 //}
+//int main()
+//{
+//	int i = 1;
+//	float sum=100, gao=100;
+//	for (i = 1; i <=10; i++)
+//	{
+//		gao = gao / 2;
+//		sum = sum+gao * 2;
+//	}
+//	sum = sum - gao * 2;
+//	printf("%f %f\n", sum, gao);
+//	return 0;
+//}
+//int main()
+//{
+//	int i,j=1;
+//	for (i = 9; i >= 1; i--)
+//	{
+//		j = (j + 1) * 2;
+//	}
+//	printf("%d\n", j);
+//	return 0;
+//}
 int main()
 {
-	int i = 1;
-	float sum=0, gao=100;
-	for (i = 1; i <= 10; i++)
-	{
-		gao = gao / 2;
-		sum = sum+gao * 2;
-	}
-	sum = sum + 100;
-	printf("%f %f\n", sum, gao);
-	return 0;
+
 }
