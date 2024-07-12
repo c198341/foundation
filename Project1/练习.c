@@ -738,6 +738,18 @@
 //	printf("%d\n", j);
 //	return 0;
 //}
+//int main()
+//{
+//	double x=1.0, y,a;
+//	scanf("%lf", &a);
+//	do
+//	{
+//		y = x;
+//		x = (y + a / y) / 2;
+//	} while (fabs(x - y) > 1e-5);
+//	printf("%lf", x);
+//	return 0;
+//}
 int main()
 {
 
