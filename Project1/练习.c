@@ -750,7 +750,35 @@
 //	printf("%lf", x);
 //	return 0;
 //}
+//int main()
+//{
+//	double x0, x1=1.5;
+//	do
+//	{
+//		x0 = x1;
+//		x1 = x0 - (2 * x0 * x0 * x0 - 4 * x0 * x0 + 3 * x0 - 6) / (6 * x0 * x0 - 8 * x0 + 3);
+//	} while (fabs(x1 - x0));
+//	printf("%lf", x0);
+//}
 int main()
 {
-
+	double a=-10, b=10, x,y;
+	{
+		x = (a + b) / 2;
+		y = 2 * x * x * x - 4 * x * x + 3 * x - 6;
+		if (y == 0)
+		{
+			a = b;
+		}
+		else if (y * (2 * a * a * a - 4 * a * a + 3 * a - 6) < 0)
+		{
+			b = x;
+		}
+		else if (y * (2 * b * b * b - 4 * b * b + 3 * b - 6) < 0)
+		{
+			a = x;
+		}   
+	}while (fabs(b - a) > 1e-5);
+	printf("this is root:%lf", x);
+	return 0;
 }
