@@ -787,5 +787,16 @@
 //}
 int main()
 {
-	int i, j;
+	int i, j,k;
+	for (i = 1; i <= 7; i++)
+	{
+		for (k = 1; k <=(7-i); k++)
+			printf(" ");
+		for (j = 6; j >= 0; j = j - 2)
+		{
+			printf("* ");
+		}
+		printf("\n");
+	}	
+	return 0;
 }
