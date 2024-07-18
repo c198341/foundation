@@ -792,7 +792,7 @@ int main()
 	{
 		for (k = 1; k <=(7-i); k++)
 			printf(" ");
-		for (j = 6; j >= 0; j = j - 2)
+		for (j = 1;  i <= j; j = j - 2)
 		{
 			printf("* ");
 		}
