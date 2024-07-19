@@ -785,18 +785,38 @@
 //	system("pause");
 //	return 0;
 //}
+//int main()
+//{
+//	int i, j,k=4;
+//	for (i = 1; i <= 4; i++)
+//	{
+//		for (k = 1; k <=(4-i); k++)
+//			printf("  ");
+//		for (j = 1; j <=2*i-1; j++)
+//		{
+//			printf(" *");
+//		}
+//		printf("\n");
+//	}
+//	for(i=1;i<=3;i++)
+//	{
+//		for (k = 1; k <=i; k++)
+//			printf("  ");
+//		for (j = 1; j <= 7-2 * i; j++)
+//		{
+//			printf(" *");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i, j,k;
-	for (i = 1; i <= 7; i=i+2)
-	{
-		for (k = 1; k <=(7-i); k++)
-			printf(" ");
-		for (j = 1; j <=i; j = j + 2)
-		{
-			printf("* ");
-		}
-		printf("\n");
-	}	
+	char a, b, c;
+	for (a = 'A'; a <= 'C'; a++)
+		for (b = 'A'; b <= 'C'; b++)
+			for (c = 'A'; c <= 'C'; c++)
+				if (a != 'A' && c != 'A' && c != 'C')
+					pringf("%%% vs %%%\n", a, b, c, );
 	return 0;
 }
