@@ -788,11 +788,11 @@
 int main()
 {
 	int i, j,k;
-	for (i = 1; i <= 7; i++)
+	for (i = 1; i <= 7; i=i+2)
 	{
 		for (k = 1; k <=(7-i); k++)
 			printf(" ");
-		for (j = 1;  i <= j; j = j - 2)
+		for (j = 1; j <=i; j = j + 2)
 		{
 			printf("* ");
 		}
