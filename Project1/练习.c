@@ -810,15 +810,19 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	char a, b, c;
+//	for (a = 'X'; a <= 'Z'; a++)
+//		for (b = 'X'; b <= 'Z'; b++)
+//			for (c = 'X'; c <= 'Z'; c++)
+//				if (a != 'X' && c != 'X' && c != 'Z'&&a!=c&&a!=b&&b!=c)
+//				{
+//					printf("A%c\nB%c\nC%c\n", a, b, c);
+//				}
+//	return 0;
+//}
 int main()
 {
-	char a, b, c;
-	for (a = 'A'; a <= 'C'; a++)
-		for (b = 'A'; b <= 'C'; b++)
-			for (c = 'A'; c <= 'C'; c++)
-				if (a != 'A' && c != 'A' && c != 'C'&&a!=c&&a!=b&&b!=c)
-				{
-					printf("%c%c%c vs %c%c%c\n", a, b, c,'X','Y','Z');
-				}
-	return 0;
+
 }
