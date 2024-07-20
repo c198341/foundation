@@ -816,7 +816,9 @@ int main()
 	for (a = 'A'; a <= 'C'; a++)
 		for (b = 'A'; b <= 'C'; b++)
 			for (c = 'A'; c <= 'C'; c++)
-				if (a != 'A' && c != 'A' && c != 'C')
-					pringf("%%% vs %%%\n", a, b, c, );
+				if (a != 'A' && c != 'A' && c != 'C'&&a!=c&&a!=b&&b!=c)
+				{
+					printf("%c%c%c vs %c%c%c\n", a, b, c,'X','Y','Z');
+				}
 	return 0;
 }
