@@ -824,5 +824,13 @@
 //}
 int main()
 {
-
+	int i, j=1;
+	int a[100], b[100];
+	for (i = 1; i <= 100; i++)
+		a[i-1] = i;
+	while (j != 100)
+	{
+		if(j)
+	}
+	return 0;
 }
