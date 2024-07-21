@@ -875,14 +875,51 @@
 //	printf("\n");
 //	return 0;
 //}
+//int main()
+//{
+//	int a[3][3], i,j,sum=0;
+//	srand((unsigned)time(NULL));
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			a[i][j] = rand() % 100 + 1;
+//			printf("%d ", a[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	for (i = 0; i < 3; i++)
+//		sum = sum + a[i][i];
+//	printf("%d\n", sum);
+//	sum = 0;
+//	for (i = 0, j = 2; i < 3 && j >= 0; i++, j--)
+//		sum = sum + a[i][j];
+//	printf("%d\n", sum);
+//	return 0;
+//}
 int main()
 {
-	int a[3][3], i,j;
+	int i, a[11],j,b;
+	int c;
 	srand((unsigned)time(NULL));
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
-		a[i][j] = rand() % 100 + 1;
-		printf("%d ", a[i][j]);
+		a[i] = rand() % 100 + 1;
+		//printf("%d ", a[i]);
 	}
-
+	printf("\n");
+	for(i=0;i<10;i++)
+		for(j=i+1;j<10;j++)
+			if (a[i] > a[j])
+			{
+				b = a[i];
+				a[i] = a[j];
+				a[j] = b;
+			}
+	scanf("%d", &a[10]);
+	for (i = 0; i < 11; i++)
+		printf("%d ", a[i]);
+	for(i=0;i<=)
+	printf("\n");
+	return 0;
 }
