@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
 //void print_table(int i)
 //{
 //	int j = 0;
@@ -822,15 +824,65 @@
 //				}
 //	return 0;
 //}
+//int ispn(int a)
+//{
+//	int i;
+//	for (i = 2; i <= sqrt(a); i++)
+//		if (a % i == 0)
+//			return 0;
+//	return 1;
+//}
+//int main()
+//{
+//	int i, j=0;
+//	int a[100];
+//	for (i = 0; i <= 99; i++)
+//		a[i] = i+1;
+//	a[0] = 0;
+//	for (i = 2; i <= 100; i++)
+//	{
+//		if(!ispn(i))
+//		  for (j = 3; j <= 99; j++)
+//			if(a[j] % i == 0)
+//				a[j] = 0;
+//	}
+//	for (i = 0; i <= 99; i++)
+//		if (a[i] != 0)
+//			printf("%d ", a[i]);
+//	printf("\n");
+//	return 0;
+//}
+//int main()
+//{
+//	int i, a[10],j,b;
+//	srand((unsigned)time(NULL));
+//	for (i = 0; i < 10; i++)
+//	{
+//		a[i] = rand() % 100 + 1;
+//		printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//	for(i=0;i<10;i++)
+//		for(j=i+1;j<10;j++)
+//			if (a[i] > a[j])
+//			{
+//				b = a[i];
+//				a[i] = a[j];
+//				a[j] = b;
+//			}
+//	for (i = 0; i < 10; i++)
+//		printf("%d ", a[i]);
+//	printf("\n");
+//	return 0;
+//}
 int main()
 {
-	int i, j=1;
-	int a[100], b[100];
-	for (i = 1; i <= 100; i++)
-		a[i-1] = i;
-	while (j != 100)
+	int a[3][3], i,j;
+	srand((unsigned)time(NULL));
+	for (i = 0; i < 9; i++)
 	{
-		if(j)
+		a[i][j] = rand() % 100 + 1;
+		printf("%d ", a[i][j]);
 	}
-	return 0;
+
 }
