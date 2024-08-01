@@ -899,7 +899,7 @@
 //}
 int main()
 {
-	int i, a[11],j,b;
+	int i, a[11],j,b,mid;
 	int c;
 	srand((unsigned)time(NULL));
 	for (i = 0; i < 10; i++)
@@ -919,7 +919,36 @@ int main()
 	scanf("%d", &a[10]);
 	for (i = 0; i < 11; i++)
 		printf("%d ", a[i]);
-	for(i=0;i<=)
+	i = 0;
+	j = 10;
+	while (i <= j)
+	{
+		mid = (i + j) / 2;
+		if (a[10] == a[mid])
+		{
+			i = mid+1;
+			b = i;
+			break;
+		}
+		else if (a[10] > a[mid])
+		{
+			i = mid+1;
+			b = i;
+		}
+		else
+		{
+			j = mid-1;
+			b = j;
+		}
+	}
+	c = a[10];
+	for (i = 10; i > (10 - b); i--)
+	{
+		a[9 - i] =a[10 - i] ;
+	}
+	a[b] = c;
 	printf("\n");
+	for (i = 0; i < 11; i++)
+		printf("%d ", a[i]);
 	return 0;
 }
