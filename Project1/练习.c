@@ -899,8 +899,7 @@
 //}
 int main()
 {
-	int i, a[11],j,b,mid;
-	int c;
+	int i, a[11],j,b,mid,c;
 	srand((unsigned)time(NULL));
 	for (i = 0; i < 10; i++)
 	{
@@ -926,25 +925,32 @@ int main()
 		mid = (i + j) / 2;
 		if (a[10] == a[mid])
 		{
-			i = mid+1;
-			b = i;
+			b= mid;
 			break;
 		}
 		else if (a[10] > a[mid])
 		{
 			i = mid+1;
-			b = i;
 		}
 		else
 		{
 			j = mid-1;
-			b = j;
 		}
 	}
+	if (j < i)
+		if (a[0] > a[10])
+			b = 0;
+		else if (a[0] < a[10])
+			b = 10;
+		else
+			b = mid;
 	c = a[10];
-	for (i = 10; i > (10 - b); i--)
+	if (b != 10)
 	{
-		a[9 - i] =a[10 - i] ;
+		for (i = 0; i < (10 - b); i++)
+		{
+			a[10 - i] = a[9 - i];
+		}
 	}
 	a[b] = c;
 	printf("\n");
