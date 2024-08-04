@@ -897,64 +897,92 @@
 //	printf("%d\n", sum);
 //	return 0;
 //}
+//int main()
+//{
+//	int i, a[11],j,b,mid,c;
+//	srand((unsigned)time(NULL));
+//	for (i = 0; i < 10; i++)
+//	{
+//		a[i] = rand() % 100 + 1;
+//		//printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//	for(i=0;i<10;i++)
+//		for(j=i+1;j<10;j++)
+//			if (a[i] > a[j])
+//			{
+//				b = a[i];
+//				a[i] = a[j];
+//				a[j] = b;
+//			}
+//	scanf("%d", &a[10]);
+//	for (i = 0; i < 11; i++)
+//		printf("%d ", a[i]);
+//	i = 0;
+//	j = 10;
+//	while (i <= j)
+//	{
+//		mid = (i + j) / 2;
+//		if (a[10] == a[mid])
+//		{
+//			b= mid;
+//			break;
+//		}
+//		else if (a[10] > a[mid])
+//		{
+//			i = mid+1;
+//		}
+//		else
+//		{
+//			j = mid-1;
+//		}
+//	}
+//	if (j < i)
+//		if (a[0] > a[10])
+//			b = 0;
+//		else if (a[9] < a[10])
+//			b = 10;
+//		else
+//			b = mid;
+//	c = a[10];
+//	if (b != 10)
+//	{
+//		for (i = 0; i < (10 - b); i++)
+//		{
+//			a[10 - i] = a[9 - i];
+//		}
+//	}
+//	a[b] = c;
+//	printf("\n");
+//	for (i = 0; i < 11; i++)
+//		printf("%d ", a[i]);
+//	return 0;
+//}
+//int main()
+//{
+//	int a[] = { 8,6,5,4,1 };
+//	int b = sizeof(a)/sizeof(a[0]);
+//	int i=0, j=b-1;
+//	int c;
+//	for (i = 0; i < b; i++)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//	for (i = 0, j = (b - 1); i <= j; i++, j--)
+//	{
+//		c = a[i];
+//		a[i] = a[j];
+//		a[j] = c;
+//	}
+//	for (i = 0; i < b; i++)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
 int main()
 {
-	int i, a[11],j,b,mid,c;
-	srand((unsigned)time(NULL));
-	for (i = 0; i < 10; i++)
-	{
-		a[i] = rand() % 100 + 1;
-		//printf("%d ", a[i]);
-	}
-	printf("\n");
-	for(i=0;i<10;i++)
-		for(j=i+1;j<10;j++)
-			if (a[i] > a[j])
-			{
-				b = a[i];
-				a[i] = a[j];
-				a[j] = b;
-			}
-	scanf("%d", &a[10]);
-	for (i = 0; i < 11; i++)
-		printf("%d ", a[i]);
-	i = 0;
-	j = 10;
-	while (i <= j)
-	{
-		mid = (i + j) / 2;
-		if (a[10] == a[mid])
-		{
-			b= mid;
-			break;
-		}
-		else if (a[10] > a[mid])
-		{
-			i = mid+1;
-		}
-		else
-		{
-			j = mid-1;
-		}
-	}
-	if (j < i)
-		if (a[0] > a[10])
-			b = 0;
-		else if (a[0] < a[10])
-			b = 10;
-		else
-			b = mid;
-	c = a[10];
-	if (b != 10)
-	{
-		for (i = 0; i < (10 - b); i++)
-		{
-			a[10 - i] = a[9 - i];
-		}
-	}
-	a[b] = c;
-	printf("\n");
-	for (i = 0; i < 11; i++)
-		printf("%d ", a[i]);
-	return 0;
+
 }
