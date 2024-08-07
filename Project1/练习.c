@@ -985,5 +985,14 @@
 int main()
 {
 	int i, j;
-	int a
+	int a[10][10];
+	a[0][0] = 1;
+	printf("%d", a[0][0]);
+	for(i=0;i<10;i++)
+		for (j = 0; j <= i + 1; j++)
+		{
+			if(j==0)
+				a[][]
+		}
+	return 0;
 }
