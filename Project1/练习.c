@@ -992,9 +992,10 @@ int main()
 	{
 		for (j = 1; j <= i + 1; j++)
 		{
-			if (j == 0)
+			if ((j+1) == i)
 				a[i][j] = 1;
-			a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
+			else
+				a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
 			printf(" %d ", a[i][j]);
 		}
 		printf("\n");
