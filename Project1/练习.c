@@ -1010,9 +1010,13 @@
 //}
 int main()
 {
-	int n;
+	int n,i,j;
+	int a[15][15] = { 0 };
 	scanf("%d", &n);
-	printf("1-n*n的魔方阵:\n");
+	printf("%d的魔方阵:\n",n);
+	i = 0;
+	j = n / 2 + 1;
 
+	for(i=0;i<n;i++)
 	return 0;
 }
