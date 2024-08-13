@@ -1010,13 +1010,19 @@
 //}
 int main()
 {
-	int n,i,j;
+	int n,i,j,k=1;
 	int a[15][15] = { 0 };
 	scanf("%d", &n);
 	printf("%dµÄÄ§·½Õó:\n",n);
 	i = 0;
-	j = n / 2 + 1;
+	j = n / 2;
+	a[i][j] = k++;
+	for (i = 0; i < n; i++)
+	{
+		i--;
+		j++;
+		if(i<0||j>n)
 
-	for(i=0;i<n;i++)
+	}
 	return 0;
 }
