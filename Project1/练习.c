@@ -1008,21 +1008,82 @@
 //	}		
 //	return 0;
 //}
+//int main()
+//{
+//	int n,i,j,k=1;
+//	int a[15][15];
+//	scanf("%d", &n);
+//	printf("%d的魔方阵:\n",n);
+//	for (i = 1; i <= n; i++)
+//		for (j = 1; j <= n; j++)
+//			a[i][j] = 0;
+//	i = n+1;
+//	j = n / 2+1;
+//	a[1][j] = k;
+//	for (k = 2; k <= n*n; k++)
+//	{
+//		i--;
+//		j++;
+//		if (i<1 && j>n)
+//		{
+//			i = i + 2;
+//			j = j - 1;
+//		}
+//		else
+//		{
+//			if (i < 1)
+//				i = n;
+//			if (j > n)
+//				j = 1;
+//		}
+//		if (a[i][j] == 0)
+//		{
+//			a[i][j] = k;
+//		}
+//		else
+//		{
+//			i = i + 2;
+//			j = j - 1;
+//			a[i][j] = k;
+//		}
+//	}
+//	for (i = 1; i <= n; i++)
+//	{
+//		for (j = 1; j <= n; j++)
+//		{
+//			printf("%3d", a[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int n,i,j,k=1;
-	int a[15][15] = { 0 };
-	scanf("%d", &n);
-	printf("%d的魔方阵:\n",n);
-	i = 0;
-	j = n / 2;
-	a[i][j] = k++;
-	for (i = 0; i < n; i++)
+	int a[5][5],i,j,k=0;
+	int ad;
+	srand((unsigned)time(NULL));
+	for (i = 0; i < 5; i++)
+		for (j = 0; j < 5; j++)
+			a[i][j] = rand() % 100+1;
+	for (i = 0; i < 5; i++)
 	{
-		i--;
-		j++;
-		if(i<0||j>n)
-
+		for (j = 0; j < 5; j++)
+		{
+			printf("%3d", a[i][j]);
+		}
+		printf("\n");
+	}	
+	while (k != 4)
+	{
+		ad = a[0][k];
+		for (j = 0; j < 5; j++)
+		{
+			i = 0;
+			if (a[i][j] == ad)
+				break;
+			else if (a[i][j] > ad)
+				ad = a[i][j];
+		}
+		k++;
 	}
-	return 0;
 }
