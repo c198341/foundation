@@ -1057,33 +1057,95 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	int a[3][3], i, j,i1=0,j1=0, k = 0;
+//	int ad,flag=0;
+//	//srand((unsigned)time(NULL));
+//	for (i = 0; i < 3; i++)
+//		for (j = 0; j < 3; j++)
+//			scanf("%d", &a[i][j]);
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%3d", a[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	for (k = 0; k < 3; k++)
+//	{
+//		i = k;
+//		ad = a[i][0];
+//		for (j = 1; j < 3; j++)
+//		{
+//			if (ad<a[i][j] )
+//			{
+//				ad = a[i][j];
+//				i1 = i;
+//				j1 = j;
+//			}
+//		}
+//		for (j = j1, i =0; i < 3; i++)
+//		{
+//			if (ad > a[i][j])
+//				break;
+//		}
+//		if (i == 3)
+//		{
+//			printf("an dian is %d\n", ad);
+//			flag = 1;
+//		}
+//	}
+//	if (flag == 0)
+//		printf("no an dian");
+//	return 0;
+//}
+//int main()
+//{
+//	int a[15],i,j,mid,flag;
+//	srand((unsigned)time(NULL));
+//	for (i = 0; i < 15; i++)
+//		a[i] = rand() % 100 + 1;
+//	for (i = 0; i < 15; i++)
+//		printf("%3d", a[i]);
+//	printf("\n");
+//	for(i=0;i<14;i++)
+//		for(j=i+1;j<15;j++)
+//			if (a[i] < a[j])
+//			{
+//				mid = a[j];
+//				a[j] = a[i];
+//				a[i] = mid;
+//			}
+//	for (i = 0; i < 15; i++)
+//		printf("%3d", a[i]);
+//	printf("\n");
+//	scanf("%d", &flag);
+//	i = 0;
+//	j = 14;
+//	while (i <= j)
+//	{
+//		mid = (i+j) / 2;
+//		if (flag == a[mid])
+//		{
+//			printf("find:xia biao shi %d",mid);
+//			break;
+//		}
+//		else if (flag > a[mid])
+//		{
+//			j = mid-1;
+//		}
+//		else
+//		{
+//			i = mid + 1;
+//		}
+//	}
+//	if (i > j)
+//		printf("’“≤ªµΩ");
+//	return 0;
+//}
 int main()
 {
-	int a[5][5],i,j,k=0;
-	int ad;
-	srand((unsigned)time(NULL));
-	for (i = 0; i < 5; i++)
-		for (j = 0; j < 5; j++)
-			a[i][j] = rand() % 100+1;
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j < 5; j++)
-		{
-			printf("%3d", a[i][j]);
-		}
-		printf("\n");
-	}	
-	while (k != 4)
-	{
-		ad = a[0][k];
-		for (j = 0; j < 5; j++)
-		{
-			i = 0;
-			if (a[i][j] == ad)
-				break;
-			else if (a[i][j] > ad)
-				ad = a[i][j];
-		}
-		k++;
-	}
+
 }
