@@ -1145,16 +1145,28 @@
 //		printf("’“≤ªµΩ");
 //	return 0;
 //}
+//int main()
+//{
+//	int i,j;
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j <= i; j++)
+//			printf(" ");
+//		for (j = 0; j <= 4; j++)
+//			printf("* ");
+//		printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i,j;
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j <= i; j++)
-			printf(" ");
-		for (j = 0; j <= 4; j++)
-			printf("* ");
-		printf("\n");
-	}
+	char s[] = { "ABCabc" };
+	char *s1 = &s[0];
+	char str[100] = {"\0"};
+	int a = sizeof(s) / sizeof(s[0])-1,i=0;
+	for (i = 1; i <= a; i++)
+		str[i - 1] = 27 - i + * (s1++) ;
+	puts(s);
+	puts(str);
 	return 0;
 }
