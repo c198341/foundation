@@ -1158,15 +1158,71 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	char s[] = { "R droo erhrg Xsrmz mvcg dvvp" };
+//	char* s1 = &s[0];
+//	char str[100] = {"\0"};
+//	int i = 0;
+//	while (*s1!= '\0')
+//	{
+//		if (*s1 >= 'A' && *s1 <= 'Z')
+//			str[i] = 155 - *s1;
+//		else if (*s1 >= 'a' && *s1 <= 'z')
+//			str[i] = 219 - *s1;
+//		else
+//			str[i] = *s1;
+//		i++;
+//		s1++;
+//	}
+//	puts(s);
+//	puts(str);
+//	return 0;
+//}
+//int main()
+//{
+//	char s1[10] = { "ab\0" };
+//	char s2[10] = { "b" };
+//	char* p1 = &s1[0];
+//	char* p2 = &s2[0];
+//	while (*(p1) != '\0')
+//	{
+//		p1++;
+//	}
+//	while (*p2 != '\0')
+//	{
+//		*(p1++) = *(p2++);
+//	}
+//	*p1 = '\0';
+//	puts(s1);
+//	return 0;
+//}
+//int main()
+//{
+//	char s1[] = { "abc\0" };
+//	char s2[] = { "bccl\0" };
+//	char* p1 = &s1[0];
+//	char* p2 = &s2[0];
+//	printf("%d\n", sizeof(s1));
+//	printf("%d\n", sizeof(s2));
+//	if (sizeof(s1) < sizeof(s2))
+//	{
+//		printf("s1̫С");
+//	}
+//	else
+//	{
+//		do
+//		{
+//			*p1 = *p2;
+//			p1++;
+//			p2++;
+//		} while (*p2 != '\0');
+//		*p1 = *p2;
+//		puts(s1);
+//	}
+//	return 0;
+//}
 int main()
 {
-	char s[] = { "ABCabc" };
-	char *s1 = &s[0];
-	char str[100] = {"\0"};
-	int a = sizeof(s) / sizeof(s[0])-1,i=0;
-	for (i = 1; i <= a; i++)
-		str[i - 1] = 27 - i + * (s1++) ;
-	puts(s);
-	puts(str);
-	return 0;
+
 }
