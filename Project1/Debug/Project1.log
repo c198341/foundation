@@ -1,5 +1,2 @@
 ﻿  练习.c
-D:\驱动精灵搬家目录\foundation\Project1\练习.c(1231,1): error C2085: “main”: 不在形参表中
-D:\驱动精灵搬家目录\foundation\Project1\练习.c(1231,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-D:\驱动精灵搬家目录\foundation\Project1\练习.c(1232,7): error C2082: 形参“a”的重定义
-D:\驱动精灵搬家目录\foundation\Project1\练习.c(1232,10): error C2082: 形参“b”的重定义
+  Project1.vcxproj -> D:\驱动精灵搬家目录\foundation\Project1\Debug\Project1.exe

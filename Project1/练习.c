@@ -1222,16 +1222,86 @@
 //	}
 //	return 0;
 //}
-int yue(int a, int b)
+//int yue(int a, int b)
+//{
+//	int c;
+//	if (a > b)
+//	{
+//		c = a;
+//		a = b;
+//		b = c;
+//	}
+//	c = a;
+//	while (1)
+//	{
+//		if (a % c == 0 && b % c == 0)
+//			return c;
+//		else
+//		{
+//			c--;
+//		}
+//	}
+//}
+//int bei(int a, int b)
+//{
+//	int c;
+//	int i = 1;
+//	if (a > b)
+//	{
+//		c = a;
+//		a = b;
+//		b = c;
+//	}
+//	c = a;
+//	while (1)
+//	{
+//		if ( (i * c)%a == 0 && (i * c)%b== 0)
+//			return i * c;
+//		else
+//		{
+//			i++;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int a, b;
+//	scanf("%d %d", &a, &b);
+//	printf("%d\n",yue(a, b)); 
+//	printf("%d\n", bei(a, b));
+//	return 0;
+//}
+void dayu(double d, double a, double b)
 {
-
+	d = sqrt(d);
+	printf("%lf %lf\n", (-b + d) / (2 * a), (-b - d) / (2 * a));
 }
-int bei(int a,int b)
+void dengyu(double d, double a, double b)
+{
+	d = sqrt(d);
+	printf("%lf %lf\n", (-b + d) / (2 * a), (-b - d) / (2 * a));
+}
+void xiaoyu(double d, double a, double b)
+{
+	d = sqrt(-d);
+	printf("%lf+%lfi %lf-%lfi\n", -b / (2 * a),d/(2*a), (-b) / (2 * a),d/(2*a));
+}
 int main()
 {
-	int a, b;
-	scanf("%d %d", &a, &b);
-	printf("%d\n",yue(a, b)); 
-	printf("%d\n", bei(a, b));
+	double a, b, c;
+	double d;
+	scanf("%lf %lf %lf", &a, &b, &c);
+	if (a == 0)
+		printf("a=0!?");
+	else
+	{
+		d = b * b - 4 * a * c;
+		if (d > 0)
+			dayu(d,a,b);
+		else if (d == 0)
+			dengyu(d,a,b);
+		else
+			xiaoyu(d,a,b);
+	}
 	return 0;
 }
