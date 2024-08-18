@@ -1222,7 +1222,16 @@
 //	}
 //	return 0;
 //}
-int main()
+int yue(int a, int b)
 {
 
+}
+int bei(int a,int b)
+int main()
+{
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%d\n",yue(a, b)); 
+	printf("%d\n", bei(a, b));
+	return 0;
 }
