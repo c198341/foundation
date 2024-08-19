@@ -1325,39 +1325,63 @@
 //		printf("bu shi su shu");
 //	return 0;
 //}
-void v(int a[][3],int i,int j)
+//void v(int a[][3],int i,int j)
+//{
+//	int b,i1,j1;
+//	for (i1 = 0; i1 < i; i1++)
+//	{
+//		for (j1 = 0; j1 <= i1; j1++)
+//		{
+//			b = a[i1][j1];
+//			a[i1][j1] = a[j1][i1];
+//			a[j1][i1] = b;
+//		}
+//	}
+//	for (i1 = 0; i1 < 3; i1++)
+//	{
+//		for (j1 = 0; j1 < 3; j1++)
+//		{
+//			printf("%2d", a[i1][j1]);
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	int a[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+//	int i, j;
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%2d", a[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	v(a,3,3);
+//	return 0;
+//}
+void v(char* s,char* a,char* b)
 {
-	int b,i1,j1;
-	for (i1 = 0; i1 < i; i1++)
-	{
-		for (j1 = 0; j1 <= i1; j1++)
-		{
-			b = a[i1][j1];
-			a[i1][j1] = a[j1][i1];
-			a[j1][i1] = b;
-		}
-	}
-	for (i1 = 0; i1 < 3; i1++)
-	{
-		for (j1 = 0; j1 < 3; j1++)
-		{
-			printf("%2d", a[i1][j1]);
-		}
-		printf("\n");
+	char c;
+	while(a<b)
+	{ 
+		c = *a;
+		*a = *b;
+		*b = c;
+		a++;
+		b--;
 	}
 }
 int main()
 {
-	int a[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
-	int i, j;
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-		{
-			printf("%2d", a[i][j]);
-		}
-		printf("\n");
-	}
-	v(a,3,3);
+	char s[10] = {""};
+	char* a=&s[0];
+	char* b;
+	gets(s);
+	puts(s);
+	b = sizeof(s) / sizeof(s[0]) - 2 + a;
+	v(s,a,b);
+	puts(s);
 	return 0;
 }
