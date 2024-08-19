@@ -1271,37 +1271,93 @@
 //	printf("%d\n", bei(a, b));
 //	return 0;
 //}
-void dayu(double d, double a, double b)
+//void dayu(double d, double a, double b)
+//{
+//	d = sqrt(d);
+//	printf("%lf %lf\n", (-b + d) / (2 * a), (-b - d) / (2 * a));
+//}
+//void dengyu(double d, double a, double b)
+//{
+//	d = sqrt(d);
+//	printf("%lf %lf\n", (-b + d) / (2 * a), (-b - d) / (2 * a));
+//}
+//void xiaoyu(double d, double a, double b)
+//{
+//	d = sqrt(-d);
+//	printf("%lf+%lfi %lf-%lfi\n", -b / (2 * a),d/(2*a), (-b) / (2 * a),d/(2*a));
+//}
+//int main()
+//{
+//	double a, b, c;
+//	double d;
+//	scanf("%lf %lf %lf", &a, &b, &c);
+//	if (a == 0)
+//		printf("a=0!?");
+//	else
+//	{
+//		d = b * b - 4 * a * c;
+//		if (d > 0)
+//			dayu(d,a,b);
+//		else if (d == 0)
+//			dengyu(d,a,b);
+//		else
+//			xiaoyu(d,a,b);
+//	}
+//	return 0;
+//}
+//int su(int a)
+//{
+//	int i;
+//		for (i = 2; i <= sqrt(a); i++)
+//			if (a % i == 0)
+//				return 0;
+//		return 1;
+//}
+//int main()
+//{
+//	int a;
+//	scanf("%d", &a);
+//	if (a == 1)
+//		printf("1?");
+//	else if (su(a))
+//		printf("shi su shu");
+//	else
+//		printf("bu shi su shu");
+//	return 0;
+//}
+void v(int a[][3],int i,int j)
 {
-	d = sqrt(d);
-	printf("%lf %lf\n", (-b + d) / (2 * a), (-b - d) / (2 * a));
-}
-void dengyu(double d, double a, double b)
-{
-	d = sqrt(d);
-	printf("%lf %lf\n", (-b + d) / (2 * a), (-b - d) / (2 * a));
-}
-void xiaoyu(double d, double a, double b)
-{
-	d = sqrt(-d);
-	printf("%lf+%lfi %lf-%lfi\n", -b / (2 * a),d/(2*a), (-b) / (2 * a),d/(2*a));
+	int b,i1,j1;
+	for (i1 = 0; i1 < i; i1++)
+	{
+		for (j1 = 0; j1 <= i1; j1++)
+		{
+			b = a[i1][j1];
+			a[i1][j1] = a[j1][i1];
+			a[j1][i1] = b;
+		}
+	}
+	for (i1 = 0; i1 < 3; i1++)
+	{
+		for (j1 = 0; j1 < 3; j1++)
+		{
+			printf("%2d", a[i1][j1]);
+		}
+		printf("\n");
+	}
 }
 int main()
 {
-	double a, b, c;
-	double d;
-	scanf("%lf %lf %lf", &a, &b, &c);
-	if (a == 0)
-		printf("a=0!?");
-	else
+	int a[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+	int i, j;
+	for (i = 0; i < 3; i++)
 	{
-		d = b * b - 4 * a * c;
-		if (d > 0)
-			dayu(d,a,b);
-		else if (d == 0)
-			dengyu(d,a,b);
-		else
-			xiaoyu(d,a,b);
+		for (j = 0; j < 3; j++)
+		{
+			printf("%2d", a[i][j]);
+		}
+		printf("\n");
 	}
+	v(a,3,3);
 	return 0;
 }
