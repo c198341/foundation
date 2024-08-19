@@ -5,6 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 //void print_table(int i)
 //{
 //	int j = 0;
@@ -1361,27 +1362,31 @@
 //	v(a,3,3);
 //	return 0;
 //}
-void v(char* s,char* a,char* b)
-{
-	char c;
-	while(a<b)
-	{ 
-		c = *a;
-		*a = *b;
-		*b = c;
-		a++;
-		b--;
-	}
-}
+//void v(char* s,char* a,char* b)
+//{
+//	char c;
+//	while(a<b)
+//	{ 
+//		c = *a;
+//		*a = *b;
+//		*b = c;
+//		a++;
+//		b--;
+//	}
+//}
+//int main()
+//{
+//	char s[10] = {""};
+//	char* a=&s[0];
+//	char* b=a;
+//	gets(s);
+//	puts(s);
+//	b = strlen(s) - 1 + a;
+//	v(s,a,b);
+//	puts(s);
+//	return 0;
+//}
 int main()
 {
-	char s[10] = {""};
-	char* a=&s[0];
-	char* b;
-	gets(s);
-	puts(s);
-	b = sizeof(s) / sizeof(s[0]) - 2 + a;
-	v(s,a,b);
-	puts(s);
-	return 0;
+
 }
