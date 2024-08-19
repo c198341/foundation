@@ -1386,7 +1386,23 @@
 //	puts(s);
 //	return 0;
 //}
+void l(char* p, char* q)
+{
+	while (*q != '\0')
+	{
+		*p = *q;
+		p++;
+		q++;
+	}
+}
 int main()
 {
-
+	char s1[] = { "i am" };
+	char s2[] = { " chinese" };
+	char* p = &s1[0];
+	char* q = &s2[0];
+	p = strlen(s1) + p;
+	l(p, q);
+	printf("%s\n", s1);
+	return 0;
 }
