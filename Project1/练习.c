@@ -1408,7 +1408,46 @@
 //	puts(s1);
 //	return 0;
 //}
+//void l(char* p, char* q)
+//{
+//	while (*q != '\0')
+//	{
+//		if (*q == 'A' || *q == 'E' || *q == 'I' || *q == 'O' || *q == 'U' || *q == 'a' || *q == 'e' || *q == 'i' || *q == 'o' || *q == 'u')
+//		{
+//			*p = *q;
+//			p++;
+//			q++;
+//		}
+//			
+//		else
+//		{
+//			q++;
+//		}
+//	}
+//	*p = '\0';
+//}
+//int main()
+//{
+//	char s1[30] = { "i am" };
+//	char s2[] = { " chinese" };
+//	char* p = &s1[0];
+//	char* q = &s2[0];
+//	p = strlen(s1) + p;
+//	//printf("%d", strlen(s1));
+//	l(p, q);
+//	puts(s1);
+//	return 0;
+//}
+void k(int a)
+{
+	int b;
+	b = a % 10;
+	a = a / 10;
+	printf("%d ", k(a)/10);
+}
 int main()
 {
-
+	int a=1990;
+	k(a);
+	return 0;
 }
