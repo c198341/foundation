@@ -1394,6 +1394,7 @@ void l(char* p, char* q)
 		p++;
 		q++;
 	}
+	*p = '\0';
 }
 int main()
 {
@@ -1402,7 +1403,8 @@ int main()
 	char* p = &s1[0];
 	char* q = &s2[0];
 	p = strlen(s1) + p;
+	//printf("%d", strlen(s1));
 	l(p, q);
-	printf("%s\n", s1);
+	puts(s1);
 	return 0;
 }
