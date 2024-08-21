@@ -1438,23 +1438,57 @@
 //	puts(s1);
 //	return 0;
 //}
-void k(int a)
+//
+//void t(char* s,int* zm,int* sz,int* kg,int* qt)
+//{
+//	while (*s != '\0')
+//	{
+//		if ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z'))
+//			*zm = *zm + 1;
+//		else if (*s >= '0' && *s <= '9')
+//			*sz = *sz + 1;
+//		else if (*s == ' ')
+//			*kg = *kg + 1;
+//		else
+//			*qt=*qt+1;
+//		s++;
+//	}
+//}
+//int main()
+//{
+//	int zm=0, sz=0, kg=0, qt=0;
+//	char s[] = { "i 2 chinese!" };
+//	t(&s[0],&zm,&sz,&kg,&qt);
+//	printf("%d %d %d %d\n", zm, sz, kg, qt);
+//	return 0;
+//}
+void z(char* s, char b[10])
 {
-	int i;
-	int b[4];
-	for (i = 0; i < 4; i++)
+	int i=0,j=0;
+	char* s1 = s;
+	while (*s != '\0')
 	{
-		b[i] = a % 10;
-		a = a / 10;
-	}
-	for (i = 3; i >=0; i--)
-	{
-		printf("%c ", b[i]+'0');
+		s= s1;
+		i = 0;
+		while (*s1 != ' ')
+		{
+			i++;
+			s1++;
+		}
+		if (i > j)
+		{
+			j = i;
+			s1++;
+			for (i = 0; i < j; i++)
+				b[i] = *(s++);
+		}
 	}
 }
 int main()
 {
-	int a=1990;
-	k(a);
+	char s[] = { "i am a chinese! " };
+	char b[10] = { "" };
+	z(&s[0],b);
+	printf("%s\n", b);
 	return 0;
 }
