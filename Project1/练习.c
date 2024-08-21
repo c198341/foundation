@@ -1440,10 +1440,17 @@
 //}
 void k(int a)
 {
-	int b;
-	b = a % 10;
-	a = a / 10;
-	printf("%d ", k(a)/10);
+	int i;
+	int b[4];
+	for (i = 0; i < 4; i++)
+	{
+		b[i] = a % 10;
+		a = a / 10;
+	}
+	for (i = 3; i >=0; i--)
+	{
+		printf("%c ", b[i]+'0');
+	}
 }
 int main()
 {
