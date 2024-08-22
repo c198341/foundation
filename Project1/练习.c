@@ -1464,11 +1464,11 @@
 //}
 void z(char* s, char b[10])
 {
-	int i=0,j=0;
+	int i = 0, j = 0;
 	char* s1 = s;
 	while (*s != '\0')
 	{
-		s= s1;
+		s = s1;
 		i = 0;
 		while (*s1 != ' ')
 		{
@@ -1480,7 +1480,14 @@ void z(char* s, char b[10])
 			j = i;
 			s1++;
 			for (i = 0; i < j; i++)
-				b[i] = *(s++);
+			{
+				b[i] = *s;
+				s++;
+			}
+		}
+		else
+		{
+			s1++;
 		}
 	}
 }
