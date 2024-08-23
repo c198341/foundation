@@ -1462,40 +1462,41 @@
 //	printf("%d %d %d %d\n", zm, sz, kg, qt);
 //	return 0;
 //}
-void z(char* s, char b[10])
+void z(char* s, char* b)
 {
 	int i = 0, j = 0;
-	char* s1 = s;
-	while (*s != '\0')
+	char* ss = s;
+	while ((*s) != '\0')
 	{
-		s = s1;
+		s = ss;
 		i = 0;
-		while (*s1 != ' ')
+		while ((*ss) != ' ')
 		{
 			i++;
-			s1++;
+			ss++;
 		}
 		if (i > j)
 		{
 			j = i;
-			s1++;
+			ss++;
 			for (i = 0; i < j; i++)
 			{
-				b[i] = *s;
+				*b = *s;
 				s++;
+				b++;
 			}
 		}
 		else
 		{
-			s1++;
+			ss++;
 		}
 	}
 }
 int main()
 {
-	char s[] = { "i am a chinese! " };
-	char b[10] = { "" };
-	z(&s[0],b);
-	printf("%s\n", b);
+	char s[] = { "i am a chinese " };
+	char b[10] = { " " };
+	z(&s[0],&b[0]);
+	puts(b);
 	return 0;
 }
