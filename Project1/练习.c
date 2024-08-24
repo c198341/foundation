@@ -1498,7 +1498,7 @@ int main()
 {
 	char s[] = { "i am a chinese " };
 	char b[10] = { " " };
-	z(&s[0],&b[0]);
+	z(s,b);
 	puts(b);
 	return 0;
 }
