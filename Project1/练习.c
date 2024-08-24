@@ -1466,8 +1466,10 @@ void z(char* s, char* b)
 {
 	int i = 0, j = 0;
 	char* ss = s;
+	char* bb = b;
 	while ((*s) != '\0')
 	{
+		b = bb;
 		s = ss;
 		i = 0;
 		while ((*ss) != ' ')
