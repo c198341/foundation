@@ -1462,43 +1462,64 @@
 //	printf("%d %d %d %d\n", zm, sz, kg, qt);
 //	return 0;
 //}
-void z(char* s, char* b)
+//void z(char* s, char* b)
+//{
+//	int i = 0, j = 0;
+//	char* ss = s;
+//	char* bb = b;
+//	while ((*s) != '\0')
+//	{
+//		b = bb;
+//		//s = ss;
+//		i = 0;
+//		while ((*ss) != ' ')
+//		{
+//			i++;
+//			ss++;
+//		}
+//		if (i > j)
+//		{
+//			j = i;
+//			ss++;
+//			for (i = 0; i < j; i++)
+//			{
+//				*b = *s;
+//				s++;
+//				b++;
+//			}
+//		}
+//		else
+//		{
+//			ss++;
+//		}
+//		s = ss;
+//	}
+//}
+//int main()
+//{
+//	char s[] = { "i am a1111 chi " };
+//	char b[10] = { " " };
+//	z(s,b);
+//	puts(b);
+//	return 0;
+//}
+void qp(char* s, int a)
 {
-	int i = 0, j = 0;
-	char* ss = s;
-	char* bb = b;
-	while ((*s) != '\0')
-	{
-		b = bb;
-		s = ss;
-		i = 0;
-		while ((*ss) != ' ')
-		{
-			i++;
-			ss++;
-		}
-		if (i > j)
-		{
-			j = i;
-			ss++;
-			for (i = 0; i < j; i++)
+	int i,j,k;
+	for (i = 1; i < a; i++)
+		for (j = i - 1; j < a - i; j++)
+			if (*(s+j) > *(s+j + 1))
 			{
-				*b = *s;
-				s++;
-				b++;
-			}
-		}
-		else
-		{
-			ss++;
-		}
-	}
+				k = *(s+j);
+				*(s+j) = *(s+j + 1);
+				*(s+j + 1) = k;
+			}	
 }
 int main()
 {
-	char s[] = { "i am a chinese " };
-	char b[10] = { " " };
-	z(s,b);
-	puts(b);
+	char s[11] = { "7891234560" };
+	printf("%s\n",s);
+	qp(s, 10);
+	printf("%s\n", s);
 	return 0;
 }
