@@ -1503,23 +1503,45 @@
 //	puts(b);
 //	return 0;
 //}
-void qp(char* s, int a)
+//void qp(char* s, int a)
+//{
+//	int i, j;
+//	char k;
+//	for (i = 1; i < a; i++)
+//		for (j = 0; j < a - i; j++)
+//			if (*(s+j) > *(s+j + 1))
+//			{
+//				k = *(s+j);
+//				*(s+j) = *(s+j + 1);
+//				*(s+j + 1) = k;
+//			}	
+//}
+//int main()
+//{
+//	char s[11] = { "7856091234" };
+//	printf("%s\n",s);
+//	qp(s, 10);
+//	printf("%s\n", s);
+//	return 0;
+//}
+double s(double a, double b, double c, double d)
 {
-	int i,j,k;
-	for (i = 1; i < a; i++)
-		for (j = i - 1; j < a - i; j++)
-			if (*(s+j) > *(s+j + 1))
-			{
-				k = *(s+j);
-				*(s+j) = *(s+j + 1);
-				*(s+j + 1) = k;
-			}	
+	double x=0, x0=0, f, fd;
+	do
+	{
+		x0 = x;
+		f = a * x * x * x + b * x * x + c * x + d;
+		fd = 3 * a * x + 2 * b * x + c;
+		x = x0 - f / fd;
+		if (fabs(x - 1.0) < 1e-5)
+			break;
+	} while (1);
+	return x;
 }
 int main()
 {
-	char s[11] = { "7891234560" };
-	printf("%s\n",s);
-	qp(s, 10);
-	printf("%s\n", s);
+	double a, b, c, d;
+	scanf("%lf %lf %lf %lf", &a, &b, &c, &d);
+	printf("%lf\n", s(a, b, c, d));
 	return 0;
 }
