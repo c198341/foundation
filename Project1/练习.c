@@ -1524,24 +1524,131 @@
 //	printf("%s\n", s);
 //	return 0;
 //}
-double s(double a, double b, double c, double d)
-{
-	double x=0, x0=0, f, fd;
-	do
-	{
-		x0 = x;
-		f = a * x * x * x + b * x * x + c * x + d;
-		fd = 3 * a * x + 2 * b * x + c;
-		x = x0 - f / fd;
-		if (fabs(x - 1.0) < 1e-5)
-			break;
-	} while (1);
-	return x;
-}
+//double s(double a, double b, double c, double d)
+//{
+//	double x=1, x0, f, fd;
+//	do
+//	{
+//		x0 = x;
+//		f = a * x0 * x0 * x0 + b * x0 * x0 + c * x0 + d;
+//		fd = 3 * a * x0*x0 + 2 * b * x0 + c;
+//		x = x0 - f / fd;
+//	} while ((fabs(x - x0) >= 1e-5));
+//	return x;
+//}
+//int main()
+//{
+//	double a, b, c, d;
+//	scanf("%lf %lf %lf %lf", &a, &b, &c, &d);
+//	printf("%lf\n", s(a, b, c, d));
+//	return 0;
+//}
+//double r(double x, int n)
+//{
+//	if (n == 0)
+//		return 1.0;
+//	else if (n == 1)
+//		return x;
+//	else
+//		return (((double)(2 * n - 1) )* x - r(x,n-1)-((double)(n-1)*r(x,n-2) ))/ (double)n;
+//}
+//int main()
+//{
+//	double x;
+//	int n;
+//	scanf("%lf %d", &x,&n);
+//	printf("%lf\n", r(x, n));
+//	return 0;
+//}
+//void xsp(int a[][2], int i, int j)
+//{
+//	int ii, jj;
+//	double sum=0;
+//	for (ii = 0; ii < i; ii++)
+//	{
+//		sum = 0;
+//		for (jj = 0; jj < j; jj++)
+//		{
+//			sum = sum + a[ii][jj];
+//		}
+//		printf("%.1lf ", sum / 2);
+//	}
+//	printf("\n");
+//}
+//void kp(int a[][2], int i, int j)
+//{
+//	int ii, jj;
+//	double sum = 0;
+//	for (jj = 0; jj < j; jj++)
+//	{
+//		sum = 0;
+//		for (ii = 0; ii < i; ii++)
+//		{
+//			sum = sum + a[ii][jj];
+//		}
+//		printf("%0.1lf ", sum / 5);
+//	}
+//	printf("\n");
+//}
+//void zg(int a[][2], int i, int j)
+//{
+//	int ii, jj, z=0, g=0;
+//	int zg=0;
+//	for(ii=0;ii<i;ii++)
+//		for (jj = 0; jj < j; jj++)
+//		{
+//			if (a[ii][jj] > zg)
+//			{
+//				zg = a[ii][jj];
+//				z = ii+1;
+//				g = jj+1;
+//			}
+//		}
+//	printf("%d %d\n", z, g);
+//}
+//void fc(int a[][2], int i, int j)
+//{
+//	int ii, jj;
+//	double sum = 0,s1=0,s2=0;
+//	for (ii = 0; ii < i; ii++)
+//	{
+//		sum = 0;
+//		for (jj = 0; jj < j; jj++)
+//		{
+//			sum = sum + a[ii][jj];
+//		}
+//		sum = sum / 2;
+//		s1 =s1+ sum * sum;
+//		s2 = s2 + sum;
+//	}
+//	printf("%lf\n", (s1 / 5) - ((s2 / 5) * (s2 / 5)));
+//}
+//int main()
+//{
+//	int a[5][2];
+//	int i, j;
+//	srand((unsigned)time(NULL));
+//	for (i = 0; i < 5; i++)
+//		for (j = 0; j < 2; j++)
+//			a[i][j] = rand() % 100 + 1;
+//	printf("st subject:\n");
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j < 2; j++)
+//			printf("%3d ", a[i][j]);
+//		printf("\n");
+//	}
+//	printf("stp:\n");
+//	xsp(a, 5, 2);
+//	printf("kp:\n");
+//	kp(a, 5, 2);
+//	printf("zg:\n");
+//	zg(a, 5, 2);
+//	printf("fc:\n");
+//	fc(a, 5, 2);
+//	return 0;
+//}
 int main()
 {
-	double a, b, c, d;
-	scanf("%lf %lf %lf %lf", &a, &b, &c, &d);
-	printf("%lf\n", s(a, b, c, d));
-	return 0;
+
 }
