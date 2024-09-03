@@ -1,2 +1,6 @@
 ﻿  练习.c
+D:\驱动精灵搬家目录\foundation\Project1\练习.c(1654,28): warning C4047: “函数”:“const char *”与“char (*)[6]”的间接级别不同
+D:\驱动精灵搬家目录\foundation\Project1\练习.c(1654,24): warning C4024: “strlen”: 形参和实参 1 的类型不同
+D:\驱动精灵搬家目录\foundation\Project1\练习.c(1655,30): warning C4047: “函数”:“const char *”与“char (*)[6]”的间接级别不同
+D:\驱动精灵搬家目录\foundation\Project1\练习.c(1655,28): warning C4024: “strlen”: 形参和实参 1 的类型不同
   Project1.vcxproj -> D:\驱动精灵搬家目录\foundation\Project1\Debug\Project1.exe
