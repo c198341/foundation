@@ -1,2 +1,3 @@
 ﻿  赛程过半.cpp
-  赛程过半.vcxproj -> D:\驱动精灵搬家目录\foundation\赛程过半\Debug\赛程过半.exe
+E:\Meitu\foundation\赛程过半\赛程过半.cpp(68,11): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  赛程过半.vcxproj -> E:\Meitu\foundation\赛程过半\Debug\赛程过半.exe

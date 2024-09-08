@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include <math.h>
 //void rarr(char* arr, int sz)
 //{
 //	assert(arr);
@@ -51,18 +52,23 @@ int main()
 	int i = 0;
 	int j = i;
 	int n = 0;
-	int a[6];
 	for (i = 0; i <= 100000; i++)
 	{
 		j = i;
-		n = 0;
-		while (n != 6)
+		n = 1;
+		while (j / 10 != 0)
 		{
-			a[n] = (j% 10)*(j % 10)*(j % 10);
 			j = j / 10;
 			n++;
 		}
-		if (a[0] + a[1] + a[2] + a[3] + a[4] + a[5] == i)
+		int sum = 0;
+		j = i;
+		while (j%10!=0)
+		{	
+			sum=sum+ pow((j % 10), n);
+			j = j / 10;
+		}
+		if (sum == i)
 			printf("%d ", i);
 	}
 	return 0;
