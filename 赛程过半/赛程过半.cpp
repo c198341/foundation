@@ -47,29 +47,33 @@
 //	printf("%d\n", a(i,n));
 //	return 0;
 //}
+//int main()
+//{
+//	int i = 0;
+//	int j = i;
+//	int n = 0;
+//	for (i = 0; i <= 100000; i++)
+//	{
+//		j = i;
+//		n = 1;
+//		while ((j / 10) != 0)
+//		{
+//			j = j / 10;
+//			n++;
+//		}
+//		int sum = 0;
+//		j = i;
+//		while ((j) != 0)
+//		{	
+//			sum=sum+ pow((j % 10), n);
+//			j = j / 10;
+//		}
+//		if (sum == i)
+//			printf("%d ", i);
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i = 0;
-	int j = i;
-	int n = 0;
-	for (i = 0; i <= 100000; i++)
-	{
-		j = i;
-		n = 1;
-		while (j / 10 != 0)
-		{
-			j = j / 10;
-			n++;
-		}
-		int sum = 0;
-		j = i;
-		while (j%10!=0)
-		{	
-			sum=sum+ pow((j % 10), n);
-			j = j / 10;
-		}
-		if (sum == i)
-			printf("%d ", i);
-	}
-	return 0;
+
 }
