@@ -103,11 +103,44 @@
 //		printf("\n");
 //	}
 //	return 0;
+////}
+//int main()
+//{
+//	int i;
+//	int sum = 0;
+//	scanf("%d", &i);
+//	sum = 2 * i - 1;
+//	printf("%d\n", sum);
+//	return 0;
 //}
+int xb(int a[], int sz,int i)
+{
+		while (i<sz)
+		{
+			sz--;
+			if (a[sz] % 2 != 0)
+			{
+				return sz;
+			}
+		}
+}
 int main()
 {
-	int i;
-	int sum = 0;
-	scanf("%d", &i);
-	while()
+	int i, k,right;
+	int a[] = {1,3,45,79,1};
+	int sz = sizeof(a)/sizeof(a[0]);
+	for (i = 0; i < sz-1; i++)
+	{
+		if (a[i] % 2 == 0)
+		{
+			right=xb(a, sz,i);
+			k = a[right];
+			a[right] = a[i];
+			a[i] = k;
+		}
+	}
+	for (i = 0; i < sz; i++)
+		printf("%d ", a[i]);
+	printf("\n");
+	return 0;
 }
