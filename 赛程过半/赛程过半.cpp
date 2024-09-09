@@ -73,34 +73,41 @@
 //	}
 //	return 0;
 //}
+//int main()
+//{
+//	int i, j,k;
+//	int line = 0;
+//	scanf("%d", &line);
+//	for (i = 1; i <= line; i++)
+//	{
+//		for (j = 1; j <=(line-i) ; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (k = 1; k <= (2*i-1); k++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	for (i = 1; i <= line-1; i++)
+//	{
+//		for (j =1; j <=  i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (k = 1; k <= line*2-1-2*i; k++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i, j,k;
-	int line = 0;
-	scanf("%d", &line);
-	for (i = 1; i <= line; i++)
-	{
-		for (j = 1; j <=(line-i) ; j++)
-		{
-			printf(" ");
-		}
-		for (k = 1; k <= (2*i-1); k++)
-		{
-			printf("*");
-		}
-		printf("\n");
-	}
-	for (i = 1; i <= line-1; i++)
-	{
-		for (j =1; j <=  i; j++)
-		{
-			printf(" ");
-		}
-		for (k = 1; k <= line*2-1-2*i; k++)
-		{
-			printf("*");
-		}
-		printf("\n");
-	}
-	return 0;
+	int i;
+	int sum = 0;
+	scanf("%d", &i);
+	while()
 }
