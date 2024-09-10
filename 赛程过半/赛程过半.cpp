@@ -113,34 +113,58 @@
 //	printf("%d\n", sum);
 //	return 0;
 //}
-int xb(int a[], int sz,int i)
-{
-		while (i<sz)
-		{
-			sz--;
-			if (a[sz] % 2 != 0)
-			{
-				return sz;
-			}
-		}
-}
+//int xb(int a[], int sz,int i)
+//{
+//		while (i<sz)
+//		{
+//			sz--;
+//			if (a[sz] % 2 != 0)
+//			{
+//				return sz;
+//			}
+//		}
+//}
+//int main()
+//{
+//	int i, k,right;
+//	int a[] = {1,3,45,79,1};
+//	int sz = sizeof(a)/sizeof(a[0]);
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		if (a[i] % 2 == 0)
+//		{
+//			right=xb(a, sz,i);
+//			k = a[right];
+//			a[right] = a[i];
+//			a[i] = k;
+//		}
+//	}
+//	for (i = 0; i < sz; i++)
+//		printf("%d ", a[i]);
+//	printf("\n");
+//	return 0;
+//}
 int main()
 {
-	int i, k,right;
-	int a[] = {1,3,45,79,1};
-	int sz = sizeof(a)/sizeof(a[0]);
-	for (i = 0; i < sz-1; i++)
+	int i, j,k;
+	int a[50][50] = {1};
+	scanf("%d", &k);
+	for (i = 0; i < k; i++)
 	{
-		if (a[i] % 2 == 0)
+		for (j = 0; j <= i; j++)
 		{
-			right=xb(a, sz,i);
-			k = a[right];
-			a[right] = a[i];
-			a[i] = k;
+			if (j == 0 || j == i)
+			{
+				a[i][j] = 1;
+				printf(" %5d ", a[i][j]);
+			}
+			else
+			{
+				a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+				printf(" %5d ", a[i][j]);
+			}
 		}
+		printf("\n");
 	}
-	for (i = 0; i < sz; i++)
-		printf("%d ", a[i]);
-	printf("\n");
 	return 0;
 }
