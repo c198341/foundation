@@ -144,27 +144,49 @@
 //	printf("\n");
 //	return 0;
 //}
+//int main()
+//{
+//	int i, j,k;
+//	int a[50][50] = {1};
+//	scanf("%d", &k);
+//	for (i = 0; i < k; i++)
+//	{
+//		for (j = 0; j <= i; j++)
+//		{
+//			if (j == 0 || j == i)
+//			{
+//				a[i][j] = 1;
+//				printf(" %5d ", a[i][j]);
+//			}
+//			else
+//			{
+//				a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+//				printf(" %5d ", a[i][j]);
+//			}
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int k = 0;
+//	for (k = 'a'; k <= 'd'; k++)
+//	{
+//		if ((k != 'a') + (k == 'c') + (k == 'd') + (k != 'd') == 3)
+//			printf("killer=%c\n", k);
+//	}
+//	return 0;
+//}
 int main()
 {
-	int i, j,k;
-	int a[50][50] = {1};
-	scanf("%d", &k);
-	for (i = 0; i < k; i++)
-	{
-		for (j = 0; j <= i; j++)
-		{
-			if (j == 0 || j == i)
-			{
-				a[i][j] = 1;
-				printf(" %5d ", a[i][j]);
-			}
-			else
-			{
-				a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
-				printf(" %5d ", a[i][j]);
-			}
-		}
-		printf("\n");
-	}
+	int a, b, c, d, e;
+	for (a = 1; a < 6; a++)
+		for (b = 1; b < 6; b++)
+			for (c = 1; c < 6; c++)
+				for (d = 1; d < 6; d++)
+					for (e = 1; e < 6; e++)
+						if (((b == 2)+ (a == 3)==1) &&((b == 2)+( e == 4)==1) &&((c == 1)+( d == 2)==1)&& ((c == 5)+( d == 3) ==1)&& ((e == 4)+( a == 1) == 1)&&(a+b+c+d+e==15))
+							printf("a=%d,b=%d,c=%d,d=%d,e=%d\n", a, b, c, d, e);
 	return 0;
 }
