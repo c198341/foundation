@@ -190,9 +190,24 @@
 //							printf("a=%d,b=%d,c=%d,d=%d,e=%d\n", a, b, c, d, e);
 //	return 0;
 //}
+//int main()
+//{
+//	char *arr[] = { "aaaa","dddd","cccc","bbbb" };
+//
+//	return 0;
+//}
+void leftrev(char* arr, int a,int k)
+{
+	char arr1[10];
+	int i = 1;
+
+}
 int main()
 {
-	char *arr[] = { "aaaa","dddd","cccc","bbbb" };
-
+	char arr[] = "abcd";
+	int k = 0;
+	scanf("%d", &k);
+	leftrev(arr, sizeof(arr),k);
+	puts(arr);
 	return 0;
 }
