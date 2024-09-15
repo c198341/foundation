@@ -199,15 +199,31 @@
 void leftrev(char* arr, int a,int k)
 {
 	char arr1[10];
-	int i = 1;
-
+	char* parr = arr + k;
+	int i = 0;
+	while (i < k)
+	{
+		arr1[i] = arr[i];
+		i++;
+	}
+	while (*(arr+i) != '\0')
+	{
+		*arr = *(arr + i);
+		i++;
+	}
+	while (*parr != '\0')
+	{
+		*(arr + i) = *parr;
+		parr++;
+	}
 }
 int main()
 {
 	char arr[] = "abcd";
 	int k = 0;
 	scanf("%d", &k);
-	leftrev(arr, sizeof(arr),k);
+	puts(arr);
+	leftrev(arr, strlen(arr),k);
 	puts(arr);
 	return 0;
 }
