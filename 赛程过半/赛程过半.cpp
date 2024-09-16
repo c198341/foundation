@@ -196,35 +196,42 @@
 //
 //	return 0;
 //}
-void leftrev(char* arr, int a,int k)
+int leftrev(char s1[],char s2[],int length)
 {
+	assert(s2);
 	char arr1[10] = {"\0"};
 	int i = 0;
-	while (i < k)
+	int length1 = 0;
+	for (length1 = 0; length1 < length; length1++)
 	{
-		arr1[i] = arr[i];
-		i++;
-	}
-	i = 0;
-	while (*(arr+k+i) != '\0')
-	{
-		*(arr+i) =*(arr+k+i) ;
-		i++;
-	}
-	i = 0;
-	while (*(arr + k + i) != '\0')
-	{
-		*(arr+k+i) =arr1[i];
-		i++;
+		while (i < length1)
+		{
+			arr1[i] = arr[i];
+			i++;
+		}
+		i = 0;
+		while (*(arr + k + i) != '\0')
+		{
+			*(arr + i) = *(arr + k + i);
+			i++;
+		}
+		i = 0;
+		while (*(arr + a - k + i) != '\0')
+		{
+			*(arr + a - k + i) = arr1[i];
+			i++;
+		}
 	}
 }
+int rightrev()
 int main()
 {
-	char arr[] = "abcd";
-	int k = 0;
-	scanf("%d", &k);
-	puts(arr);
-	leftrev(arr, strlen(arr),k);
-	puts(arr);
+	char s1[] = "aabcd";
+	char s2[] = "bcdaa";
+	int length = strlen(s1);
+	if (leftrev(s1, s2,length)&&rightrev(s1,s2,length)
+		printf("is rev");
+	else
+		printf("is not rev");
 	return 0;
 }
