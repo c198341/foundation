@@ -198,23 +198,24 @@
 //}
 void leftrev(char* arr, int a,int k)
 {
-	char arr1[10];
-	char* parr = arr + k;
+	char arr1[10] = {"\0"};
 	int i = 0;
 	while (i < k)
 	{
 		arr1[i] = arr[i];
 		i++;
 	}
-	while (*(arr+i) != '\0')
+	i = 0;
+	while (*(arr+k+i) != '\0')
 	{
-		*arr = *(arr + i);
+		*(arr+i) =*(arr+k+i) ;
 		i++;
 	}
-	while (*parr != '\0')
+	i = 0;
+	while (*(arr + k + i) != '\0')
 	{
-		*(arr + i) = *parr;
-		parr++;
+		*(arr+k+i) =arr1[i];
+		i++;
 	}
 }
 int main()
