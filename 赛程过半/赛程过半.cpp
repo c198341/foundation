@@ -211,7 +211,7 @@ int leftrev(char s1[],char s2[],int length)
 			i++;
 		}
 		i = 0;
-		while (*(s1 + length + i) != '\0')
+		while (*(s1 + length1 + i) != '\0')
 		{
 			*(arr1 + i) = *(s1 + length1 + i);
 			i++;
@@ -222,7 +222,7 @@ int leftrev(char s1[],char s2[],int length)
 			*(arr1 + length - length1 + i) = arr2[i];
 			i++;
 		}
-		if (strcmp(arr1, s2))
+		if (!strcmp(arr1, s2))
 			return 1;
 	}
 	return 0;
@@ -230,31 +230,35 @@ int leftrev(char s1[],char s2[],int length)
 int rightrev(char s1[], char s2[], int length)
 {
 	char tmp;
-	char arr[10] = {"\0"};
+	char arr1[10] = {"\0"};
+	char arr2[10] = { "\0" };
 	int i=0;
 	int length1 = 0;
 	for (i = 0; i < length; i++)
 	{
-		tmp = s1[length - 1 - i];
-		for (length1 = 0; length1 < i; i++)
 		{
-			s1[length - 1 - i] = s1[length - 2 - i];
+			tmp = s1[length - 1];
+			for (length1 = 0; length1 < i; i++)
+			{
+				arr1[length - 1 - i] = s1[length - 2 - i];
+			}
+			arr1[i] = tmp;
 		}
-		s1[0] = tmp;
-		if (strcmp(s1, arr))
+		arr1[length-1] ="\0";
+		if (!strcmp(s2, arr1))
 			return 1;
-	}
+	} 
 	return 0;
 }
 int main()
 {
 	char s1[] = "aabcd";
-	char s2[] = "bbdaa";
+	char s2[] = "bcdaa";
 	assert(strlen(s1)==strlen(s2));
 	int length = strlen(s1);
 	if (leftrev(s1,s2,length)&&rightrev(s1,s2,length))
-		printf("is rev");
+		printf("is rev\n");
 	else
-		printf("is not rev");
+		printf("is not rev\n");
 	return 0;
 }
