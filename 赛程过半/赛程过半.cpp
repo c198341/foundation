@@ -196,69 +196,117 @@
 //
 //	return 0;
 //}
-int leftrev(char s1[],char s2[],int length)
-{
-	assert(s2);
-	char arr1[10] = {"\0"};
-	char arr2[10] = { "\0" };
-	int i = 0;
-	int length1 = 0;
-	for (length1 = 0; length1 < length; length1++)
-	{
-		while (i <= length1)
-		{
-			arr2[i] = s1[i];
-			i++;
-		}
-		i = 0;
-		while (*(s1 + length1 + i) != '\0')
-		{
-			*(arr1 + i) = *(s1 + length1 + i);
-			i++;
-		}
-		i = 0;
-		while (*(arr1 + length - length1 + i) != '\0')
-		{
-			*(arr1 + length - length1 + i) = arr2[i];
-			i++;
-		}
-		if (!strcmp(arr1, s2))
-			return 1;
-	}
-	return 0;
-}
-int rightrev(char s1[], char s2[], int length)
-{
-	char tmp;
-	char arr1[10] = {"\0"};
-	char arr2[10] = { "\0" };
-	int i=0;
-	int length1 = 0;
-	for (i = 0; i < length; i++)
-	{
-		{
-			tmp = s1[length - 1];
-			for (length1 = 0; length1 < i; i++)
-			{
-				arr1[length - 1 - i] = s1[length - 2 - i];
-			}
-			arr1[i] = tmp;
-		}
-		arr1[length-1] ="\0";
-		if (!strcmp(s2, arr1))
-			return 1;
-	} 
-	return 0;
-}
+//int leftrev(char s1[],char s2[],int length)
+//{
+//	assert(s2);
+//	char arr1[10] = {"\0"};
+//	char arr2[10] = { "\0" };
+//	int i = 0;
+//	int length1 = 0;
+//	for (length1 = 0; length1 < length; length1++)
+//	{
+//		while (i <= length1)
+//		{
+//			arr2[i] = s1[i];
+//			i++;
+//		}
+//		i = 0;
+//		while (*(s1 + length1 + i) != '\0')
+//		{
+//			*(arr1 + i) = *(s1 + length1 + i);
+//			i++;
+//		}
+//		i = 0;
+//		while (*(arr1 + length - length1 + i) != '\0')
+//		{
+//			*(arr1 + length - length1 + i) = arr2[i];
+//			i++;
+//		}
+//		if (!strcmp(arr1, s2))
+//			return 1;
+//	}
+//	return 0;
+//}
+//int rightrev(char s1[], char s2[], int length)
+//{
+//	char tmp;
+//	char arr1[10] = {"\0"};
+//	char arr2[10] = { "\0" };
+//	int i=0;
+//	int length1 = 0;
+//	for (i = 0; i < length; i++)
+//	{
+//		{
+//			tmp = s1[length - 1];
+//			for (length1 = 0; length1 < i; i++)
+//			{
+//				arr1[length - 1 - i] = s1[length - 2 - i];
+//			}
+//			arr1[i] = tmp;
+//		}
+//		if (!strcmp(s2, arr1))
+//			return 1;
+//	} 
+//	return 0;
+//}
+//int another(char* s1, char* s2)
+//{
+//	int i = strlen(s1);
+//	int j = 0;
+//	int ret = 1;
+//	int z = 0;
+//	for (j = 0; j < i; j++)
+//	{
+//		s1[j + i] = s1[j];
+//	}
+//	for (j = 0; j < i; j++)
+//	{
+//		ret = 1;
+//		for (z = 0; z < i; z++)
+//		{
+//			if (s1[j + z] != s2[z])
+//			{
+//				ret = 0;
+//				ret = ret * 1;
+//			}
+//		}
+//		if (ret == 1)
+//			return 1;
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char s1[20] = "abcdef";
+//	char s2[20] = "efab";
+//	assert(strlen(s1)==strlen(s2));
+//	//int length = strlen(s1);
+//	if (another(s1,s2)==1)//&&rightrev(s1,s2,length))
+//		printf("is rev\n");
+//	else
+//		printf("is not rev\n");
+//	return 0;
+//}
 int main()
 {
-	char s1[] = "aabcd";
-	char s2[] = "bcdaa";
-	assert(strlen(s1)==strlen(s2));
-	int length = strlen(s1);
-	if (leftrev(s1,s2,length)&&rightrev(s1,s2,length))
-		printf("is rev\n");
-	else
-		printf("is not rev\n");
+	int arr[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+	int n = 7;
+	int i,left,right;
+	for (i = 0; i < 3; i++)
+	{
+		left =0;
+		right = 2;
+		while (left <= right)
+		{
+			if (arr[i][((left+right)/2+1)] == n)
+				printf("got\n");
+			else if (arr[i][(left + right) / 2 + 1] > n)
+			{
+				right = (left + right)/2+1;
+			}
+			else
+				left = (left + right) / 2 + 1;
+		}
+	}
 	return 0;
 }
