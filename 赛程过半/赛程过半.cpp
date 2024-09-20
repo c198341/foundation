@@ -298,14 +298,17 @@ int main()
 		right = 2;
 		while (left <= right)
 		{
-			if (arr[i][((left+right)/2+1)] == n)
+			if (arr[i][((left + right) / 2+1)] == n)
+			{
 				printf("got\n");
-			else if (arr[i][(left + right) / 2 + 1] > n)
+				break;
+			}
+			else if (arr[i][(left + right) / 2+1] > n)
 			{
 				right = (left + right)/2+1;
 			}
 			else
-				left = (left + right) / 2 + 1;
+				left = (left + right) / 2+1;
 		}
 	}
 	return 0;
