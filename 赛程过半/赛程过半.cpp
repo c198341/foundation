@@ -290,25 +290,26 @@
 int main()
 {
 	int arr[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
-	int n = 7;
-	int i,left,right;
+	int n = 0;
+	int i,left,right,mid;
 	for (i = 0; i < 3; i++)
 	{
 		left =0;
 		right = 2;
 		while (left <= right)
 		{
-			if (arr[i][((left + right) / 2+1)] == n)
+			mid = (left + right) / 2;
+			if (arr[i][mid] == n)
 			{
 				printf("got\n");
 				break;
 			}
-			else if (arr[i][(left + right) / 2+1] > n)
+			else if (arr[i][mid] > n)
 			{
-				right = (left + right)/2+1;
+				right =  mid-1;
 			}
 			else
-				left = (left + right) / 2+1;
+				left = mid+1;
 		}
 	}
 	return 0;
