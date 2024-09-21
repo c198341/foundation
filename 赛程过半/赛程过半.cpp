@@ -287,30 +287,80 @@
 //		printf("is not rev\n");
 //	return 0;
 //}
-int main()
+//int find(int arr[3][3], int n, int row, int col)
+//{
+//	int i, left, right, mid;
+//	for (i = 0; i < 3; i++)
+//	{
+//		left = 0;
+//		right = 2;
+//		while (left <= right)
+//		{
+//			mid = (left + right) / 2;
+//			if (arr[i][mid] == n)
+//			{
+//				return 1;
+//			}
+//			else if (arr[i][mid] > n)
+//			{
+//				right = mid - 1;
+//			}
+//			else
+//				left = mid + 1;
+//		}
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+//	int n = 17;
+//	int ret = find(arr, n, 3, 3);
+//	if (ret == 1)
+//		printf("find\n");
+//	else
+//		printf("not find\n");
+//	return 0;
+//}
+int int_cmp(const void* p1, const void* p2)
 {
-	int arr[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
-	int n = 0;
-	int i,left,right,mid;
-	for (i = 0; i < 3; i++)
+	return (*(int*)p1 - *(int*)p2);
+}
+void _swap(void* p1, void* p2, int size)
+{
+	int i = 0;
+	for (i = 0; i < size; i++)
 	{
-		left =0;
-		right = 2;
-		while (left <= right)
+		char tmp = *((char*)p1 + i);
+		*((char*)p1 + i) = *((char*)p2 + i);
+		*((char*)p2 + i) = tmp;
+	}
+}
+void bubble(void* base, int count, int size, int(*cmp)(void*, void*))
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < count - 1; i++)
+	{
+		for (j = 0; j < count - i - 1; j++)
 		{
-			mid = (left + right) / 2;
-			if (arr[i][mid] == n)
+			if (cmp((char*)base + j * size, (char*)base + (j + 1) * size) > 0)
 			{
-				printf("got\n");
-				break;
+				_swap((char*)base + j * size, (char*)base + (j + 1) * size, size);
 			}
-			else if (arr[i][mid] > n)
-			{
-				right =  mid-1;
-			}
-			else
-				left = mid+1;
 		}
 	}
+}
+int main()
+{
+	int arr[] = { 1, 3, 5, 7, 9, 2, 4, 6, 8, 0 };
+	//char *arr[] = {"aaaa","dddd","cccc","bbbb"};
+	int i = 0;
+	bubble(arr, sizeof(arr) / sizeof(arr[0]), sizeof(int), int_cmp);
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
 	return 0;
 }
