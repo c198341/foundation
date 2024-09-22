@@ -375,7 +375,24 @@
 //	printf("\n");
 //	return 0;
 //}
+void my_strncpy(char* dest, char* sou, int n)
+{
+	assert(dest && sou);
+	int count = 0;
+	while (*dest++=*sou++)
+	{
+		count++;
+	}
+	while (++count!=n)
+	{
+		*dest++ = '\0';
+	}
+}
 int main()
 {
-
+	char arr1[10] = "abcdfgh";
+	char arr2[] = "bit";
+	my_strncpy(arr1, arr2, 3);
+	printf("%s\n", arr1);
+	return 0;
 }
