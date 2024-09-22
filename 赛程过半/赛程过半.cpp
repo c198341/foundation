@@ -378,21 +378,22 @@
 void my_strncpy(char* dest, char* sou, int n)
 {
 	assert(dest && sou);
+	assert(strlen(dest) >= (unsigned int)n);
 	int count = 0;
-	while (*dest++=*sou++)
+	while (count!=n)
 	{
+		if(*sou!='\0')
+			*dest++ = *sou++;
+		else
+			*dest++ = '\0';
 		count++;
-	}
-	while (++count!=n)
-	{
-		*dest++ = '\0';
 	}
 }
 int main()
 {
 	char arr1[10] = "abcdfgh";
 	char arr2[] = "bit";
-	my_strncpy(arr1, arr2, 3);
+	my_strncpy(arr1, arr2, 1);
 	printf("%s\n", arr1);
 	return 0;
 }
