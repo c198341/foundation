@@ -1,4 +1,2 @@
 ﻿  赛程过半.cpp
-D:\驱动精灵搬家目录\foundation\赛程过半\赛程过半.cpp(359,64): error C2664: “void bubble(void *,int,int,int (__cdecl *)(void *,void *))”: 无法将参数 4 从“int (__cdecl *)(const void *,const void *)”转换为“int (__cdecl *)(void *,void *)”
-D:\驱动精灵搬家目录\foundation\赛程过半\赛程过半.cpp(359,57): message : 在匹配目标类型的范围内没有具有该名称的函数
-D:\驱动精灵搬家目录\foundation\赛程过半\赛程过半.cpp(339,6): message : 参见“bubble”的声明
+  赛程过半.vcxproj -> D:\驱动精灵搬家目录\foundation\赛程过半\Debug\赛程过半.exe
