@@ -375,25 +375,26 @@
 //	printf("\n");
 //	return 0;
 //}
-void my_strncpy(char* dest, char* sou, int n)
-{
-	assert(dest && sou);
-	assert(strlen(dest) >= (unsigned int)n);
-	int count = 0;
-	while (count!=n)
-	{
-		if(*sou!='\0')
-			*dest++ = *sou++;
-		else
-			*dest++ = '\0';
-		count++;
-	}
-}
+//void my_strncpy(char* dest, char* sou, int n)
+//{
+//	assert(dest && sou);
+//	assert(strlen(dest) >= (unsigned int)n);
+//	int count = 0;
+//	while (count!=n)
+//	{
+//		if(*sou!='\0')
+//			*dest++ = *sou++;
+//		else
+//			*dest++ = '\0';
+//		count++;
+//	}
+//}
 int main()
 {
 	char arr1[10] = "abcdfgh";
 	char arr2[] = "bit";
-	my_strncpy(arr1, arr2, 1);
+	//my_strncpy(arr1, arr2, 1);
+	strncpy(arr1, arr2, 4);
 	printf("%s\n", arr1);
 	return 0;
 }
