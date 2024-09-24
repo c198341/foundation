@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <math.h>
 #include <stdlib.h>
+#include <ctype.h>
 //void rarr(char* arr, int sz)
 //{
 //	assert(arr);
@@ -389,12 +390,19 @@
 //		count++;
 //	}
 //}
+//int main()
+//{
+//	char arr1[10] = "abcdfgh";
+//	char arr2[] = "bit";
+//	//my_strncpy(arr1, arr2, 1);
+//	strncpy(arr1, arr2, 4);
+//	printf("%s\n", arr1);
+//	return 0;
+//}
 int main()
 {
-	char arr1[10] = "abcdfgh";
-	char arr2[] = "bit";
-	//my_strncpy(arr1, arr2, 1);
-	strncpy(arr1, arr2, 4);
-	printf("%s\n", arr1);
+	char ch = 'a';
+	int ret = isgraph(ch);
+	printf("%d\n", ret);
 	return 0;
 }
