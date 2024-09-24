@@ -399,10 +399,29 @@
 //	printf("%s\n", arr1);
 //	return 0;
 //}
+//int main()
+//{
+//	char ch = 'a';
+//	int ret = isgraph(ch);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+void* my_memmove(void* dest, void* src, size_t count)
+{
+	if (dest < src)
+		while();
+	else
+		;
+}
 int main()
 {
-	char ch = 'a';
-	int ret = isgraph(ch);
-	printf("%d\n", ret);
+	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int i = 0;
+	//memcpy(arr1 + 2, arr1, 20);
+	my_memmove(arr1 + 2, arr1, sizeof(arr1));
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", arr1[i]);
+	}
 	return 0;
 }
