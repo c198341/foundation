@@ -408,10 +408,18 @@
 //}
 void* my_memmove(void* dest, void* src, size_t count)
 {
+	assert(dest && src);
 	if (dest < src)
-		while();
+	{
+		while (count--)
+		{
+			*(char*)dest++ = *(char*)src++;
+		}
+	}
 	else
+	{
 		;
+	}
 }
 int main()
 {
