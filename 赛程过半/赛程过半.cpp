@@ -406,42 +406,75 @@
 //	printf("%d\n", ret);
 //	return 0;
 //}
-void* my_memmove(void* dest,const void* src, size_t count)
+//void* my_memmove(void* dest,const void* src, size_t count)
+//{
+//	void* ret = dest;
+//	assert(dest && src);
+//	if (dest < src)
+//	{
+//		while (count--)
+//		{
+//			*(char*)dest = *(char*)src;
+//			dest= (char*)dest+1;
+//			src=(char*)src+1;
+//		}
+//	}
+//	else
+//	{
+//		dest=(char*)dest+count-1;
+//		src = (char*)src + count-1;
+//		while (count--)
+//		{
+//			*(char*)dest = *(char*)src;
+//			dest=(char*)dest-1;
+//			src=(char*)src-1;
+//		}
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	//memcpy(arr1 + 2, arr1, 20);
+//	my_memmove(arr1, arr1+2, sizeof(arr1[0])*5);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr1[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//#pragma pack(4)
+//struct s
+//{
+//	char c;
+//	int a;
+//	double d;
+//};
+//#pragma pack()
+//int main()
+//{
+//	struct s s1;
+//	printf("%d\n", sizeof(s1));
+//	return 0;
+//}
+struct w
 {
-	void* ret = dest;
-	assert(dest && src);
-	if (dest < src)
+	char name[20];
+	char num[3];
+};
+void my_scanf(struct w p[])
+{
+	int i = 0;
+	for (i = 0; i < 5; i++)
 	{
-		while (count--)
-		{
-			*(char*)dest = *(char*)src;
-			dest= (char*)dest+1;
-			src=(char*)src+1;
-		}
+		p[i]->name[20]=
 	}
-	else
-	{
-		dest=(char*)dest+count-1;
-		src = (char*)src + count-1;
-		while (count--)
-		{
-			*(char*)dest = *(char*)src;
-			dest=(char*)dest-1;
-			src=(char*)src-1;
-		}
-	}
-	return ret;
 }
 int main()
 {
-	int arr1[] = { 1,2,3,4,5,6,7,8,9,10 };
-	int i = 0;
-	//memcpy(arr1 + 2, arr1, 20);
-	my_memmove(arr1, arr1+2, sizeof(arr1[0])*5);
-	for (i = 0; i < 10; i++)
-	{
-		printf("%d ", arr1[i]);
-	}
-	printf("\n");
+	struct w ws[5] = {0};
+	my_scanf(&ws[0]);
 	return 0;
 }
