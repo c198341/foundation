@@ -459,64 +459,92 @@
 //	printf("%d\n", sizeof(s1));
 //	return 0;
 //}
-struct w
-{
-	char name[20];
-	char num[3];
-};
-void my_scanf(struct w* p)
-{
-	int i = 0;
-	for (i = 0; i < 3; i++)
-	{
-		scanf("%s %s", (p+i)->name, (p+i)->num);
-	}
-}
-int sort_by_num(const void* p1,const void* p2)
-{
-	return strcmp(((*(struct w*)p1).num),((*(struct w*)p2).num));
-}
-void my_sort(struct w* p)
-{
-	qsort(p, 3, sizeof(p[0]), sort_by_num);
-}
-struct w* my_search(struct w* left,int length, char* search)
-{
-	struct w* right=left+length-1;
-	struct w* mid;
-	while(left<=right)
-	{
-		mid = left+right;
-		if (!strcmp((mid->num), search))
-			return mid;
-		else if (strcmp((mid->num), search) > 0)
-		{
-			right = mid-1;
-		}
-		else
-			left = mid+1;
-	}
-	return NULL;
-}
+//struct w
+//{
+//	char name[20];
+//	char num[3];
+//};
+//void my_scanf(struct w* p)
+//{
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		scanf("%s %s", (p+i)->name, (p+i)->num);
+//	}
+//}
+//int sort_by_num(const void* p1,const void* p2)
+//{
+//	return strcmp(((*(struct w*)p1).num),((*(struct w*)p2).num));
+//}
+//void my_sort(struct w* p)
+//{
+//	qsort(p, 5, sizeof(p[0]), sort_by_num);
+//}
+//struct w* my_search(struct w ws[],int length, char* search)
+//{
+//	int left=0;
+//	int right = length - 1;
+//	int mid;
+//	while(left<=right)
+//	{
+//		mid = (left+right)/2;
+//		if (!strcmp((ws[mid].num), search))
+//			return &ws[mid];
+//		else if (strcmp((ws[mid].num), search) > 0)
+//		{
+//			right = mid-1;
+//		}
+//		else
+//			left = mid+1;
+//	}
+//	return NULL;
+//}
+//int main()
+//{
+//	struct w ws[5] = {0};
+//	my_scanf(&ws[0]);
+//	int i = 0;
+//	my_sort(&ws[0]);
+//	printf("\nafter sort:\n");
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%s %s\n", ws[i].name, ws[i].num);
+//	}
+//	printf("\n");
+//	char search[3];
+//	scanf("%s", search);
+//	int length = sizeof(ws) / sizeof(ws[0]);
+//	struct w* find=my_search(ws,length, search);
+//	if (find!=NULL)
+//		printf("find:name is:%s\n",find->name);
+//	else
+//		printf("not find\n");
+//	return 0;
+//}
 int main()
 {
-	struct w ws[3] = {0};
-	my_scanf(&ws[0]);
+	char hex[5];
+	int ret = 0;
+	int oct = 0;
+	gets_s(hex);
+	ret = strlen(hex);
 	int i = 0;
-	my_sort(&ws[0]);
-	printf("\nafter sort:\n");
-	for (i = 0; i < 3; i++)
+	while (i != ret)
 	{
-		printf("%s %s\n", ws[i].name, ws[i].num);
+		if (hex[i] >= '0' && hex[i] <= '9')
+		{
+			oct= oct+ ((hex[i]- '0')) * pow(16, ((double)4 - (double)i));
+		}
+		else if (hex[i] >= 'A' && hex[i] <= 'F')
+		{
+			oct = oct + (hex[i] -'A'+10) * pow(16, ((double)4 - (double)i));
+		}
+		else if(hex[i] >= 'a' && hex[i] <= 'f')
+		{
+			oct = oct + (hex[i] -'a'+10) * pow(16, ((double)4 - (double)i));
+		}
+		i++;
 	}
-	printf("\n");
-	char search[3];
-	scanf("%s", search);
-	int length = sizeof(ws) / sizeof(ws[0]);
-	struct w* find=my_search(ws,length, search);
-	if (find!=NULL)
-		printf("find:name is:%s\n",find->name);
-	else
-		printf("not find\n");
+	printf("%d\n", oct);
 	return 0;
 }
