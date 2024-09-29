@@ -548,14 +548,47 @@
 //	printf("%d\n", oct);
 //	return 0;
 //}
-convert(int n)
-{
-
-}
-int main()
-{
-	int n = 0;
-	scanf("%d", &n);
-	convert(n);
-	return 0;
-}
+//void convert(int n)
+//{
+//	if (n / 10 == 0)
+//		printf("%c",n % 10+48);
+//	else
+//	{
+//		convert(n/10);
+//		printf("%c",n%10+48);
+//	}
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	convert(n);
+//	printf("\n");
+//	return 0;
+//}
+//int leapyear(int year)
+//{
+//	if ((year%4==0&&year%100!=0)||(year%400==0))
+//		return 1;
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	int month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	int year, mon, day;
+//	int flag = 0;//²»ÊÇÈòÄê
+//	scanf("%d %d %d", &year, &mon, &day);
+//	flag=leapyear(year);
+//	int i = 0;
+//	int ret = 0;
+//	for (i = 0; i < mon - 1; i++)
+//	{
+//		ret = ret + month[i];
+//	}
+//	ret = ret + day;
+//	if (flag == 1)
+//		ret++;
+//	printf("is %d day(s)\n", ret);
+//	return 0;
+//}
