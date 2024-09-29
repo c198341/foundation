@@ -521,30 +521,41 @@
 //		printf("not find\n");
 //	return 0;
 //}
+//int main()
+//{
+//	char hex[5] = {0};
+//	int ret = 0;
+//	int oct = 0;
+//	gets_s(hex);
+//	ret = strlen(hex);
+//	int i = 0;
+//	while (i != ret)
+//	{
+//		if (hex[i] >= '0' && hex[i] <= '9')
+//		{
+//			oct= (double)oct+ (((double)hex[i]- '0')) * pow(16, ((double)ret-1-i));
+//		}
+//		else if (hex[i] >= 'A' && hex[i] <= 'F')
+//		{
+//			oct = oct + ((double)hex[i] -'A'+10) * pow(16, ((double)ret-1-i));
+//		}
+//		else if(hex[i] >= 'a' && hex[i] <= 'f')
+//		{
+//			oct = oct + ((double)hex[i] -'a'+10) * pow(16, ((double)ret-1-i));
+//		}
+//		i++;
+//	}
+//	printf("%d\n", oct);
+//	return 0;
+//}
+convert(int n)
+{
+
+}
 int main()
 {
-	char hex[5];
-	int ret = 0;
-	int oct = 0;
-	gets_s(hex);
-	ret = strlen(hex);
-	int i = 0;
-	while (i != ret)
-	{
-		if (hex[i] >= '0' && hex[i] <= '9')
-		{
-			oct= oct+ ((hex[i]- '0')) * pow(16, ((double)4 - (double)i));
-		}
-		else if (hex[i] >= 'A' && hex[i] <= 'F')
-		{
-			oct = oct + (hex[i] -'A'+10) * pow(16, ((double)4 - (double)i));
-		}
-		else if(hex[i] >= 'a' && hex[i] <= 'f')
-		{
-			oct = oct + (hex[i] -'a'+10) * pow(16, ((double)4 - (double)i));
-		}
-		i++;
-	}
-	printf("%d\n", oct);
+	int n = 0;
+	scanf("%d", &n);
+	convert(n);
 	return 0;
 }
