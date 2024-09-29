@@ -4,7 +4,7 @@
 #include <string.h>
 int* cmp_by_int(const void* e1, const void* e2)
 {
-
+	;
 }
 int main()
 {
