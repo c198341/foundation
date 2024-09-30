@@ -49,7 +49,7 @@ void convert(int* arr)
 		if (arr[i] > arr[max])
 			max = i;
 	}
-	int tmp;
+	int tmp
 	tmp = arr[1];
 	arr[1] = arr[mix];
 	arr[mix] = tmp;
