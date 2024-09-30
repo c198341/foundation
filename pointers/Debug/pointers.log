@@ -1,3 +1,2 @@
 ﻿  pointers.cpp
-D:\驱动精灵搬家目录\foundation\POINTERS\pointers.cpp(25,10): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
   pointers.vcxproj -> D:\驱动精灵搬家目录\foundation\POINTERS\Debug\pointers.exe
