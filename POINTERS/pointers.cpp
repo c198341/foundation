@@ -173,34 +173,71 @@
 //	return 0;
 //}
 //
-void my_count(char* arr, int length, int* up, int* low, int* bs, int* num, int* qita)
+//void my_count(char* arr, int length, int* up, int* low, int* bs, int* num, int* qita)
+//{
+//	int i = 0;
+//	for (i = 0; i < length; i++)
+//	{
+//		if (isupper(*(arr + i)))
+//			(*up)++;
+//		else if (islower(*(arr + i)))
+//			(*low)++;
+//		else if (isspace(*(arr + i)))
+//			(*bs)++;
+//		else if (isdigit(*(arr + i)))
+//			(*num)++;
+//		else
+//			(*qita)++;
+//
+//	}
+//}
+//int main()
+//{
+//	char arr[10] = {0};
+//	gets_s(arr);
+//	int up = 0;
+//	int low = 0;
+//	int bs = 0;
+//	int num = 0;
+//	int qita = 0;
+//	my_count(arr, strlen(arr),&up, &low, &bs, &num, &qita);
+//	printf("%d %d %d %d %d", up, low, bs, num, qita);
+//	return 0;
+//}
+void convert(int* arr[3])
 {
-	int i = 0;
-	for (i = 0; i < length; i++)
+	int i, j;
+	for (i = 0; i < 3; i++)
 	{
-		if (isupper(*(arr + i)))
-			(*up)++;
-		else if (islower(*(arr + i)))
-			(*low)++;
-		else if (isspace(*(arr + i)))
-			(*bs)++;
-		else if (isdigit(*(arr + i)))
-			(*num)++;
-		else
-			(*qita)++;
-
+		for (j = 0; j < 3; j++)
+			(*arr[i])[j] = arr[j][i];
 	}
 }
 int main()
 {
-	char arr[10] = {0};
-	gets_s(arr);
-	int up = 0;
-	int low = 0;
-	int bs = 0;
-	int num = 0;
-	int qita = 0;
-	my_count(arr, strlen(arr),&up, &low, &bs, &num, &qita);
-	printf("%d %d %d %d %d", up, low, bs, num, qita);
+	int arr[3][3];
+	int i,j,n;
+	n = 1;
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
+			arr[i][j] = n++;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	convert(&arr[3]);
+	printf("after convert:\n");
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
 	return 0;
 }
