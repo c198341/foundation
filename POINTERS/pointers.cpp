@@ -204,40 +204,48 @@
 //	printf("%d %d %d %d %d", up, low, bs, num, qita);
 //	return 0;
 //}
-void convert(int* arr[3])
-{
-	int i, j;
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-			(*arr[i])[j] = arr[j][i];
-	}
-}
+//void convert(int arr[][3])
+//{
+//	int i, j;
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < i; j++)
+//		{
+//			int tmp = arr[i][j];
+//			arr[i][j] = arr[j][i];
+//			arr[j][i] = tmp;
+//		}
+//	}
+//}
+//int main()
+//{
+//	int arr[3][3];
+//	int i,j,n;
+//	n = 5;
+//	for (i = 0; i < 3; i++)
+//		for (j = 0; j < 3; j++)
+//			arr[i][j] = n++;
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	convert(arr);
+//	printf("after convert:\n");
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int arr[3][3];
-	int i,j,n;
-	n = 1;
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
-			arr[i][j] = n++;
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-		{
-			printf("%d ", arr[i][j]);
-		}
-		printf("\n");
-	}
-	convert(&arr[3]);
-	printf("after convert:\n");
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-		{
-			printf("%d ", arr[i][j]);
-		}
-		printf("\n");
-	}
-	return 0;
+
 }
