@@ -248,33 +248,9 @@
 //}
 void my_sort(int arr[][5])
 {
-	int i, j,k;
-	int b[5] = { arr[0][0],arr[0][1],arr[0][2],arr[0][3],arr[0][0] };
+	int i, j;
 	int tmp;
-	for (k = 0; k < 3; k++)
-	{
-		for (i = 0; i < 5; i++)
-		{
-			for (j = 0; j < 5; j++)
-			{
-				if (b[k] > arr[i][j])
-				{
-					b[k] = arr[i][j];
-				}
-			}
-		}
-	}
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j < 5; j++)
-		{
-			if (b[0]< arr[i][j])
-			{
-				b[4] = arr[i][j];
-			}
-		}
-	}
-	for(k=0;k<)
+	for ()
 }
 int main()
 {
