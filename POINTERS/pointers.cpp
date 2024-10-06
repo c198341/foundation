@@ -249,19 +249,103 @@
 void my_sort(int arr[][5])
 {
 	int i, j;
+	int max=arr[0][0];
+	int min = arr[0][0];
 	int tmp;
-	for ()
+	int line, col;
+	for (i=0;i<5;i++)
+		for (j = 0; j < 5; j++)
+		{
+			if (max < arr[i][j])
+			{
+				max = arr[i][j];
+				line = i;
+				col = j;
+			}
+		}
+	tmp = arr[2][2];
+	arr[2][2] = max;
+	arr[line][col] = tmp;
+	min = arr[0][0];
+	for(i=0;i<5;i++)
+		for (j = 0; j < 5; j++)
+		{
+			if (min > arr[i][j])
+			{
+				min = arr[i][j];
+				line = i;
+				col = j;
+			}
+		}
+	tmp = arr[0][0];
+	arr[0][0] = min;
+	arr[line][col] = tmp;
+	min = arr[0][4];
+	for (i = 0; i < 5; i++)
+		for (j = 0; j < 5; j++)
+		{
+			if (i == 0 && j == 0)
+			{
+				;
+			}
+			else if (min > arr[i][j])
+			{
+				min = arr[i][j];
+				line = i;
+				col = j;
+			}
+		}
+	tmp = arr[0][4];
+	arr[0][4] = min;
+	arr[line][col] = tmp;
+	min = arr[4][0];
+	for (i = 0; i < 5; i++)
+		for (j = 0; j < 5; j++)
+		{
+			if ((i == 0 && j == 0)||(i == 0 && j == 4))
+			{
+				;
+			}
+			else if (min > arr[i][j])
+			{
+				min = arr[i][j];
+				line = i;
+				col = j;
+			}
+		}
+	tmp = arr[4][0];
+	arr[4][0] = min;
+	arr[line][col] = tmp;
+	min = arr[4][4];
+	for (i = 0; i < 5; i++)
+		for (j = 0; j < 5; j++)
+		{
+			if ((i == 0 && j == 0) || (i == 0 && j == 4)||(i==4&&j==0))
+			{
+				;
+			}
+			else if (min > arr[i][j])
+			{
+				min = arr[i][j];
+				line = i;
+				col = j;
+			}
+		}
+	tmp = arr[4][4];
+	arr[4][4] = min;
+	arr[line][col] = tmp;
 }
 int main()
 {
 	int arr[5][5];
 	int i, j;
-	srand((unsigned)time(NULL));
+	//srand((unsigned)time(NULL));
 	for (i = 0; i < 5; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{
-			arr[i][j] = rand() % 50 + 1;
+			//arr[i][j] = rand() % 50 + 1;
+			arr[i][j] = i + j;
 			printf("%2d  ", arr[i][j]);
 		}
 		printf("\n");
