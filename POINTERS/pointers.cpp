@@ -253,7 +253,7 @@ void my_sort(int arr[][5])
 	int min = arr[0][0];
 	int tmp;
 	int line=0, col=0;
-	/*for (i = 0; i < 5; i++)
+	for (i = 0; i < 5; i++)
 		for (j = 0; j < 5; j++)
 		{
 			if (max < arr[i][j])
@@ -265,7 +265,7 @@ void my_sort(int arr[][5])
 		}
 	tmp = arr[2][2];
 	arr[2][2] = max;
-	arr[line][col] = tmp;*/
+	arr[line][col] = tmp;
 	min = arr[0][0];
 	for(i=0;i<5;i++)
 		for (j = 0; j < 5; j++)
