@@ -246,146 +246,160 @@
 //	}
 //	return 0;
 //}
-void my_sort(int arr[][5])
-{
-	int i, j;
-	int max=arr[0][0];
-	int min = arr[0][0];
-	int tmp;
-	int line=0, col=0;
-	for (i = 0; i < 5; i++)
-		for (j = 0; j < 5; j++)
-		{
-			if (max < arr[i][j])
-			{
-				max = arr[i][j];
-				line = i;
-				col = j;
-			}
-		}
-	tmp = arr[2][2];
-	arr[2][2] = max;
-	arr[line][col] = tmp;
-	min = arr[0][0];
-	for(i=0;i<5;i++)
-		for (j = 0; j < 5; j++)
-		{
-			if (min > arr[i][j])
-			{
-				min = arr[i][j];
-				line = i;
-				col = j;
-			}
-		}
-	tmp = arr[0][0];
-	arr[0][0] = min;
-	arr[line][col] = tmp;
-	min = arr[0][4];
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j < 5; j++)
-		{
-			if ((i == 0) && (j == 0))
-			{
-				;
-			}
-			else if (min > arr[i][j])
-			{
-				min = arr[i][j];
-				line = i;
-				col = j;
-			}
-		}
-	}	
-	tmp = arr[0][4];
-	arr[0][4] = min;
-	arr[line][col] = tmp;
-	min = arr[4][0];
-	for (i = 0; i < 5; i++)
-		for (j = 0; j < 5; j++)
-		{
-			if ((i == 0 && j == 0)||(i == 0 && j == 4))
-			{
-				;
-			}
-			else if (min > arr[i][j])
-			{
-				min = arr[i][j];
-				line = i;
-				col = j;
-			}
-		}
-	tmp = arr[4][0];
-	arr[4][0] = min;
-	arr[line][col] = tmp;
-	min = arr[4][4];
-	for (i = 0; i < 5; i++)
-		for (j = 0; j < 5; j++)
-		{
-			if ((i == 0 && j == 0) || (i == 0 && j == 4)||(i==4&&j==0))
-			{
-				;
-			}
-			else if (min > arr[i][j])
-			{
-				min = arr[i][j];
-				line = i;
-				col = j;
-			}
-		}
-	tmp = arr[4][4];
-	arr[4][4] = min;
-	arr[line][col] = tmp;
-	/*for (i = 0; i < 5; i++)
-		for (j = 0; j < 5; j++)
-		{
-			if (max < arr[i][j])
-			{
-				max = arr[i][j];
-				line = i;
-				col = j;
-			}
-		}
-	tmp = arr[2][2];
-	arr[2][2] = max;
-	arr[line][col] = tmp;*/
-}
+//void my_sort(int arr[][5])
+//{
+//	int i, j;
+//	int max=arr[0][0];
+//	int min = arr[0][0];
+//	int tmp;
+//	int line=0, col=0;
+//	for (i = 0; i < 5; i++)
+//		for (j = 0; j < 5; j++)
+//		{
+//			if (max < arr[i][j])
+//			{
+//				max = arr[i][j];
+//				line = i;
+//				col = j;
+//			}
+//		}
+//	tmp = arr[2][2];
+//	arr[2][2] = max;
+//	arr[line][col] = tmp;
+//	min = arr[0][0];
+//	line = 0;
+//	col = 0;
+//	for(i=0;i<5;i++)
+//		for (j = 0; j < 5; j++)
+//		{
+//			if (min > arr[i][j])
+//			{
+//				min = arr[i][j];
+//				line = i;
+//				col = j;
+//			}
+//		}
+//	tmp = arr[0][0];
+//	arr[0][0] = min;
+//	arr[line][col] = tmp;
+//	min = arr[0][4];
+//	//line = 0;
+//	//col = 4;
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j < 5; j++)
+//		{
+//			if ((i == 0) && (j == 0))
+//			{
+//				;
+//			}
+//			else if (min > arr[i][j])
+//			{
+//				min = arr[i][j];
+//				line = i;
+//				col = j;
+//			}
+//		}
+//	}	
+//	tmp = arr[0][4];
+//	arr[0][4] = min;
+//	arr[line][col] = tmp;
+//	min = arr[4][0];
+//	//line = 4;
+//	//col = 0;
+//	for (i = 0; i < 5; i++)
+//		for (j = 0; j < 5; j++)
+//		{
+//			if ((i == 0 && j == 0)||(i == 0 && j == 4))
+//			{
+//				;
+//			}
+//			else if (min > arr[i][j])
+//			{
+//				min = arr[i][j];
+//				line = i;
+//				col = j;
+//			}
+//		}
+//	tmp = arr[4][0];
+//	arr[4][0] = min;
+//	arr[line][col] = tmp;
+//	min = arr[4][4];
+//	//line = 4;
+//	//col = 4;
+//	for (i = 0; i < 5; i++)
+//		for (j = 0; j < 5; j++)
+//		{
+//			if ((i == 0 && j == 0) || (i == 0 && j == 4)||(i==4&&j==0))
+//			{
+//				;
+//			}
+//			else if (min > arr[i][j])
+//			{
+//				min = arr[i][j];
+//				line = i;
+//				col = j;
+//			}
+//		}
+//	tmp = arr[4][4];
+//	arr[4][4] = min;
+//	arr[line][col] = tmp;
+//	//for (i = 0; i < 5; i++)
+//	//	for (j = 0; j < 5; j++)
+//	//	{
+//	//		if (max < arr[i][j])
+//	//		{
+//	//			max = arr[i][j];
+//	//			line = i;
+//	//			col = j;
+//	//		}
+//	//	}
+//	//tmp = arr[2][2];
+//	//arr[2][2] = max;
+//	//arr[line][col] = tmp;
+//}
+//int main()
+//{
+//	int arr[5][5];
+//	int i, j;
+//	int n = 1;
+//	//srand((unsigned)time(NULL));
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j < 5; j++)
+//		{
+//			//arr[i][j] = rand() % 50 + 1;
+//			//arr[i][j] = n++;
+//			//scanf("%d", &arr[i][j]);
+//			arr[i][j] = n++;
+//		}
+//		printf("\n");
+//	}
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j < 5; j++)
+//		{
+//			//arr[i][j] = rand() % 50 + 1;
+//			//arr[i][j] = n++;
+//			printf("%2d ",arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	printf("after sort:\n");
+//	my_sort(arr);
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = 0; j < 5; j++)
+//		{
+//			printf("%2d  ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
 int main()
 {
-	int arr[5][5];
-	int i, j;
-	int n = 1;
-	//srand((unsigned)time(NULL));
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j < 5; j++)
-		{
-			//arr[i][j] = rand() % 50 + 1;
-			//arr[i][j] = n++;
-			//scanf("%d", &arr[i][j]);
-			arr[i][j] = n++;
-		}
-		printf("\n");
-	}
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j < 5; j++)
-		{
-			//arr[i][j] = rand() % 50 + 1;
-			//arr[i][j] = n++;
-			printf("%2d ",arr[i][j]);
-		}
-		printf("\n");
-	}
-	printf("after sort:\n");
-	my_sort(arr);
-	for (i = 0; i < 5; i++)
-	{
-		for (j = 0; j < 5; j++)
-		{
-			printf("%2d  ", arr[i][j]);
-		}
-		printf("\n");
-	}
-	return 0;
+	char arr[3];
+	int i = 0;
+	for()
 }
