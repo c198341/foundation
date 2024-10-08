@@ -1,4 +1,2 @@
 ﻿  pointers.cpp
-D:\驱动精灵搬家目录\foundation\POINTERS\pointers.cpp(412,46): error C2664: “void qsort(void *,size_t,size_t,_CoreCrtNonSecureSearchSortCompareFunction)”: 无法将参数 4 从“int (__cdecl *)(void *,void *)”转换为“_CoreCrtNonSecureSearchSortCompareFunction”
-D:\驱动精灵搬家目录\foundation\POINTERS\pointers.cpp(412,35): message : 在匹配目标类型的范围内没有具有该名称的函数
-D:\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_search.h(60,23): message : 参见“qsort”的声明
+  pointers.vcxproj -> E:\Meitu\foundation\POINTERS\Debug\pointers.exe
