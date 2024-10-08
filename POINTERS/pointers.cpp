@@ -400,19 +400,25 @@
 int cmp_by_char(const void* p1,const void* p2)
 {
 	return (strcmp((char*)p1, (char*)p2));
+	//return (*(char*)p1 > *(char*)p2);
 }
 int main()
 {
 	char* arr[3];
+	char brr[30];
 	int i = 0;
+	int n = 0;
+	scanf_s("%d", &n);
+	int c=getchar();
 	for (i = 0; i < 3; i++)
 	{
-		gets_s(arr[i],4);
+		arr[i] = &brr[n*i];
+		gets_s(arr[i],n);
 	}
 	qsort(arr[0], 3, sizeof(arr[0]), cmp_by_char);
 	for (i = 0; i < 3; i++)
 	{
-		printf("%s\n", arr[i]);
+		printf("%s ", arr[i]);
 	}
 	printf("\n");
 	return 0;
