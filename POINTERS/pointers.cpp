@@ -397,9 +397,23 @@
 //	}
 //	return 0;
 //}
+int cmp_by_char(void* p1,void* p2)
+{
+	return (strcmp((char*)p1, (char*)p2));
+}
 int main()
 {
-	char arr[3];
+	char* arr[3];
 	int i = 0;
-	for()
+	for (i = 0; i < 3; i++)
+	{
+		scanf("%s", arr[i]);
+	}
+	qsort(arr[0], 3, sizeof(arr[0]), cmp_by_char);
+	for (i = 0; i < 3; i++)
+	{
+		printf("%s\n", arr[i]);
+	}
+	printf("\n");
+	return 0;
 }
