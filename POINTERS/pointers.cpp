@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 //int cmp_by_int(const void* p1, const void* p2)
 //{
 //	return ((*(int*)p1>*(int*)p2)?1:0);
@@ -397,31 +398,38 @@
 //	}
 //	return 0;
 //}
-void my_sort(const char* arr[3],int n)
-{
-	const char* tmp;
-	int i = 0;
-	int j = 0;
-	for (i = 0; i < n-1; i++)
-		for(j=i+1;j<n;j++)
-		{
-		    if (strcmp(arr[i],arr[j])==1)
-		       {
-			      tmp = arr[i];
-				  arr[i] = arr[j];
-				  arr[j] = tmp;
-		       }
-	    }
-}
+//void my_sort(const char* arr[3],int n)
+//{
+//	const char* tmp;
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < n-1; i++)
+//		for(j=i+1;j<n;j++)
+//		{
+//		    if (strcmp(arr[i],arr[j])==1)
+//		       {
+//			      tmp = arr[i];
+//				  arr[i] = arr[j];
+//				  arr[j] = tmp;
+//		       }
+//	    }
+//}
+//int main()
+//{
+//	const char* arr[3] = {"acaa","ac","ab"};
+//	int i = 0;
+//	my_sort(arr,3);
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("%s ", arr[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
 int main()
 {
-	const char* arr[3] = {"acaa","ac","ab"};
-	int i = 0;
-	my_sort(arr,3);
-	for (i = 0; i < 3; i++)
-	{
-		printf("%s ", arr[i]);
-	}
-	printf("\n");
+	//https://blog.csdn.net/lwj8819/article/details/119243289?ops_request_misc=%257B%2522request%255Fid%2522%253A%25224470A19D-2C74-4D09-90F3-D8281A74EA6D%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=4470A19D-2C74-4D09-90F3-D8281A74EA6D&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-119243289-null-null.142^v100^pc_search_result_base7&utm_term=%E5%86%99%E4%B8%80%E4%B8%AA%E7%94%A8%E7%9F%A9%E5%BD%A2%E6%B3%95%E6%B1%82%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0%2C%E5%88%86%E5%88%AB%E6%B1%82&spm=1018.2226.3001.4187
+	printf("input your choose:\n[1]sinx\n[2]cosx\n[3]ex\n");
+
 	return 0;
 }
