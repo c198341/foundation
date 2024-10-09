@@ -408,7 +408,7 @@ int main()
 	char brr[30];
 	int i = 0;
 	int n = 0;
-	scanf_s("%d", &n);
+	scanf("%d", &n);
 	int c=getchar();
 	for (i = 0; i < 3; i++)
 	{
