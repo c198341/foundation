@@ -397,25 +397,27 @@
 //	}
 //	return 0;
 //}
-int cmp_by_char(const void* p1,const void* p2)
+void my_sort(const char* arr[3],int n)
 {
-	return (strcmp((char*)p1, (char*)p2));
-	//return (*(char*)p1 > *(char*)p2);
+	const char* tmp;
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < n-1; i++)
+		for(j=i+1;j<n;j++)
+		{
+		    if (strcmp(arr[i],arr[j])==1)
+		       {
+			      tmp = arr[i];
+				  arr[i] = arr[j];
+				  arr[j] = tmp;
+		       }
+	    }
 }
 int main()
 {
-	char* arr[3];
-	char brr[30];
+	const char* arr[3] = {"acaa","ac","ab"};
 	int i = 0;
-	int n = 0;
-	scanf("%d", &n);
-	int c=getchar();
-	for (i = 0; i < 3; i++)
-	{
-		arr[i] = &brr[n*i];
-		gets_s(arr[i],n);
-	}
-	qsort(arr[0], 3, sizeof(arr[0]), cmp_by_char);
+	my_sort(arr,3);
 	for (i = 0; i < 3; i++)
 	{
 		printf("%s ", arr[i]);
