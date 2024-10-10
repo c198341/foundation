@@ -426,35 +426,137 @@
 //	printf("\n");
 //	return 0;
 //}
-double cal(double (*handler)(double))
+//double cal(double (*handler)(double))
+//{
+//	double dx = (1 - 0) / 1000.0;
+//	double sum = 0;
+//	double i = 0;
+//	for (i = 0; i <=1; i=i+dx)
+//	{
+//		sum = sum + handler(i) * dx;
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	//https://blog.csdn.net/lwj8819/article/details/119243289?ops_request_misc=%257B%2522request%255Fid%2522%253A%25224470A19D-2C74-4D09-90F3-D8281A74EA6D%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=4470A19D-2C74-4D09-90F3-D8281A74EA6D&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-119243289-null-null.142^v100^pc_search_result_base7&utm_term=%E5%86%99%E4%B8%80%E4%B8%AA%E7%94%A8%E7%9F%A9%E5%BD%A2%E6%B3%95%E6%B1%82%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0%2C%E5%88%86%E5%88%AB%E6%B1%82&spm=1018.2226.3001.4187
+//	printf("input your choose:\n[1]sinx\n[2]cosx\n[3]ex\n");
+//	int n;
+//	scanf("%d", &n);
+//	double ret=0;
+//	switch (n)
+//	{
+//	case 1:
+//		ret = cal(sin);
+//		break;
+//	case 2:
+//		ret = cal(cos);
+//		break;
+//	case 3:
+//		ret = cal(exp);
+//		break;
+//	default:
+//		printf("wrong choose\n");
+//	}
+//	printf("ret=%lf\n", ret);
+//	return 0;
+//}
+//void reverse(int* arr,int n)
+//{
+//	int* arr1 = arr;
+//	int* arr2 = arr + n-1;
+//	int tmp;
+//	while (arr1 <= arr2)
+//	{
+//		tmp = *arr1;
+//		*arr1 = *arr2;
+//		*arr2 = tmp;
+//		arr1++;
+//		arr2--;
+//	}
+//}
+//int main()
+//{
+//	int arr[5];
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	reverse(arr,5);
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+//struct stu
+//{
+//	char num[4];
+//	double chinese;
+//	double math;
+//};
+//double avg(struct stu* s,int n)
+//{
+//	int i = 0;
+//	double sum = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		sum = sum + (s+i)->chinese;
+//	}
+//	return (sum / n);
+//}
+//void toolow(struct stu* s,int n)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (((s + i)->chinese < 60.0) && ((s + i)->math < 60.0))
+//			printf("num is %s,chinese is %lf,math is %lf,ave sco is %lf", (s + i)->num, (s + i)->chinese, (s + i)->math, ((s + i)->chinese + (s + i)->math) / 2.0);
+//	}
+//	printf("\n");
+//}
+//void highsco(struct stu* s, int n)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (((s + i)->chinese + (s + i)->math) / 2 >= 90.0 || ((s + i)->chinese >= 85.0 && (s + i)->math >= 85.0))
+//		{
+//			printf("num is %s", (s + i)->num);
+//		}
+//	}
+//}
+//int main()
+//{
+//	struct stu s[3] = { {"001",85.1,90,},{"002",50.0,40.0},{"003",90.0,98.0}};
+//	double avg_chinese=avg(s,3);
+//	printf("ave of chinese is %lf", avg_chinese);
+//	printf("\n");
+//	toolow(s,sizeof(s)/sizeof(s[0]));
+//	highsco(s, sizeof(s) / sizeof(s[0]));
+//	return 0;
+//}
+int statistics(char* arr, int* num)
 {
-	double dx = (1 - 0) / 1000.0;
-	double sum = 0;
-	int i = 0;
-	for (i = 0; i <=1; i=i+dx)
+	char* head = arr;
+	char* tail = arr;
+	char* tmp = arr;
+	while (*tmp != '\0')
 	{
-		sum = sum + handler(i) * dx;
+		if()
 	}
-	return sum;
 }
 int main()
 {
-	//https://blog.csdn.net/lwj8819/article/details/119243289?ops_request_misc=%257B%2522request%255Fid%2522%253A%25224470A19D-2C74-4D09-90F3-D8281A74EA6D%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=4470A19D-2C74-4D09-90F3-D8281A74EA6D&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-119243289-null-null.142^v100^pc_search_result_base7&utm_term=%E5%86%99%E4%B8%80%E4%B8%AA%E7%94%A8%E7%9F%A9%E5%BD%A2%E6%B3%95%E6%B1%82%E5%AE%9A%E7%A7%AF%E5%88%86%E7%9A%84%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0%2C%E5%88%86%E5%88%AB%E6%B1%82&spm=1018.2226.3001.4187
-	printf("input your choose:\n[1]sinx\n[2]cosx\n[3]ex\n");
-	int n;
-	scanf("%d", &n);
-	double ret=0;
-	switch (n)
+	char arr[] = { "a123x456  17960?   302tab5876" };
+	int num[10];
+	int n=statistics(arr, num);
+	printf("n=%d\n", n);
+	for (int i = 0; i < n; i++)
 	{
-	case 1:
-		ret = cal(sin);
-	case 2:
-		ret = cal(cos);
-	case 3:
-		ret = cal(exp);
-	default:
-		printf("wrong choose\n");
+		printf("%d ", num[i]);
 	}
-	printf("ret=%lf\n", ret);
 	return 0;
 }
