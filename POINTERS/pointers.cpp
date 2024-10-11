@@ -614,7 +614,14 @@
 //}
 char* my_alloc(char* p, int n)
 {
+	if (n >1000 )//sizeof(p) / sizeof(p[0])
+		return NULL;
+	else
+	{
+		*(p + n) = 'a';
 
+		return p + n;
+	}
 }
 int main()
 {
@@ -622,10 +629,15 @@ int main()
 	char* p = qian;
 	int n = 0;
 	scanf("%d", &n);
-	char* pk = my_alloc(p, n);
+	char* pk = my_alloc(qian, n);
 	if (pk == NULL)
 		printf("order too much space\n");
 	else
+	{
+		printf("%p\n%p\n", p, pk);
+		printf("%c\n", *pk);
+	}
+	//my_free(pk);
 
 	return 0;
 }
