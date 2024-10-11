@@ -5,6 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
+#include <assert.h>
 //int cmp_by_int(const void* p1, const void* p2)
 //{
 //	return ((*(int*)p1>*(int*)p2)?1:0);
@@ -538,25 +539,93 @@
 //	highsco(s, sizeof(s) / sizeof(s[0]));
 //	return 0;
 //}
-int statistics(char* arr, int* num)
+//int statistics(char* arr, int* num)
+//{
+//	char* head = arr;
+//	char* tail = arr;
+//	char* tmp = arr;
+//	int n=0;
+//	int i = 0;
+//	while (*tmp != '\0')
+//	{
+//		if (*tmp >= '0' && *tmp <= '9')
+//		{
+//			head = tmp++;
+//			while (*tmp >= '0' && *tmp <= '9')
+//			{
+//				tmp++;
+//			}
+//			tail = tmp - 1;
+//			while (head<=tail)
+//			{
+//				n = n * 10+*head-48;
+//				head++;
+//			}
+//			num[i++] = n;
+//			n = 0;
+//			tmp++;
+//		}
+//		else
+//			tmp++;
+//	}
+//	return i;
+//}
+//int main()
+//{
+//	char arr[] = { "a123x40x/56/n  17960?" };
+//	int num[10];
+//	int n=statistics(arr, num);
+//	printf("n=%d\n", n);
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d ", num[i]);
+//	}
+//	return 0;
+//}
+//int my_strcmp(char* p1, char* p2)
+//{
+//	assert(*p1 != NULL && *p2 != NULL);
+//	while (*p1 != '\0' && *p2 != '\0')
+//	{
+//		if (*p1 > *p2)
+//			return *p1 - *p2;
+//		else if (*p1 < *p2)
+//			return *p1 - *p2;
+//		p1++;
+//		p2++;
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	char s1[] = { "bay" };
+//	char s2[] = { "bay" };
+//	int n = my_strcmp(s1,s2);
+//	printf("%d\n", n);
+//	return 0;
+//}
+//int main()
+//{
+//	const char* month[12] = { "jan","feb","mar","apr","may","jun","july","agu","sep","oct","nov","dec" };
+//	int i = 1;
+//	scanf("%d", &i);
+//	printf("%s", month[i - 1]);
+//	return 0;
+//}
+char* my_alloc(char* p, int n)
 {
-	char* head = arr;
-	char* tail = arr;
-	char* tmp = arr;
-	while (*tmp != '\0')
-	{
-		if()
-	}
+
 }
 int main()
 {
-	char arr[] = { "a123x456  17960?   302tab5876" };
-	int num[10];
-	int n=statistics(arr, num);
-	printf("n=%d\n", n);
-	for (int i = 0; i < n; i++)
-	{
-		printf("%d ", num[i]);
-	}
+	char qian[1000];
+	char* p = qian;
+	int n = 0;
+	scanf("%d", &n);
+	char* pk = my_alloc(p, n);
+	if (pk == NULL)
+		printf("order too much space\n");
+	else
+
 	return 0;
 }
