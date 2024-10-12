@@ -612,21 +612,24 @@
 //	printf("%s", month[i - 1]);
 //	return 0;
 //}
-char* my_alloc(char* p, int n)
+char* my_alloc(char* pk, int n)
 {
 	if (n >1000 )//sizeof(p) / sizeof(p[0])
 		return NULL;
 	else
 	{
 		*(p + n) = 'a';
-
+		*(p + n - 1) = 'b';
 		return p + n;
 	}
+}
+void my_free(char* p)
+{
+	p = NULL;
 }
 int main()
 {
 	char qian[1000];
-	char* p = qian;
 	int n = 0;
 	scanf("%d", &n);
 	char* pk = my_alloc(qian, n);
@@ -635,9 +638,10 @@ int main()
 	else
 	{
 		printf("%p\n%p\n", p, pk);
-		printf("%c\n", *pk);
+		printf("%c\n%c\n", *pk, *(pk - 1));
 	}
-	//my_free(pk);
-
+	my_free(pk);
+	*pk = 'a';
+	printf("%c\n", *pk);
 	return 0;
 }
