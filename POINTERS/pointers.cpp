@@ -612,36 +612,54 @@
 //	printf("%s", month[i - 1]);
 //	return 0;
 //}
-char* my_alloc(char* pk, int n)
+//#define newsize 1000
+//char newbuf[newsize];
+//char* newp = newbuf;
+//char* my_alloc(char* pk, int n)
+//{
+//	if (n >1000 )//sizeof(p) / sizeof(p[0])
+//		return NULL;
+//	else
+//	{
+//		newp = pk + n;
+//		*(newp-n) = 'a';
+//		*(newp+1-n) = 'b';
+//		*(newp) = 'z';
+//		return newp- n;
+//	}
+//}
+//void my_free(char* p)//free(n)
+//{
+//	if (p >= newbuf && p < newbuf + 1000)
+//		newp = p;
+//}
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	char* pk = my_alloc(newbuf, n-1);
+//	if (pk == NULL)
+//		printf("order too much space\n");
+//	else
+//	{
+//		printf("%c\n%c\n%c\n", pk[0], pk[1], pk[n-1]); //alloc(n);
+//	}
+//	my_free(pk);
+//	return 0;
+//}
+int cmp(const void* p1,const void* p2)
 {
-	if (n >1000 )//sizeof(p) / sizeof(p[0])
-		return NULL;
-	else
-	{
-		*(p + n) = 'a';
-		*(p + n - 1) = 'b';
-		return p + n;
-	}
-}
-void my_free(char* p)
-{
-	p = NULL;
+	return strcmp((char*)p1, (char*)p2);
 }
 int main()
 {
-	char qian[1000];
-	int n = 0;
-	scanf("%d", &n);
-	char* pk = my_alloc(qian, n);
-	if (pk == NULL)
-		printf("order too much space\n");
-	else
+	const char* arr[5] = { "follow","basic","great","fortran","computer" };
+	const char** p = arr;
+	qsort(p,5,sizeof(*(p+4)),cmp);
+	int i = 0;
+	for (i = 0; i < 5; i++)
 	{
-		printf("%p\n%p\n", p, pk);
-		printf("%c\n%c\n", *pk, *(pk - 1));
+		printf("%s\n", *(p+i));
 	}
-	my_free(pk);
-	*pk = 'a';
-	printf("%c\n", *pk);
 	return 0;
 }
