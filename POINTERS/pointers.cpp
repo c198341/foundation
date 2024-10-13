@@ -647,19 +647,33 @@
 //	my_free(pk);
 //	return 0;
 //}
-int cmp(const void* p1,const void* p2)
+//int cmp(const void* p1,const void* p2)
+//{
+//	return strcmp(*(char**)p1, *(char**)p2);
+//}
+//int main()
+//{
+//	const char* arr[5] = { "follow","basic","great","fortran","computer" };
+//	const char** p = arr;
+//	qsort(p,5,sizeof(arr[4]),cmp);
+//	int i = 0;
+//	for (i = 0; i < 5; i++)
+//	{
+//		printf("%s\n", *(p+i));
+//	}
+//	return 0;
+//}
+//
+struct when
 {
-	return strcmp((char*)p1, (char*)p2);
-}
+	int year;
+	int month;
+	int day;
+};
 int main()
 {
-	const char* arr[5] = { "follow","basic","great","fortran","computer" };
-	const char** p = arr;
-	qsort(p,5,sizeof(*(p+4)),cmp);
-	int i = 0;
-	for (i = 0; i < 5; i++)
-	{
-		printf("%s\n", *(p+i));
-	}
+	struct when w;
+	scanf("%d %d %d", &w.year, &w.month, &w.day);
+
 	return 0;
 }
