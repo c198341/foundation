@@ -670,10 +670,15 @@ struct when
 	int month;
 	int day;
 };
+int days(struct when w)
+{
+
+}
 int main()
 {
 	struct when w;
 	scanf("%d %d %d", &w.year, &w.month, &w.day);
-
+	int ret=days(w);
+	printf("%d\n", ret);
 	return 0;
 }
