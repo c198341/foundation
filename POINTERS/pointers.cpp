@@ -670,9 +670,31 @@ struct when
 	int month;
 	int day;
 };
+int leapyear(int w)
+{
+	if ((w % 4 == 0 && w % 100 != 0) || (w % 400 == 0))
+		return 1;
+	else
+		return 0;
+}
 int days(struct when w)
 {
-
+	int i = 1;
+	int ret = 0;
+	int ms[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	for (i = 1; i < w.month; i++)
+	{
+		ret = ret + ms[i-1];
+	}
+	if (leapyear(w.year))
+	{
+		if (w.month<=2)
+			return ret+w.day;
+		else
+			return ret +1+ w.day;
+	}
+	else
+		return ret + w.day;
 }
 int main()
 {
