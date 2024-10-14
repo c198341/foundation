@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#pragma warning(once:4996)
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -664,43 +665,124 @@
 //	return 0;
 //}
 //
-struct when
+//struct when
+//{
+//	int year;
+//	int month;
+//	int day;
+//};
+//int leapyear(int w)
+//{
+//	if ((w % 4 == 0 && w % 100 != 0) || (w % 400 == 0))
+//		return 1;
+//	else
+//		return 0;
+//}
+//int days(struct when w)
+//{
+//	int i = 1;
+//	int ret = 0;
+//	int ms[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	for (i = 1; i < w.month; i++)
+//	{
+//		ret = ret + ms[i-1];
+//	}
+//	if (leapyear(w.year))
+//	{
+//		if (w.month<=2)
+//			return ret+w.day;
+//		else
+//			return ret +1+ w.day;
+//	}
+//	else
+//		return ret + w.day;
+//}
+//int main()
+//{
+//	struct when w;
+//	scanf("%d %d %d", &w.year, &w.month, &w.day);
+//	int ret=days(w);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//struct stu
+//{
+//	int num;
+//	char name[3];
+//	double score;
+//};
+//void my_print(struct stu* s,int n)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		printf("%d %s %lf\n", s[i].num, s[i].name, s[i].score);
+//	}
+//}
+//void my_input(struct stu* s, int n)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d %s %lf", &s[i].num, &s[i].name, &s[i].score);
+//	}
+//}
+//int main()
+//{
+//	struct stu s[3];// = { {10,"zh",90.0},{11,"qi",45.0},{12,"su",89.5} };
+//	my_input(s, 3);
+//	my_print(s,sizeof(s)/sizeof(s[0]));
+//	return 0;
+//}
+struct stu
 {
-	int year;
-	int month;
-	int day;
+	int num;
+	char name[3];
+	double chinese;
+	double math;
+	double english;
 };
-int leapyear(int w)
+void my_print(struct stu* s, int n)
 {
-	if ((w % 4 == 0 && w % 100 != 0) || (w % 400 == 0))
-		return 1;
-	else
-		return 0;
+	int i = 0;
+	double ret=0;
+	for (i = 0; i < n; i++)
+	{
+		ret = ret + s[i].chinese;
+	}
+	printf("avg of chinese=%lf\n", ret / 5);
+	ret = 0;
+	for (i = 0; i < n; i++)
+	{
+		ret = ret + s[i].math;
+	}
+	printf("avg of math=%lf\n", ret / 5);
+	ret = 0;
+	for (i = 0; i < n; i++)
+	{
+		ret = ret + s[i].english;
+	}
+	printf("avg of english=%lf\n", ret / 5);
+	struct stu* p = &s[0];
+	for (i = 0; i < 5; i++)
+	{
+		if (p[0].chinese + p[0].math + p[0].english < s[i].chinese + s[i].math + s[i].english)
+			p = &s[i];
+	}
+	printf("num=%d name=%s chinese=%lf math=%lf english=%lf ave=%lf\n",p->num,p->name,p->chinese,p->math,p->english, (p->chinese+ p->math+ p->english)/3);
 }
-int days(struct when w)
+void my_input(struct stu* s, int n)
 {
-	int i = 1;
-	int ret = 0;
-	int ms[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
-	for (i = 1; i < w.month; i++)
+	int i = 0;
+	for (i = 0; i < n; i++)
 	{
-		ret = ret + ms[i-1];
+		scanf("%d %s %lf %lf %lf", &s[i].num, &s[i].name, &s[i].chinese,&s[i].math,&s[i].english);
 	}
-	if (leapyear(w.year))
-	{
-		if (w.month<=2)
-			return ret+w.day;
-		else
-			return ret +1+ w.day;
-	}
-	else
-		return ret + w.day;
 }
 int main()
 {
-	struct when w;
-	scanf("%d %d %d", &w.year, &w.month, &w.day);
-	int ret=days(w);
-	printf("%d\n", ret);
+	struct stu s[5];// = { {10,"zh",90.0},{11,"qi",45.0},{12,"su",89.5} };
+	my_input(s, 5);
+	my_print(s, sizeof(s) / sizeof(s[0]));
 	return 0;
 }
