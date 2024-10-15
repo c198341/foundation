@@ -734,55 +734,59 @@
 //	my_print(s,sizeof(s)/sizeof(s[0]));
 //	return 0;
 //}
-struct stu
-{
-	int num;
-	char name[3];
-	double chinese;
-	double math;
-	double english;
-};
-void my_print(struct stu* s, int n)
-{
-	int i = 0;
-	double ret=0;
-	for (i = 0; i < n; i++)
-	{
-		ret = ret + s[i].chinese;
-	}
-	printf("avg of chinese=%lf\n", ret / 5);
-	ret = 0;
-	for (i = 0; i < n; i++)
-	{
-		ret = ret + s[i].math;
-	}
-	printf("avg of math=%lf\n", ret / 5);
-	ret = 0;
-	for (i = 0; i < n; i++)
-	{
-		ret = ret + s[i].english;
-	}
-	printf("avg of english=%lf\n", ret / 5);
-	struct stu* p = &s[0];
-	for (i = 0; i < 5; i++)
-	{
-		if (p[0].chinese + p[0].math + p[0].english < s[i].chinese + s[i].math + s[i].english)
-			p = &s[i];
-	}
-	printf("num=%d name=%s chinese=%lf math=%lf english=%lf ave=%lf\n",p->num,p->name,p->chinese,p->math,p->english, (p->chinese+ p->math+ p->english)/3);
-}
-void my_input(struct stu* s, int n)
-{
-	int i = 0;
-	for (i = 0; i < n; i++)
-	{
-		scanf("%d %s %lf %lf %lf", &s[i].num, &s[i].name, &s[i].chinese,&s[i].math,&s[i].english);
-	}
-}
+//struct stu
+//{
+//	int num;
+//	char name[3];
+//	double chinese;
+//	double math;
+//	double english;
+//};
+//void my_print(struct stu* s, int n)
+//{
+//	int i = 0;
+//	double ret=0;
+//	for (i = 0; i < n; i++)
+//	{
+//		ret = ret + s[i].chinese;
+//	}
+//	printf("avg of chinese=%lf\n", ret / 5);
+//	ret = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		ret = ret + s[i].math;
+//	}
+//	printf("avg of math=%lf\n", ret / 5);
+//	ret = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		ret = ret + s[i].english;
+//	}
+//	printf("avg of english=%lf\n", ret / 5);
+//	struct stu* p = &s[0];
+//	for (i = 0; i < 5; i++)
+//	{
+//		if (p[0].chinese + p[0].math + p[0].english < s[i].chinese + s[i].math + s[i].english)
+//			p = &s[i];
+//	}
+//	printf("num=%d name=%s chinese=%lf math=%lf english=%lf ave=%lf\n",p->num,p->name,p->chinese,p->math,p->english, (p->chinese+ p->math+ p->english)/3);
+//}
+//void my_input(struct stu* s, int n)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf("%d %s %lf %lf %lf", &s[i].num, &s[i].name, &s[i].chinese,&s[i].math,&s[i].english);
+//	}
+//}
+//int main()
+//{
+//	struct stu s[5];// = { {10,"zh",90.0},{11,"qi",45.0},{12,"su",89.5} };
+//	my_input(s, 5);
+//	my_print(s, sizeof(s) / sizeof(s[0]));
+//	return 0;
+//}
 int main()
 {
-	struct stu s[5];// = { {10,"zh",90.0},{11,"qi",45.0},{12,"su",89.5} };
-	my_input(s, 5);
-	my_print(s, sizeof(s) / sizeof(s[0]));
-	return 0;
+
 }
