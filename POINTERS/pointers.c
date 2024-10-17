@@ -786,7 +786,3 @@
 //	my_print(s, sizeof(s) / sizeof(s[0]));
 //	return 0;
 //}
-int main()
-{
-
-}
