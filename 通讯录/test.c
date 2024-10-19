@@ -1,6 +1,6 @@
-//测试功能
 #define _CRT_SECURE_NO_WARNINGS
-#pragma warning(disable:4996) 
+//测试功能
+#pragma warning(disable:6031) 
 #include "contact.h"
 void menu()
 {
@@ -14,6 +14,8 @@ void menu()
 int main()
 {
 	int input = 0;
+	struct Contact con;
+	InitContact(&con);
 
 	do
 	{
@@ -22,19 +24,24 @@ int main()
 		scanf("%d", &input);
 		switch(input)
 		{
-			case 1:
+			case ADD:
+				AddContact(&con);
 				break;
-			case 2:
+			case DELETE:
+				DelContact(&con);
 				break;
-			case 3:
+			case SEARCH:
+				SearchContact(&con);
 				break;
-			case 4:
+			case MODIFY:
+				ModifyContact(&con);
 				break;
-			case 5:
+			case SHOW:
+				ShowContact(&con);
 				break;
-			case 6:
+			case SORT:
 				break;
-			case 0:
+			case EXIT:
 				printf("退出程序\n");
 				break;
 			default :
