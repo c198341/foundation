@@ -99,6 +99,14 @@ void ModifyContact(struct Contact* ps)
 		scanf("%s", ps->data[pos].addr);
 	}
 }
+int sort_by_name(const void* ps1, const void* ps2)
+{
+	return strcmp(((struct PeoInfo*)ps1)->name, ((struct PeoInfo*)ps2)->name);
+}
+void SortContact(struct Contact* ps)
+{
+	qsort(ps->data,ps->size, sizeof(struct PeoInfo),sort_by_name);
+}
 void ShowContact(const struct Contact* ps)
 {
 	if (ps->size == 0)

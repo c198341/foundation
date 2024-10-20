@@ -3,6 +3,7 @@
 #pragma warning(disable:6031)  
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define MAX 1000
 #define MAX_NAME 20
 #define MAX_SEX 5
@@ -37,3 +38,4 @@ void ShowContact(const struct Contact* ps);
 void DelContact(struct Contact* ps);
 void SearchContact(const struct Contact* ps);
 void ModifyContact(struct Contact* ps);
+void SortContact(struct Contact* ps);
