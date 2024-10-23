@@ -56,7 +56,14 @@
 //}
 void bin(int value)
 {
+	if (value / 2 == 0)
+		printf("%d", value % 2);
+	else
 
+	while (value / 2 != 0)
+	{
+		printf("")
+	}
 }
 void getbits(int value, int n1, int n2)
 {
