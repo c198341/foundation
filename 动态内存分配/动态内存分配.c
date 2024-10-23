@@ -54,27 +54,24 @@
 //	p = NULL;
 //	return 0;
 //}
-void bin(int value)
-{
-	if (value / 2 == 0)
-		printf("%d", value % 2);
-	else
-
-	while (value / 2 != 0)
-	{
-		printf("")
-	}
-}
-void getbits(int value, int n1, int n2)
-{
-
-}
+//void getbits(int value, int n1, int n2)
+//{
+//	if(n1<=n2)
+//		printf("%o\n", (value >> (n1)) & (~(~0 << (n2 - n1 + 1))));
+//}
+//int main()
+//{
+//	unsigned int value;
+//	int n1,n2;
+//	scanf("%o", &value);
+//	scanf("%d %d", &n1, &n2);
+//	getbits(value, n1, n2);
+//	return 0;
+//}
 int main()
 {
-	int value,n1,n2;
-	scanf("%o", &value);
-	bin(value);
-	scanf("%d %d", &n1, &n2);
-	getbits(value, n1, n2);
+	unsigned int v;
+	scanf("%d", &v);
+	printf("%d\n", v & 43690);//https://blog.csdn.net/weixin_30673611/article/details/95099538?ops_request_misc=&request_id=&biz_id=102&utm_term=%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%8C%E5%AF%B9%E4%B8%80%E4%B8%AA16%E4%BD%8D%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%8F%96%E5%87%BA%E5%AE%83%E7%9A%84%E5%A5%87%E6%95%B0%E4%BD%8D&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-95099538.142^v100^pc_search_result_base7&spm=1018.2226.3001.4187
 	return 0;
 }
