@@ -88,19 +88,55 @@
 //	printf("%o\n", v);//https://blog.csdn.net/weixin_30673611/article/details/95099538?ops_request_misc=&request_id=&biz_id=102&utm_term=%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%8C%E5%AF%B9%E4%B8%80%E4%B8%AA16%E4%BD%8D%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E5%8F%96%E5%87%BA%E5%AE%83%E7%9A%84%E5%A5%87%E6%95%B0%E4%BD%8D&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-95099538.142^v100^pc_search_result_base7&spm=1018.2226.3001.4187
 //	return 0;
 //}
-
-int main()
+//void to_luoji(int* a)
+//{
+//	*a = ((*a)>>1)^(1<<31);
+//}
+//void to_suanshu(int* a)
+//{
+//	*a= ((*a)>>1) | (1 << 31);
+//}
+//int main()
+//{
+//	int a = -1;
+//	printf("%d\n", a);
+//	printf("%d\n", (a >> 1));
+//	if ((a>>1) ==-1)
+//	{
+//		printf("À„ ı”““∆\n");
+//		to_luoji(&a); 
+//		printf("%d\n", a);
+//	}
+//	else
+//	{
+//		printf("¬ﬂº≠”““∆\n");
+//		to_suanshu(&a);
+//		printf("%d\n", a);
+//	}
+//	return 0;
+//}
+int move(int value, int n)
 {
-	signed int a = -1;
-	if (((a >> 15) & 1) == 1)
+	int a, b;
+	if (n >= 0)
 	{
-		printf("À„ ı”““∆\n");
-		to_luoji(a);
+		a = value << (32 - n);
+		b = value >> n;
+		return (a | b);
 	}
 	else
 	{
-		printf("¬ﬂº≠”““∆\n");
-		to_suanshu(a);
+		
+		a = value >> (32 - (-n));
+		b = value << (-n);
+		return (a | b);
 	}
+}
+int main()
+{
+	int value,n;
+	scanf("%o %d",&value, &n);
+	value=move(value, n);
+	printf("%o\n", value);
 	return 0;
 }
