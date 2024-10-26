@@ -115,9 +115,9 @@
 //	}
 //	return 0;
 //}
-int move(int value, int n)
+unsigned int move(unsigned int value, int n)
 {
-	int a, b;
+	unsigned int a, b;
 	if (n >= 0)
 	{
 		a = value << (32 - n);
@@ -134,7 +134,9 @@ int move(int value, int n)
 }
 int main()
 {
-	int value,n;
+	unsigned int value;
+	int n;
+	//printf("%d\n", sizeof(int));
 	scanf("%o %d",&value, &n);
 	value=move(value, n);
 	printf("%o\n", value);
