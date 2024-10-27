@@ -115,18 +115,17 @@
 //	}
 //	return 0;
 //}
-unsigned int move(unsigned int value, int n)
+unsigned  int move(unsigned int value, int n)
 {
-	unsigned int a, b;
+	unsigned  int a, b;
 	if (n >= 0)
 	{
 		a = value << (32 - n);
 		b = value >> n;
-		return (a | b);
+		return (a|b);
 	}
 	else
 	{
-		
 		a = value >> (32 - (-n));
 		b = value << (-n);
 		return (a | b);
@@ -134,11 +133,11 @@ unsigned int move(unsigned int value, int n)
 }
 int main()
 {
-	unsigned int value;
+	unsigned  int value;
 	int n;
-	//printf("%d\n", sizeof(int));
-	scanf("%o %d",&value, &n);
+	//printf("%d\n", sizeof(unsigned short int));
+	scanf("%u %d",&value,&n);
 	value=move(value, n);
-	printf("%o\n", value);
+	printf("%u\n", value);
 	return 0;
 }
