@@ -141,107 +141,143 @@
 //	printf("%u\n", value);
 //	return 0;
 //}
-void ToFanMa(int a)
-{
-	int i,j=0;
-	int b[32];
-	if (a >= 0)
-	{
-		i = 31;
-		for (i = 31; i >= 0; i--)
-		{
-			b[i] = a % 2;
-			a = a / 2;
-		}
-		for (i = 0; i < 32; i++)
-		{
-			if (j % 4==0&&j!=0)
-			{
-				printf(" ");
-				printf("%d", b[i]);
-				j++;
-			}
-			else
-			{
-				printf("%d", b[i]);
-				j++;
-			}
-		}
-		printf("\n");
-	}
-	else
-	{
-		b[0] = 1;
-		i = 31;
-		for (i = 31; i >= 1; i--)
-		{
-			b[i] = a % 2;
-			a = a / 2;
-		}
-		for (i = 1; i <= 31; i++)
-		{
-			if (b[i] == 0)
-				b[i] = 1;
-			else
-				b[i] = 0;
-		}
-		b[31] = b[31] + 1;
-		if (b[31] == 2)
-		{
-			for (i = 31; i >= 2; i--)
-			{
-				if (b[i] == 2)
-				{
-					b[i] = 0;
-					b[i - 1] = b[i - 1] + 1;
-				}
-			}
-		}
-		if (b[1] == 2)
-			b[1] = 0;
-		for (i = 0; i < 32; i++)
-		{
-			if (j % 4 == 0 && j != 0)
-			{
-				printf(" ");
-				printf("%d", b[i]);
-				j++;
-			}
-			else
-			{
-				printf("%d", b[i]);
-				j++;
-			}
-		}
-		printf("\n");
-	}
-}
-void ToFanMa1(int a)
-{
-	int i,j=0;
-	if (a >= 0)
-	{
-		for (i = 31; i >= 0; i--)
-		{
-			if (j % 4 == 0 && j != 0)
-			{
-				printf(" ");
-				printf("%d", (a >> i) &1);
-				j++;
-			}
-		}
-		printf("\n");
-	}
-	else
-	{
-		
-	}
-}
+//void ToFanMa(int a)
+//{
+//	int i,j=0;
+//	int b[32];
+//	if (a >= 0)
+//	{
+//		i = 31;
+//		for (i = 31; i >= 0; i--)
+//		{
+//			b[i] = a % 2;
+//			a = a / 2;
+//		}
+//		for (i = 0; i < 32; i++)
+//		{
+//			if (j % 4==0&&j!=0)
+//			{
+//				printf(" ");
+//				printf("%d", b[i]);
+//				j++;
+//			}
+//			else
+//			{
+//				printf("%d", b[i]);
+//				j++;
+//			}
+//		}
+//		printf("\n");
+//	}
+//	else
+//	{
+//		b[0] = 1;
+//		i = 31;
+//		for (i = 31; i >= 1; i--)
+//		{
+//			b[i] = a % 2;
+//			a = a / 2;
+//		}
+//		for (i = 1; i <= 31; i++)
+//		{
+//			if (b[i] == 0)
+//				b[i] = 1;
+//			else
+//				b[i] = 0;
+//		}
+//		b[31] = b[31] + 1;
+//		if (b[31] == 2)
+//		{
+//			for (i = 31; i >= 2; i--)
+//			{
+//				if (b[i] == 2)
+//				{
+//					b[i] = 0;
+//					b[i - 1] = b[i - 1] + 1;
+//				}
+//			}
+//		}
+//		if (b[1] == 2)
+//			b[1] = 0;
+//		for (i = 0; i < 32; i++)
+//		{
+//			if (j % 4 == 0 && j != 0)
+//			{
+//				printf(" ");
+//				printf("%d", b[i]);
+//				j++;
+//			}
+//			else
+//			{
+//				printf("%d", b[i]);
+//				j++;
+//			}
+//		}
+//		printf("\n");
+//	}
+//}
+//void ToFanMa1(int a)
+//{
+//	int i,j=0;
+//	if (a >= 0)
+//	{
+//		for (i = 31; i >= 0; i--)
+//		{
+//			if (j % 4 == 0 && j != 0)
+//			{
+//				printf(" ");
+//				printf("%d", (a >> i) &1);
+//				j++;
+//			}
+//			else
+//			{
+//				printf("%d", (a >> i) & 1);
+//				j++;
+//			}
+//		}
+//		printf("\n");
+//	}
+//	else
+//	{
+//		a = abs(a);
+//		int b=0;
+//		for (i = 31; i >= 1; i--)
+//		{
+//			b=b|((a % 2)<<(31-i));
+//			a = a / 2;
+//		}
+//		for (i = 30; i >= 0; i--)
+//		{
+//			b = b ^ (1 << i);
+//		}
+//		b = b + 1;
+//		b = b | (1 << 31);
+//		for (i = 31; i >= 0; i--)
+//		{
+//			if (j % 4 == 0 && j != 0)
+//			{
+//				printf(" ");
+//				printf("%d", (b >> i) & 1);
+//				j++;
+//			}
+//			else
+//			{
+//				printf("%d", (b >> i) & 1);
+//				j++;
+//			}
+//		}
+//		printf("\n");
+//	}
+//}
+//int main()
+//{
+//	int a;
+//	scanf("%d", &a);
+//	ToFanMa(a);
+//	ToFanMa1(a);
+//	return 0;
+//}
 int main()
 {
-	int a;
-	scanf("%d", &a);
-	ToFanMa(a);
-	ToFanMa1(a);
-	return 0;
+
 }
