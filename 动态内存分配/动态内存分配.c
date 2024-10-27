@@ -115,29 +115,133 @@
 //	}
 //	return 0;
 //}
-unsigned  int move(unsigned int value, int n)
+//unsigned  int move(unsigned int value, int n)
+//{
+//	unsigned  int a, b;
+//	if (n >= 0)
+//	{
+//		a = value << (32 - n);
+//		b = value >> n;
+//		return (a|b);
+//	}
+//	else
+//	{
+//		a = value >> (32 - (-n));
+//		b = value << (-n);
+//		return (a | b);
+//	}
+//}
+//int main()
+//{
+//	unsigned  int value;
+//	int n;
+//	//printf("%d\n", sizeof(unsigned short int));
+//	scanf("%u %d",&value,&n);
+//	value=move(value, n);
+//	printf("%u\n", value);
+//	return 0;
+//}
+void ToFanMa(int a)
 {
-	unsigned  int a, b;
-	if (n >= 0)
+	int i,j=0;
+	int b[32];
+	if (a >= 0)
 	{
-		a = value << (32 - n);
-		b = value >> n;
-		return (a|b);
+		i = 31;
+		for (i = 31; i >= 0; i--)
+		{
+			b[i] = a % 2;
+			a = a / 2;
+		}
+		for (i = 0; i < 32; i++)
+		{
+			if (j % 4==0&&j!=0)
+			{
+				printf(" ");
+				printf("%d", b[i]);
+				j++;
+			}
+			else
+			{
+				printf("%d", b[i]);
+				j++;
+			}
+		}
+		printf("\n");
 	}
 	else
 	{
-		a = value >> (32 - (-n));
-		b = value << (-n);
-		return (a | b);
+		b[0] = 1;
+		i = 31;
+		for (i = 31; i >= 1; i--)
+		{
+			b[i] = a % 2;
+			a = a / 2;
+		}
+		for (i = 1; i <= 31; i++)
+		{
+			if (b[i] == 0)
+				b[i] = 1;
+			else
+				b[i] = 0;
+		}
+		b[31] = b[31] + 1;
+		if (b[31] == 2)
+		{
+			for (i = 31; i >= 2; i--)
+			{
+				if (b[i] == 2)
+				{
+					b[i] = 0;
+					b[i - 1] = b[i - 1] + 1;
+				}
+			}
+		}
+		if (b[1] == 2)
+			b[1] = 0;
+		for (i = 0; i < 32; i++)
+		{
+			if (j % 4 == 0 && j != 0)
+			{
+				printf(" ");
+				printf("%d", b[i]);
+				j++;
+			}
+			else
+			{
+				printf("%d", b[i]);
+				j++;
+			}
+		}
+		printf("\n");
+	}
+}
+void ToFanMa1(int a)
+{
+	int i,j=0;
+	if (a >= 0)
+	{
+		for (i = 31; i >= 0; i--)
+		{
+			if (j % 4 == 0 && j != 0)
+			{
+				printf(" ");
+				printf("%d", (a >> i) &1);
+				j++;
+			}
+		}
+		printf("\n");
+	}
+	else
+	{
+		
 	}
 }
 int main()
 {
-	unsigned  int value;
-	int n;
-	//printf("%d\n", sizeof(unsigned short int));
-	scanf("%u %d",&value,&n);
-	value=move(value, n);
-	printf("%u\n", value);
+	int a;
+	scanf("%d", &a);
+	ToFanMa(a);
+	ToFanMa1(a);
 	return 0;
 }
