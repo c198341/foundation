@@ -277,7 +277,3 @@
 //	ToFanMa1(a);
 //	return 0;
 //}
-int main()
-{
-
-}
