@@ -16,7 +16,6 @@ int main()
 	int input = 0;
 	struct Contact con;
 	InitContact(&con);
-
 	do
 	{
 		menu();

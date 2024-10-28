@@ -4,14 +4,25 @@
 #pragma warning(disable:6031) 
 void InitContact(struct Contact* ps)
 {
-	memset(ps->data, 0,sizeof(ps->data));
-	ps->size = 0;
+	ps->data=(PeoInfo*)malloc(3*sizeof(PeoInfo));
+	if (p == NULL)
+	{
+		return;
+	}
+	ps = p;
+	printf("扩容成功！\n");
 }
 void AddContact(struct Contact* ps)
 {
-	if (ps->size == MAX)
+	Contact* p;
+	if (ps->size == ps->capability)
 	{
-		printf("通讯录已满");
+		p=realloc(ps, 5 * sizeof(PeoInfo));
+		if (p == NULL)
+		{
+			return;
+		}
+		ps = p;
 	}
 	else
 	{
