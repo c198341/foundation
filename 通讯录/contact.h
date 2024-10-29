@@ -9,6 +9,7 @@
 #define MAX_SEX 5
 #define MAX_TELE 12
 #define MAX_ADDR 30
+#define ContactSize 3
 enum Option
 {
 	EXIT,

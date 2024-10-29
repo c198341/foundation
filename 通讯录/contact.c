@@ -4,41 +4,44 @@
 #pragma warning(disable:6031) 
 void InitContact(struct Contact* ps)
 {
-	ps->data=(PeoInfo*)malloc(3*sizeof(PeoInfo));
-	if (p == NULL)
+	ps->data=(PeoInfo*)malloc(ContactSize*sizeof(PeoInfo));
+	if (ps->data == NULL)
 	{
 		return;
 	}
-	ps = p;
-	printf("扩容成功！\n");
+	ps->size = 0;
+	ps->capability = ContactSize;
 }
-void AddContact(struct Contact* ps)
+void CheckContact(Contact* ps)
 {
-	Contact* p;
+	PeoInfo* ptr;
 	if (ps->size == ps->capability)
 	{
-		p=realloc(ps, 5 * sizeof(PeoInfo));
-		if (p == NULL)
+		ptr = (PeoInfo*)realloc(ps->data, (ps->capability + 2) * sizeof(PeoInfo));
+		if (ptr == NULL)
 		{
 			return;
 		}
-		ps = p;
+		ps->data = ptr;
+		ps->capability += 2;
+		printf("增容成功\n");
 	}
-	else
-	{
-		printf("请输入名字:>\n");
-		scanf("%s", ps->data[ps->size].name);
-		printf("请输入年龄:>\n");
-		scanf("%d", &(ps->data[ps->size].age));
-		printf("请输入性别:>\n");
-		scanf("%s", ps->data[ps->size].sex);
-		printf("请输入电话:>\n");
-		scanf("%s", ps->data[ps->size].tele);
-		printf("请输入地址:>\n");
-		scanf("%s", ps->data[ps->size].addr);
-		ps->size++;
-		printf("添加成功\n");
-	}
+}
+void AddContact(struct Contact* ps)
+{
+	CheckContact(ps);
+	printf("请输入名字:>\n");
+	scanf("%s", ps->data[ps->size].name);
+	printf("请输入年龄:>\n");
+	scanf("%d", &(ps->data[ps->size].age));
+	printf("请输入性别:>\n");
+	scanf("%s", ps->data[ps->size].sex);
+	printf("请输入电话:>\n");
+	scanf("%s", ps->data[ps->size].tele);
+	printf("请输入地址:>\n");
+	scanf("%s", ps->data[ps->size].addr);
+	ps->size++;
+	printf("添加成功\n");
 }
 static int FindContact(const struct Contact* ps, char* name)
 {
