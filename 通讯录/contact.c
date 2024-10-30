@@ -139,3 +139,8 @@ void ShowContact(const struct Contact* ps)
 		}
 	}
 }
+void DestoryContact(Contact* ps)
+{
+	free(ps->data);
+	ps->data = NULL;
+}

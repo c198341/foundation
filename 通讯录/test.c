@@ -43,6 +43,7 @@ int main()
 				break;
 			case EXIT:
 				printf("ÍË³ö³ÌĞò\n");
+				DestoryContact(&con);
 				break;
 			default :
 				printf("Ñ¡Ôñ´íÎó\n");
