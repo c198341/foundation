@@ -2,45 +2,6 @@
 //实现函数功能
 #include "contact.h"
 #pragma warning(disable:6031) 
-void InitContact(struct Contact* ps)
-{
-	LoadContact(ps);
-	ps->data=(PeoInfo*)malloc(ContactSize*sizeof(PeoInfo));
-	if (ps->data == NULL)
-	{
-		return;
-	}
-	ps->size = 0;
-	ps->capability = ContactSize;
-}
-void LoadContact(Contact* ps)
-{
-	FILE* pfread = fopen("contact.txt", "r");
-	if (pfread == NULL)
-	{
-		printf("%s\n", strerror(errno));
-		return;
-	}
-
-	fclose(pfread);
-	pfread = NULL;
-}
-void SaveContact(Contact* ps)
-{
-	FILE* pfwrite = fopen("contact.txt", "wb");
-	if (pfwrite == NULL)
-	{
-		printf("%s\n", strerror(errno));
-		return;
-	}
-	int i = 0;
-	for (i = 0; i < ps->size; i++)
-	{
-		ps->data[i]=fwrite(pfwrite, sizeof(PeoInfo), 1, pfwrite);
-	}
-	fclose(pfwrite);
-	pfwrite = NULL;
-}
 void CheckContact(Contact* ps)
 {
 	PeoInfo* ptr;
@@ -56,6 +17,52 @@ void CheckContact(Contact* ps)
 		printf("增容成功\n");
 	}
 }
+void LoadContact(Contact* ps)
+{
+	PeoInfo tmp = {0};
+	FILE* pfread = fopen("contact.txt", "rb");
+	if (pfread == NULL)
+	{
+		printf("LoadContact:%s\n", strerror(errno));
+		return;
+	}
+	while (fread(&tmp, sizeof(PeoInfo), 1, pfread))
+	{
+		CheckContact(ps);
+		ps->data[ps->size] = tmp;
+		ps->size++;
+	}
+	fclose(pfread);
+	pfread = NULL;
+}
+void InitContact(struct Contact* ps)
+{
+	ps->data=(PeoInfo*)malloc(ContactSize*sizeof(PeoInfo));
+	if (ps->data == NULL)
+	{
+		return;
+	}
+	ps->size = 0;
+	ps->capability = ContactSize;
+	LoadContact(ps);
+}
+void SaveContact(Contact* ps)
+{
+	FILE* pfwrite = fopen("contact.txt", "wb");
+	if (pfwrite == NULL)
+	{
+		printf("SaveContact:%s\n", strerror(errno));
+		return;
+	}
+	int i = 0;
+	for (i = 0; i < ps->size; i++)
+	{
+		fwrite(&(ps->data[i]), sizeof(PeoInfo), 1, pfwrite);
+	}
+	fclose(pfwrite);
+	pfwrite = NULL;
+}
+
 void AddContact(struct Contact* ps)
 {
 	CheckContact(ps);
