@@ -1,2 +1,9 @@
-﻿  last=begin.c
-  文件和预处理.vcxproj -> D:\驱动精灵搬家目录\foundation\文件和预处理\Debug\文件和预处理.exe
+﻿  last==begin.c
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(57,13): warning C4133: “函数”: 从“FILE *”到“char *”的类型不兼容
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(57,10): error C2198: “fgets”: 用于调用的参数太少
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(58,13): warning C4133: “函数”: 从“FILE *”到“const char *”的类型不兼容
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(58,10): error C2198: “fputs”: 用于调用的参数太少
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(62,13): warning C4133: “函数”: 从“FILE *”到“char *”的类型不兼容
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(62,10): error C2198: “fgets”: 用于调用的参数太少
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(63,13): warning C4133: “函数”: 从“FILE *”到“const char *”的类型不兼容
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(63,10): error C2198: “fputs”: 用于调用的参数太少
