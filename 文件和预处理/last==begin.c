@@ -35,32 +35,31 @@
 //}
 int main()
 {
-    char arr1[5];
-    char arr2[5];
-    FILE* pa = fopen("a", "w");
+    char arr[10];
+    FILE* pa = fopen("a.txt", "w");
     if (pa == NULL)
     {
-    printf("%s\n", strerror(errno));
-    return 0;
+        printf("%s\n", strerror(errno));
+        return 0;
     }
-    scanf("%s", arr1);
-    fwrite(arr1, sizeof(arr1), 1, pa);
-    FILE* pb = fopen("b", "w");
+    scanf("%s", arr);
+    fwrite(arr, sizeof(arr), 1, pa);
+    FILE* pb = fopen("b.txt", "w");
     if (pb == NULL)
     {
         printf("%s\n", strerror(errno));
         return 0;
     }
-    scanf("%s", arr2);
-    fwrite(arr2, sizeof(arr2), 1, pb);
-    FILE* pc = fopen("c", "w");
-    fgets(pa,5,pa);
-    fputs(pc);
+    scanf("%s", arr);
+    fwrite(arr, sizeof(arr), 1, pb);
+    FILE* pc = fopen("c.txt", "w");
+    //fputs(pa,pc);
+    fwrite(pa, sizeof(arr), 1, pc);
     fclose(pc);
     pc = NULL;
-    pc = fopen("c", "a");
-    fgets(pb);
-    fputs(pc);
+    pc = fopen("c.txt", "a");
+    //fputs(pb,pc);
+    fwrite(pb, sizeof(arr), 1, pc);
     fclose(pa);
     pa = NULL;
     fclose(pb);
