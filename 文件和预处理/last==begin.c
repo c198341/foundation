@@ -1,10 +1,10 @@
+#pragma warning(disable:6013)
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <ctype.h>
-#pragma warning(disable:6013)
 //int main()
 //{
 //    char arr[10];
@@ -85,7 +85,7 @@
 //}
 typedef struct score
 {
-	char num[4];
+	char num[10];
 	char name[10];
 	double chinese;
 	double math;
@@ -97,12 +97,20 @@ typedef struct stu
 }stu;
 int main()
 {
-	int i;
-	stu* p;
-	score* scores[5]=(score*)malloc(5*sizeof(score));
-	for(p->n=0;p->n<4;p->n++)
+	stu* pstu= (stu*)malloc(sizeof(stu));
+	score* sco = (score*)malloc(5*sizeof(score));
+	if (pstu == NULL)
 	{
-		scanf("%s %s %.1f %.1f", scores[p->n]);
+		printf("%s\n", strerror(errno));
+		return 0;
 	}
+	for(pstu->n=0;pstu->n<5;pstu->n++)
+	{
+		scanf("%s %s %lf %lf", pstu->sco[pstu->n].num,
+			                     pstu->sco[pstu->n].name,
+			                     &(pstu->sco[pstu->n].chinese),
+			                    &( pstu->sco[pstu->n].math ));
+	}
+
 	return 0;
 }
