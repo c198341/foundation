@@ -100,7 +100,7 @@ int main()
 	int i;
 	stu* p;
 	score* scores[5]=(score*)malloc(5*sizeof(score));
-	for(p->n=0;p->n<4;p-n++)
+	for(p->n=0;p->n<4;p->n++)
 	{
 		scanf("%s %s %.1f %.1f", scores[p->n]);
 	}
