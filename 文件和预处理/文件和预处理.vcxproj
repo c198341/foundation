@@ -21,11 +21,6 @@
   <ItemGroup>
     <ClCompile Include="last==begin.c" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="a.txt" />
-    <Text Include="b.txt" />
-    <Text Include="c.txt" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
