@@ -97,13 +97,15 @@ typedef struct stu
 }stu;
 int main()
 {
-	stu* pstu= (stu*)malloc(sizeof(stu));
-	score* sco = (score*)malloc(5*sizeof(score));
-	if (pstu == NULL)
+	stu con;
+	stu* pstu= &con;
+	score* ptr = (score*)malloc(5*sizeof(score));
+	if (ptr == NULL)
 	{
 		printf("%s\n", strerror(errno));
 		return 0;
 	}
+	pstu->sco = ptr;
 	for(pstu->n=0;pstu->n<5;pstu->n++)
 	{
 		scanf("%s %s %lf %lf", pstu->sco[pstu->n].num,
@@ -111,6 +113,27 @@ int main()
 			                     &(pstu->sco[pstu->n].chinese),
 			                    &( pstu->sco[pstu->n].math ));
 	}
-
+	double chinese_ave;
+	double chinese_sum=0;
+	int i = 0;
+	for (i = 0; i < pstu->n; i++)
+		chinese_sum += pstu->sco[i].chinese;
+	chinese_ave = chinese_sum / pstu->n;
+	double stu_ave[5];
+	for (i = 0; i < pstu->n; i++)
+	{
+		stu_ave[i] = ((pstu->sco[i].chinese) + (pstu->sco[i].math)) / 2;
+	}
+	FILE* pf = fopen("stud.txt", "w");
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	for (i = 0; i < pstu->n; i++)
+	{
+		fwrite(&(pstu->sco[i]), sizeof(score), 1, pf);
+		fprintf(pf, sizeof(score), 1, stdout);
+	}
 	return 0;
 }
