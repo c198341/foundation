@@ -83,57 +83,70 @@
 //    pc = NULL;
 //    return 0;
 //}
-typedef struct score
+struct score
 {
 	char num[10];
 	char name[10];
 	double chinese;
 	double math;
-}score;
-typedef struct stu
-{
-	int n;
-	score* sco;
-}stu;
+}s[3];
+//typedef struct stu
+//{
+//	int n;
+//	score* sco;
+//}stu;
 int main()
 {
-	stu con;
-	stu* pstu= &con;
-	score* ptr = (score*)malloc(5*sizeof(score));
-	if (ptr == NULL)
-	{
-		printf("%s\n", strerror(errno));
-		return 0;
-	}
-	pstu->sco = ptr;
-	for(pstu->n=0;pstu->n<5;pstu->n++)
-	{
-		scanf("%s %s %lf %lf", pstu->sco[pstu->n].num,
-			                     pstu->sco[pstu->n].name,
-			                     &(pstu->sco[pstu->n].chinese),
-			                    &( pstu->sco[pstu->n].math ));
-	}
-	double chinese_ave;
-	double chinese_sum=0;
+	FILE* pf = fopen("stud.txt", "r");
 	int i = 0;
-	for (i = 0; i < pstu->n; i++)
-		chinese_sum += pstu->sco[i].chinese;
-	chinese_ave = chinese_sum / pstu->n;
-	double stu_ave[5];
-	for (i = 0; i < pstu->n; i++)
+	for (i = 0; i < 3; i++)
 	{
-		stu_ave[i] = ((pstu->sco[i].chinese) + (pstu->sco[i].math)) / 2;
+		fread(&(s[i]), sizeof(struct score), 1, pf);
+		printf("%s %s %lf %lf\n", s[i].num,s[i].name, s[i].chinese, s[i].math);
+		//printf("%lf \n",stu_ave[i]);
 	}
-	FILE* pf = fopen("stud.txt", "w");
-	if (pf == NULL)
-	{
-		printf("%s\n", strerror(errno));
-		return 0;
-	}
-	for (i = 0; i < pstu->n; i++)
-	{
-		fwrite(&(pstu->sco[i]), sizeof(score), 1, pf);
-		fputs(pf,stdout);
-	}
+	fclose(pf);
+	pf = NULL;
 	return 0;
 }
+//int main()
+//{
+//	stu con;
+//	stu* pstu= &con;
+//	score* ptr = (score*)malloc(5*sizeof(score));
+//	if (ptr == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	pstu->sco = ptr;
+//	for(pstu->n=0;pstu->n<3;pstu->n++)
+//	{
+//		scanf("%s %s %lf %lf", pstu->sco[pstu->n].num,
+//			                     pstu->sco[pstu->n].name,
+//			                     &(pstu->sco[pstu->n].chinese),
+//			                    &(pstu->sco[pstu->n].math));
+//	}
+//	int i;
+//	double stu_ave[3];
+//	for (i = 0; i < pstu->n; i++)
+//	{
+//		stu_ave[i] = ((pstu->sco[i].chinese) + (pstu->sco[i].math)) / 2;
+//	}
+//	FILE* pf = fopen("stud.txt", "w");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	for (i = 0; i < pstu->n; i++)
+//	{
+//		fwrite(&(pstu->sco[i]), sizeof(score), 1, pf);
+//		fwrite(&stu_ave[i], sizeof(stu_ave[i]), 1, pf);
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	free(pstu->sco);
+//	pstu->sco = NULL;
+//	return 0;
+//}
