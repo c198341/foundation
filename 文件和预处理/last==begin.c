@@ -133,7 +133,7 @@ int main()
 	for (i = 0; i < pstu->n; i++)
 	{
 		fwrite(&(pstu->sco[i]), sizeof(score), 1, pf);
-		fprintf(pf, sizeof(score), 1, stdout);
+		fputs(pf,stdout);
 	}
 	return 0;
 }
