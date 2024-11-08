@@ -152,44 +152,63 @@ void my_sort()
 }
 int main()
 {
-	stu con;
-	stu* pstu= &con;
-	score* ptr = (score*)malloc(5*sizeof(score));
-	if (ptr == NULL)
-	{
-		printf("%s\n", strerror(errno));
-		return 0;
-	}
-	pstu->sco = ptr;
-	for(pstu->n=0;pstu->n<3;pstu->n++)
-	{
-		scanf("%s %s %lf %lf", pstu->sco[pstu->n].num,
-			                     pstu->sco[pstu->n].name,
-			                     &(pstu->sco[pstu->n].chinese),
-			                    &(pstu->sco[pstu->n].math));
-	}
-	int i;
-	double stu_ave[3];
-	for (i = 0; i < pstu->n; i++)
-	{
-		stu_ave[i] = ((pstu->sco[i].chinese) + (pstu->sco[i].math)) / 2;
-		pstu->sco[i].ave = stu_ave[i];
-	}
-	FILE* pf = fopen("stud.txt", "w");
+	///*stu con;
+	//stu* pstu= &con;
+	//score* ptr = (score*)malloc(5*sizeof(score));
+	//if (ptr == NULL)
+	//{
+	//	printf("%s\n", strerror(errno));
+	//	return 0;
+	//}
+	//pstu->sco = ptr;
+	//for(pstu->n=0;pstu->n<3;pstu->n++)
+	//{
+	//	scanf("%s %s %lf %lf", pstu->sco[pstu->n].num,
+	//		                     pstu->sco[pstu->n].name,
+	//		                     &(pstu->sco[pstu->n].chinese),
+	//		                    &(pstu->sco[pstu->n].math));
+	//}
+	//int i;
+	//double stu_ave[3];
+	//for (i = 0; i < pstu->n; i++)
+	//{
+	//	stu_ave[i] = ((pstu->sco[i].chinese) + (pstu->sco[i].math)) / 2;
+	//	pstu->sco[i].ave = stu_ave[i];
+	//}
+	//FILE* pf = fopen("stud.txt", "w");
+	//if (pf == NULL)
+	//{
+	//	printf("%s\n", strerror(errno));
+	//	return 0;
+	//}
+	//for (i = 0; i < pstu->n; i++)
+	//{
+	//	fwrite(&(pstu->sco[i]), sizeof(score), 1, pf);
+	//}
+	//fclose(pf);
+	//pf = NULL;
+	//free(pstu->sco);
+	//pstu->sco = NULL;
+	//my_print();
+	//my_sort();
+	//return 0;*/
+	score s[4];
+	FILE* pf = fopen("stu_sort.txt", "r");
 	if (pf == NULL)
 	{
 		printf("%s\n", strerror(errno));
 		return 0;
 	}
-	for (i = 0; i < pstu->n; i++)
+	int i = 0;
+	for (i = 0; i < 4; i++)
 	{
-		fwrite(&(pstu->sco[i]), sizeof(score), 1, pf);
+		fread(&(s[i]), sizeof(struct score), 1, pf);
 	}
+	scanf("%s %s %lf %lf",s[3].num,s[3].name,&(s[3].chinese),&(s[3].math));
+	s[3].ave=( (s[3].chinese)+(s[3].math))/2;
+
+	fwrite(&s[i], sizeof(score), 1, pf1);
 	fclose(pf);
 	pf = NULL;
-	free(pstu->sco);
-	pstu->sco = NULL;
-	my_print();
-	my_sort();
 	return 0;
 }
