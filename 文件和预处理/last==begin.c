@@ -96,60 +96,60 @@ typedef struct stu
 	int n;
 	score* sco;
 }stu;
-void my_print()
-{
-	FILE* pf = fopen("stud.txt", "r");
-	int i = 0;
-	score s[3];
-	for (i = 0; i < 3; i++)
-	{
-		fread(&(s[i]), sizeof(struct score), 1, pf);
-		printf("%s %s %lf %lf %lf\n", s[i].num,s[i].name, s[i].chinese, s[i].math,
-		                          s[i].ave);
-	}
-	fclose(pf);
-	pf = NULL;
-}
-int com_by_ave(const void* p1, const void* p2)
-{
-	if ((const double*)p1< (const double*)p2)
-		return 1;
-	return 0;
-}
-void my_sort()
-{
-	FILE* pf = fopen("stud.txt", "r");
-	score s[3];
-	int i = 0;
-	for (i = 0; i < 3; i++)
-	{
-		fread(&(s[i]), sizeof(struct score), 1, pf);
-	}
-	qsort(&s[0], 3, sizeof(s[0]), com_by_ave);
-	fclose(pf);
-	pf = NULL;
-	FILE* pf1 = fopen("stud_sort.txt", "w");
-	if (pf1 == NULL)
-	{
-		printf("%s\n", strerror(errno));
-		return;
-	}
-	for (i = 0; i < 3; i++)
-	{
-		fwrite(&(s[i]), sizeof(struct score), 1, pf1);
-	}
-	fclose(pf1);
-	pf1 = NULL;
-	FILE* pf2= fopen("stud_sort.txt", "r");
-	for (i = 0; i < 3; i++)
-	{
-		fread(&(s[i]), sizeof(struct score), 1, pf2);
-		printf("%s %s %lf %lf %lf\n", s[i].num, s[i].name, s[i].chinese, s[i].math,
-			s[i].ave);
-	}
-	fclose(pf2);
-	pf2 = NULL;
-}
+//void my_print()
+//{
+//	FILE* pf = fopen("stud.txt", "r");
+//	int i = 0;
+//	score s[3];
+//	for (i = 0; i < 3; i++)
+//	{
+//		fread(&(s[i]), sizeof(struct score), 1, pf);
+//		printf("%s %s %lf %lf %lf\n", s[i].num,s[i].name, s[i].chinese, s[i].math,
+//		                          s[i].ave);
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//}
+//int com_by_ave(const void* p1, const void* p2)
+//{
+//	if ((const double*)p1< (const double*)p2)
+//		return 1;
+//	return 0;
+//}
+//void my_sort()
+//{
+//	FILE* pf = fopen("stud.txt", "r");
+//	score s[3];
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		fread(&(s[i]), sizeof(struct score), 1, pf);
+//	}
+//	qsort(&s[0], 3, sizeof(s[0]), com_by_ave);
+//	fclose(pf);
+//	pf = NULL;
+//	FILE* pf1 = fopen("stud_sort.txt", "w");
+//	if (pf1 == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return;
+//	}
+//	for (i = 0; i < 3; i++)
+//	{
+//		fwrite(&(s[i]), sizeof(struct score), 1, pf1);
+//	}
+//	fclose(pf1);
+//	pf1 = NULL;
+//	FILE* pf2= fopen("stud_sort.txt", "r");
+//	for (i = 0; i < 3; i++)
+//	{
+//		fread(&(s[i]), sizeof(struct score), 1, pf2);
+//		printf("%s %s %lf %lf %lf\n", s[i].num, s[i].name, s[i].chinese, s[i].math,
+//			s[i].ave);
+//	}
+//	fclose(pf2);
+//	pf2 = NULL;
+//}
 int main()
 {
 	///*stu con;
@@ -193,22 +193,56 @@ int main()
 	//my_sort();
 	//return 0;*/
 	score s[4];
-	FILE* pf = fopen("stu_sort.txt", "r");
+	FILE* pf = fopen("D:\\驱动精灵搬家目录\\foundation\\文件和预处理\\stud_sort.txt", "r");
 	if (pf == NULL)
 	{
-		printf("%s\n", strerror(errno));
+		printf("pf=%s\n", strerror(errno));
 		return 0;
 	}
 	int i = 0;
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 3; i++)
 	{
 		fread(&(s[i]), sizeof(struct score), 1, pf);
 	}
 	scanf("%s %s %lf %lf",s[3].num,s[3].name,&(s[3].chinese),&(s[3].math));
 	s[3].ave=( (s[3].chinese)+(s[3].math))/2;
-
-	fwrite(&s[i], sizeof(score), 1, pf1);
+	score ss;
+	for (i = 3; i >= 1; i--)
+	{
+		if (s[i-1].ave < s[i].ave)
+		{
+			ss = s[i];
+			s[i]=s[i-1];
+			s[i-1]=ss;
+		}
+	}
 	fclose(pf);
 	pf = NULL;
+	FILE* pf1 = fopen("stud_sort.txt", "w");
+	if (pf1 == NULL)
+	{
+		printf("pf1=%s\n", strerror(errno));
+		return 0;
+	}
+	for (i = 0; i < 4; i++)
+	{
+		fwrite(&s[i], sizeof(score), 1, pf1);
+	}
+	fclose(pf1);
+	pf1 = NULL;
+	FILE* pf2 = fopen("stud_sort.txt", "r");
+	if (pf2 == NULL)
+	{
+		printf("pf2=%s\n", strerror(errno));
+		return 0;
+	}
+	for (i = 0; i < 4; i++)
+	{
+		fread(&s[i], sizeof(score), 1, pf2);
+		printf("%s %s %lf %lf %lf\n", s[i].num, s[i].name, s[i].chinese, s[i].math,
+			s[i].ave);
+	}
+	fclose(pf2);
+	pf2 = NULL;
 	return 0;
 }
