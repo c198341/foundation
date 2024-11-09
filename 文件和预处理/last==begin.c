@@ -246,22 +246,95 @@
 //	pf2 = NULL;
 //	return 0;
 //}
+//int main()
+//{
+//	FILE* pf = fopen("t.txt", "r");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	fseek(pf, -3, SEEK_END);
+//	char ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	int i = ftell(pf);
+//	printf("%d\n", i);
+//	rewind(pf);
+//	ch = fgetc(pf);
+//	printf("%c\n", ch);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+//int main()
+//{
+//	char ch;
+//	FILE* pf = fopen("stud.txt", "r");
+//	if (pf == NULL)
+//	{
+//		perror("error:");
+//		return 0;
+//	}
+//	while ((ch = fgetc(pf))!=EOF)
+//	{
+//		putchar(ch);
+//	}
+//	if (ferror(pf))
+//		printf("非正常结束\n");
+//	else if (feof(pf))
+//		printf("正常结束\n");
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+typedef struct emp
+{
+	char name[10];
+	char num[10];
+	char sex;
+	int age;
+	double salary;
+}emp;
+typedef struct 
+enum option
+{
+	EXIT,
+	ADD,
+	DELETE,
+	SAVE
+};
+void init()
+{
+	emp 
+}
+void add()
+void delete()
+void save()
 int main()
 {
-	FILE* pf = fopen("t.txt", "r");
-	if (pf == NULL)
+	printf("**************************");
+	printf("*** 1.add     2.delete ***");
+	printf("*** 3.save    0.exit   ***");
+	printf("**************************");
+	init();
+	printf("input your choice:");
+	int input = 0;
+	scanf("%d", &input);
+	do
 	{
-		return 0;
-	}
-	fseek(pf, -3, SEEK_END);
-	char ch = fgetc(pf);
-	printf("%c\n", ch);
-	int i = ftell(pf);
-	printf("%d\n", i);
-	rewind(pf);
-	ch = fgetc(pf);
-	printf("%c\n", ch);
-	fclose(pf);
-	pf = NULL;
+		switch (input)
+		{
+		case 1:
+			add();
+			break;
+		case 2:
+			delete();
+			break;
+		case 3:
+			save();
+			break;
+		default:
+			printf("input error\n");
+		}
+	} while (input);
 	return 0;
 }
