@@ -286,15 +286,19 @@
 //	pf = NULL;
 //	return 0;
 //}
-typedef struct emp
+#define CAPABILITY 2
+typedef struct employ
 {
 	char name[10];
-	char num[10];
-	char sex;
 	int age;
 	double salary;
 }emp;
-typedef struct 
+typedef struct emp_info
+{
+	emp* e;
+	int emp_pre;
+	int emp_capability;
+}emp_info;
 enum option
 {
 	EXIT,
@@ -302,9 +306,27 @@ enum option
 	DELETE,
 	SAVE
 };
-void init()
+void loademp(emp_info* emps)
 {
-	emp 
+	FILE* pf = fopen("employee.txt", "r");
+	if (pf == NULL)
+	{
+		perror("init error:");
+		return;
+	}
+	int i = 0;
+	for(i=0;i<)
+}
+void init(emp_info* emps)
+{
+	emps->e = (emp*)malloc(sizeof(emp) * 2);
+	if (emps->e == NULL)
+	{
+		return;
+	}
+	emps->emp_pre = 0;
+	emps->emp_capability = CAPABILITY;
+	loademp(emps);
 }
 void add()
 void delete()
@@ -319,6 +341,8 @@ int main()
 	printf("input your choice:");
 	int input = 0;
 	scanf("%d", &input);
+	emp_info emps;
+	init(&emps);
 	do
 	{
 		switch (input)
