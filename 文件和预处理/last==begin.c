@@ -306,16 +306,38 @@ enum option
 	DELETE,
 	SAVE
 };
+void checkemp(emp_info* emps)
+{
+	emp_info* ptr;
+	if (emps->emp_pre == emps->emp_capability)
+	{
+		ptr = (emp_info*)realloc(emps->e, (emps->emp_capability + 2) * sizeof(emp));
+		if (ptr == NULL)
+		{
+			return;
+		}
+		emps->e = ptr;
+		emps->emp_capability += 2;
+		printf("增容成功\n");
+	}
+}
 void loademp(emp_info* emps)
 {
+	emp tmp;
 	FILE* pf = fopen("employee.txt", "r");
 	if (pf == NULL)
 	{
-		perror("init error:");
+		perror("load error:");
 		return;
 	}
-	int i = 0;
-	for(i=0;i<)
+	while (fread(&tmp, sizeof(emp), 1, pf))
+	{
+		checkemp(emps);
+		emps->e[emps->emp_pre] = tmp;
+		emps->emp_pre++;
+	}
+	fclose(pf);
+	pf = NULL;
 }
 void init(emp_info* emps)
 {
@@ -328,8 +350,22 @@ void init(emp_info* emps)
 	emps->emp_capability = CAPABILITY;
 	loademp(emps);
 }
-void add()
-void delete()
+void add(emp_info* emps)
+{
+	checkemp(emps);
+	printf("请输入名字:>\n");
+	scanf("%s", emps->e[emps->emp_pre].name);
+	printf("请输入年龄:>\n");
+	scanf("%d", &(emps->e[emps->emp_pre].age));
+	printf("请输入工资:>\n");
+	scanf("%lf", &(emps->e[emps->emp_pre].salary));
+	emps->emp_pre++;
+	printf("添加成功\n");
+}
+void delete(emp_info* emps)
+{
+
+}
 void save()
 int main()
 {
