@@ -277,12 +277,17 @@
 //	ToFanMa1(a);
 //	return 0;
 //}
+//int main()
+//{
+//	int a = 10000;
+//	FILE* pf = fopen("text.txt", "wb");
+//	fwrite(&a, 4, 1, pf);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
 int main()
 {
-	int a = 10000;
-	FILE* pf = fopen("text.txt", "wb");
-	fwrite(&a, 4, 1, pf);
-	fclose(pf);
-	pf = NULL;
-	return 0;
+	int a = 10,b=-25,c=0,d=3;
+	printf("%d\n", a <<= d > 20?b&&c++:d--);
 }
