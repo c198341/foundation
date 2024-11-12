@@ -1,2 +1,3 @@
 ﻿  last==begin.c
-  文件和预处理.vcxproj -> D:\驱动精灵搬家目录\foundation\文件和预处理\Debug\文件和预处理.exe
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(390,29): warning C4047: “=”:“char [10]”与“char (*)[10]”的间接级别不同
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(390,29): error C2106: “=”: 左操作数必须为左值

@@ -293,6 +293,11 @@ typedef struct employ
 	int age;
 	double salary;
 }emp;
+typedef struct employ_sim
+{
+	char name[10];
+	double salary;
+}emp_sim;
 typedef struct emp_info
 {
 	emp* e;
@@ -304,14 +309,16 @@ enum option
 	EXIT,
 	ADD,
 	DELETE,
-	SAVE
+	SAVE,
+	SHOW,
+	ADD_SIM
 };
 void checkemp(emp_info* emps)
 {
-	emp_info* ptr;
+	emp* ptr;
 	if (emps->emp_pre == emps->emp_capability)
 	{
-		ptr = (emp_info*)realloc(emps->e, (emps->emp_capability + 2) * sizeof(emp));
+		ptr = (emp*)realloc(emps->e, (emps->emp_capability + 2) * sizeof(emp));
 		if (ptr == NULL)
 		{
 			return;
@@ -362,35 +369,139 @@ void add(emp_info* emps)
 	emps->emp_pre++;
 	printf("添加成功\n");
 }
+void add_sim(emp_info* emps)
+{
+	emp tmp;
+	emp_sim tmp_sim;
+	FILE* pf = fopen("employee.txt", "r");
+	if (pf == NULL)
+	{
+		perror("load employee error:");
+		return;
+	}
+	FILE* pf_sim = fopen("emp_sim.txt", "w");
+	if (pf_sim == NULL)
+	{
+		perror("load emp_sim error:");
+		return;
+	}
+	while (fread(&tmp, sizeof(emp), 1, pf))
+	{
+		tmp_sim.name = tmp.name;
+		tmp_sim.salary = tmp.salary; 
+		fwrite(&tmp_sim, sizeof(emp_sim), 1, pf_sim);
+	}
+	fclose(pf);
+	pf = NULL;
+	fclose(pf_sim);
+	pf_sim = NULL;
+}
+int findemp(emp_info* emps,char* name)
+{
+	int i = 0;
+	for (i = 0; i < emps->emp_pre; i++)
+	{
+		if (strcmp(emps->e[i].name, name) == 0)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
 void delete(emp_info* emps)
 {
-
+	char name[10];
+	printf("请输入要删除人员的名字：");
+	scanf("%s", name);
+	int pos = findemp(emps, name);
+	if (pos == -1)
+	{
+		printf("找不到要删除有人员\n");
+	}
+	else
+	{
+		int j = 0;
+		for (j = pos; j < emps->emp_pre - 1; j++)
+		{
+			emps->e[j] = emps->e[j + 1];
+		}
+		emps->emp_pre--;
+		printf("删除成功\n");
+	}
 }
-void save()
+void save(emp_info* emps)
+{
+	FILE* pf = fopen("employee.txt", "w");
+	if (pf == NULL)
+	{
+		perror("save error:");
+		return;
+	}
+	int i = 0;
+	for (i = 0; i < emps->emp_pre; i++)
+	{
+		fwrite(&(emps->e[i]), sizeof(emp), 1, pf);
+	}
+	fclose(pf);
+	pf = NULL;
+}
+void show(emp_info* emps)
+{
+	if (emps->emp_pre == 0)
+	{
+		printf("通讯录为空\n");
+	}
+	else
+	{
+		int i = 0;
+		printf("%-5s\t%-5s\t%-5s\n", "名字", "年龄", "工资");
+		for (i = 0; i < emps->emp_pre; i++)
+		{
+			printf("%s\t%d\t%lf\n", emps->e[i].name, emps->e[i].age, emps->e[i].salary);
+		}
+	}
+}
+void destory(emp_info* emps)
+{
+	free(emps->e);
+	emps->e = NULL;
+}
 int main()
 {
-	printf("**************************");
-	printf("*** 1.add     2.delete ***");
-	printf("*** 3.save    0.exit   ***");
-	printf("**************************");
-	init();
-	printf("input your choice:");
-	int input = 0;
-	scanf("%d", &input);
+	printf("**************************\n");
+	printf("*** 1.add     2.delete ***\n");
+	printf("*** 3.save    4.show   ***\n");
+	printf("*** 5.add_sim 0.exit   ***\n");
+	printf("**************************\n");
 	emp_info emps;
+	init(&emps);
+	int input = 0;
 	init(&emps);
 	do
 	{
+		printf("input your choice:");
+		scanf("%d", &input);
 		switch (input)
 		{
-		case 1:
-			add();
+		case ADD:
+			add(&emps);
 			break;
-		case 2:
-			delete();
+		case DELETE:
+			delete(&emps);
 			break;
-		case 3:
-			save();
+		case SAVE:
+			save(&emps);
+			break;
+		case SHOW:
+			show(&emps);
+			break;
+		case ADD_SIM:
+			add_sim(&emps);
+			break;
+		case EXIT:
+			printf("退出\n");
+			save(&emps);
+			destory(&emps);
 			break;
 		default:
 			printf("input error\n");
