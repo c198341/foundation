@@ -304,6 +304,12 @@ typedef struct emp_info
 	int emp_pre;
 	int emp_capability;
 }emp_info;
+typedef struct emp_sim_info
+{
+	emp_sim* ee;
+	int emp_sim_pre;
+	int emp_sim_capability;
+}emp_sim_info;
 enum option
 {
 	EXIT,
@@ -311,7 +317,8 @@ enum option
 	DELETE,
 	SAVE,
 	SHOW,
-	ADD_SIM
+	ADD_SIM,
+	DELETE_SIM
 };
 void checkemp(emp_info* emps)
 {
@@ -369,7 +376,7 @@ void add(emp_info* emps)
 	emps->emp_pre++;
 	printf("添加成功\n");
 }
-void add_sim(emp_info* emps)
+void add_sim(emp_info* emps, emp_sim_info* emps_sim)
 {
 	emp tmp;
 	emp_sim tmp_sim;
@@ -387,7 +394,7 @@ void add_sim(emp_info* emps)
 	}
 	while (fread(&tmp, sizeof(emp), 1, pf))
 	{
-		tmp_sim.name = tmp.name;
+		strcpy(tmp_sim.name, tmp.name);
 		tmp_sim.salary = tmp.salary; 
 		fwrite(&tmp_sim, sizeof(emp_sim), 1, pf_sim);
 	}
@@ -395,6 +402,19 @@ void add_sim(emp_info* emps)
 	pf = NULL;
 	fclose(pf_sim);
 	pf_sim = NULL;
+	printf("已建立简明职工工资文件\n");
+	FILE* pfsim = fopen("emp_sim.txt", "r");
+	int i = 0;
+	printf("%-5s\t%-5s\n", "名字", "工资");
+	for (i = 0; i < emps->emp_pre; i++)
+	{
+		fread(&tmp_sim, sizeof(emp_sim), 1, pfsim);
+		printf("%-5s\t%-5lf\n", tmp_sim.name, tmp_sim.salary);
+	}
+	fclose(pfsim);
+	pfsim = NULL;
+	emps_sim->emp_sim_pre = emps->emp_pre;
+	emps_sim->emp_sim_capability = emps->emp_capability;
 }
 int findemp(emp_info* emps,char* name)
 {
@@ -427,6 +447,58 @@ void delete(emp_info* emps)
 		}
 		emps->emp_pre--;
 		printf("删除成功\n");
+	}
+}
+void delete_sim(emp_sim_info* emps_sim)
+{
+	char name[10];
+	printf("请输入要删除人员(emp_sim)的名字：");
+	scanf("%s", name);
+	int i = 0;
+	int pos = -1;
+	for (i = 0; i < emps_sim->emp_sim_pre; i++)
+	{
+		if (strcmp(emps_sim->ee[i].name, name) == 0)
+			pos=i;
+	}
+	if (pos == -1)
+	{
+		printf("找不到要删除有人员\n");
+	}
+	else
+	{
+		int j = 0;
+		for (j = pos; j < emps_sim->emp_sim_pre - 1; j++)
+		{
+			emps_sim->ee[j] = emps_sim->ee[j + 1];
+		}
+		emps_sim->emp_sim_pre--;
+		emps_sim->emp_sim_capability--;
+		FILE* pf = fopen("emp_sim.txt", "w");
+		if (pf == NULL)
+		{
+			perror("save error:");
+			return;
+		}
+		int i = 0;
+		for (i = 0; i < emps_sim->emp_sim_pre; i++)
+		{
+			fwrite(&(emps_sim->ee[i]), sizeof(emp_sim), 1, pf);
+		}
+		fclose(pf);
+		pf = NULL;
+		printf("删除成功\n");
+		FILE* pfsim = fopen("emp_sim.txt", "r");
+		i = 0;
+		printf("%-5s\t%-5s\n", "名字", "工资");
+		emp_sim tmp_sim;
+		for (i = 0; i < emps_sim->emp_sim_pre; i++)
+		{
+			fread(&tmp_sim, sizeof(emp_sim), 1, pfsim);
+			printf("%-5s\t%-5lf\n", tmp_sim.name, tmp_sim.salary);
+		}
+		fclose(pfsim);
+		pfsim = NULL;
 	}
 }
 void save(emp_info* emps)
@@ -471,9 +543,11 @@ int main()
 	printf("**************************\n");
 	printf("*** 1.add     2.delete ***\n");
 	printf("*** 3.save    4.show   ***\n");
-	printf("*** 5.add_sim 0.exit   ***\n");
+	printf("*** 5.add_sim 6.delete_sim\n");
+	printf("*** 0.exit             ***\n");
 	printf("**************************\n");
 	emp_info emps;
+	emp_sim_info emps_sim;
 	init(&emps);
 	int input = 0;
 	init(&emps);
@@ -496,8 +570,11 @@ int main()
 			show(&emps);
 			break;
 		case ADD_SIM:
-			add_sim(&emps);
+			add_sim(&emps, &emps_sim);
 			break;
+		case DELETE_SIM:
+		    delete_sim(&emps_sim);
+		    break;
 		case EXIT:
 			printf("退出\n");
 			save(&emps);
