@@ -454,7 +454,22 @@ void delete_sim(emp_sim_info* emps_sim)
 	char name[10];
 	printf("请输入要删除人员(emp_sim)的名字：");
 	scanf("%s", name);
+	emp_sim tmp;
+	FILE* pf1 = fopen("emp_sim.txt", "r");
+	if (pf1 == NULL)
+	{
+		perror("load error:");
+		return;
+	}
+	emps_sim->ee = (emp_sim*)malloc(sizeof(emp_sim) * 20);
 	int i = 0;
+	while (fread(&tmp, sizeof(emp_sim), 1, pf1))
+	{
+		emps_sim->ee[i++] = tmp;
+	}
+	fclose(pf1);
+	pf1 = NULL;
+	i = 0;
 	int pos = -1;
 	for (i = 0; i < emps_sim->emp_sim_pre; i++)
 	{
@@ -497,6 +512,8 @@ void delete_sim(emp_sim_info* emps_sim)
 			fread(&tmp_sim, sizeof(emp_sim), 1, pfsim);
 			printf("%-5s\t%-5lf\n", tmp_sim.name, tmp_sim.salary);
 		}
+		free(emps_sim->ee);
+		emps_sim->ee = NULL;
 		fclose(pfsim);
 		pfsim = NULL;
 	}
