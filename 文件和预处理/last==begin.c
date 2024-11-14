@@ -614,10 +614,10 @@ int main()
 	int len = 0;
 	char c='\0';
 	int size = 1;
+	printf("ÇëÊäÈë×Ö·û´®:\n");
 	char* ptr = (char*)malloc(size);
 	char* tmp;
-	FILE* pf = fopen("alpha.txt", "w");
-	printf("ÇëÊäÈë×Ö·û´®:\n");
+	FILE* pf = fopen("al.txt", "w");
 		while (c = getchar() != '\n')
 		{
 			if (len >= size)
@@ -631,14 +631,28 @@ int main()
 				}
 				ptr = tmp;
 			}
-			*(ptr + len) = c;
-			fwrite((ptr + len), sizeof(char), 1, pf);
+			if ((ptr + len) != NULL)
+			{
+				*(ptr + len) = c;
+				fwrite((ptr + len), sizeof(char), 1, pf);
+			}
 			len++;
 		}
-	//fwrite("\0", sizeof(char), 1, pf);
 	free(ptr);
 	ptr = NULL;
 	fclose(pf);
 	pf = NULL;
+	FILE* pf1 = fopen("al.txt", "r");
+	if (pf1 == NULL)
+	{
+		perror("open error:");
+		return 0;
+	}
+	while (fread(&c, sizeof(char), 1, pf1))
+	{
+		printf("%c\n", c);
+	}
+	fclose(pf1);
+	pf1 = NULL;
 	return 0;
 }
