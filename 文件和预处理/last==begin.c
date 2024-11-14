@@ -618,9 +618,6 @@ int main()
 	char* tmp;
 	FILE* pf = fopen("alpha.txt", "w");
 	printf("ÇëÊäÈë×Ö·û´®:\n");
-	while (*(ptr + len) != '\0')
-	{
-		len = 0;
 		while (c = getchar() != '\n')
 		{
 			if (len >= size)
@@ -638,8 +635,7 @@ int main()
 			fwrite((ptr + len), sizeof(char), 1, pf);
 			len++;
 		}
-	}
-	fwrite("\0", sizeof(char), 1, pf);
+	//fwrite("\0", sizeof(char), 1, pf);
 	free(ptr);
 	ptr = NULL;
 	fclose(pf);
