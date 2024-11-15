@@ -617,7 +617,7 @@ int main()
 	printf("ÇëÊäÈë×Ö·û´®:\n");
 	char* ptr = (char*)malloc(size);
 	char* tmp;
-	FILE* pf = fopen("al.txt", "w");
+	FILE* pf = fopen("a.txt", "w");
 		while (c = getchar() != '\n')
 		{
 			if (len >= size)
@@ -642,7 +642,7 @@ int main()
 	ptr = NULL;
 	fclose(pf);
 	pf = NULL;
-	FILE* pf1 = fopen("al.txt", "r");
+	FILE* pf1 = fopen("a.txt", "r");
 	if (pf1 == NULL)
 	{
 		perror("open error:");
@@ -650,7 +650,7 @@ int main()
 	}
 	while (fread(&c, sizeof(char), 1, pf1))
 	{
-		printf("%c\n", c);
+		printf("%c", c);
 	}
 	fclose(pf1);
 	pf1 = NULL;
