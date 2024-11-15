@@ -612,13 +612,13 @@
 int main()
 {
 	int len = 0;
-	char c='\0';
+	char c=0;
 	int size = 1;
 	printf("ÇëÊäÈë×Ö·û´®:\n");
 	char* ptr = (char*)malloc(size);
 	char* tmp;
 	FILE* pf = fopen("a.txt", "w");
-		while (c = getchar() != '\n')
+		while ((c = getchar()) != '\n')
 		{
 			if (len >= size)
 			{
@@ -650,7 +650,12 @@ int main()
 	}
 	while (fread(&c, sizeof(char), 1, pf1))
 	{
-		printf("%c", c);
+		if (c >= 'a' && c <= 'z')
+		{
+			printf("%c", c-32);
+		}
+		else
+			printf("%c", c);
 	}
 	fclose(pf1);
 	pf1 = NULL;
