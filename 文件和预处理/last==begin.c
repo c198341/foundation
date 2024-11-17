@@ -609,55 +609,79 @@
 //	} while (input);
 //	return 0;
 //}
+//int main()
+//{
+//	int len = 0;
+//	char c=0;
+//	int size = 1;
+//	printf("ÇëÊäÈë×Ö·û´®:\n");
+//	char* ptr = (char*)malloc(size);
+//	char* tmp;
+//	FILE* pf = fopen("a.txt", "w");
+//		while ((c = getchar()) != '\n')
+//		{
+//			if (len >= size)
+//			{
+//				size *= 2;
+//				tmp = (char*)realloc(ptr, size);
+//				if (tmp == NULL)
+//				{
+//					perror("tmp error:");
+//					return 0;
+//				}
+//				ptr = tmp;
+//			}
+//			if ((ptr + len) != NULL)
+//			{
+//				*(ptr + len) = c;
+//				fwrite((ptr + len), sizeof(char), 1, pf);
+//			}
+//			len++;
+//		}
+//	free(ptr);
+//	ptr = NULL;
+//	fclose(pf);
+//	pf = NULL;
+//	FILE* pf1 = fopen("a.txt", "r");
+//	if (pf1 == NULL)
+//	{
+//		perror("open error:");
+//		return 0;
+//	}
+//	while (fread(&c, sizeof(char), 1, pf1))
+//	{
+//		if (c >= 'a' && c <= 'z')
+//		{
+//			printf("%c", c-32);
+//		}
+//		else
+//			printf("%c", c);
+//	}
+//	fclose(pf1);
+//	pf1 = NULL;
+//	return 0;
+//}
+//int main()
+//{
+//	/*printf("%s\n", __FILE__);
+//	printf("%d\n", __LINE__);
+//	printf("%s\n", __DATE__);
+//	printf("%s\n", __TIME__);*/
+//	int i = 0;
+//	FILE* pf = fopen("log.txt", "w");
+//	for (i = 0; i < 10; i++)
+//	{
+//		fprintf(pf, "%s %d %s %s %d\n", __FILE__, __LINE__, __DATE__, __TIME__,i);
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	printf("%d\n", __STDC__);
+//	return 0;
+//}
+#define squ(x) (x)*(x)
 int main()
 {
-	int len = 0;
-	char c=0;
-	int size = 1;
-	printf("ÇëÊäÈë×Ö·û´®:\n");
-	char* ptr = (char*)malloc(size);
-	char* tmp;
-	FILE* pf = fopen("a.txt", "w");
-		while ((c = getchar()) != '\n')
-		{
-			if (len >= size)
-			{
-				size *= 2;
-				tmp = (char*)realloc(ptr, size);
-				if (tmp == NULL)
-				{
-					perror("tmp error:");
-					return 0;
-				}
-				ptr = tmp;
-			}
-			if ((ptr + len) != NULL)
-			{
-				*(ptr + len) = c;
-				fwrite((ptr + len), sizeof(char), 1, pf);
-			}
-			len++;
-		}
-	free(ptr);
-	ptr = NULL;
-	fclose(pf);
-	pf = NULL;
-	FILE* pf1 = fopen("a.txt", "r");
-	if (pf1 == NULL)
-	{
-		perror("open error:");
-		return 0;
-	}
-	while (fread(&c, sizeof(char), 1, pf1))
-	{
-		if (c >= 'a' && c <= 'z')
-		{
-			printf("%c", c-32);
-		}
-		else
-			printf("%c", c);
-	}
-	fclose(pf1);
-	pf1 = NULL;
+	int ret = squ(5+1);
+	printf("%d\n", ret);
 	return 0;
 }
