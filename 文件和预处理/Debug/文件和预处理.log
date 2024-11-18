@@ -1,2 +1,5 @@
 ﻿  last==begin.c
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(744,2): warning C4477: “printf”: 格式字符串“%f”需要类型“double”的参数，但可变参数 1 拥有了类型“int”
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(745,2): warning C4477: “printf”: 格式字符串“%f”需要类型“double”的参数，但可变参数 1 拥有了类型“int”
+D:\驱动精灵搬家目录\foundation\文件和预处理\last==begin.c(746,2): warning C4477: “printf”: 格式字符串“%f”需要类型“double”的参数，但可变参数 1 拥有了类型“int”
   文件和预处理.vcxproj -> D:\驱动精灵搬家目录\foundation\文件和预处理\Debug\文件和预处理.exe

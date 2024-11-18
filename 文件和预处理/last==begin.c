@@ -687,10 +687,62 @@
 //	PRINT(b);
 //	return 0;
 //}
-#define CAT(X,Y) X##Y
+//#define CAT(X,Y) X##Y
+//int main()
+//{
+//	int bit43 = 90;
+//	printf("%d\n", CAT(bit, 43));
+//	return 0;
+//}
+//#define SIZEOF(type) sizeof(type)
+//int main()
+//{
+////#undef SIZEOF(type)
+//	int i = SIZEOF(int);
+//
+//	printf("%d\n", i);
+//	return 0;
+//}
+//#define QUYU(a,b) a%b
+//int main()
+//{
+//	int a = 30;
+//	int b = 4;
+//	printf("%d\n",QUYU(a, b));
+//	return 0;
+//}
+//#include <math.h>
+//#define S(a,b,c) (a+b+c)/2
+//#define AREA(s,a,b,c) sqrt(s*(s-a)*(s-b)*(s-c))
+//int main()
+//{
+//	double a = 4;
+//	double b = 2;
+//	double c = 2.236*2;
+//	double s = S(a,b,c);
+//	printf("%lf\n", AREA(s,a, b, c));
+//	return 0;
+//}
+//#define LEAP_YEAR(y) (y%4==0&&y%100!=0)||(y%400==0)
+//int main()
+//{
+//	int year = 1952;
+//	if (LEAP_YEAR(year))
+//		printf("%d is a leap year.\n", year);
+//	else
+//		printf("%d is not a leap year.\n", year);
+//	return 0;
+//}
+#define NL putchar('\n')
+#define PR(format,value) printf("value=%format\t",(value))
+#define PRINT1(f,x1) PR(f,x1);NL
+#define PRINT2(f,x1,x2) PR(f,x1);PRINT1(f,x2)
 int main()
 {
-	int bit43 = 90;
-	printf("%d\n", CAT(bit, 43));
+	int x2 = 8, x1 = 3;
+	int x = 5;
+	PR(d, x);
+	PRINT1(d, x);
+	PRINT2(d, x1, x2);
 	return 0;
 }
