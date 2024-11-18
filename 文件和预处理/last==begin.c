@@ -678,10 +678,19 @@
 //	printf("%d\n", __STDC__);
 //	return 0;
 //}
-#define squ(x) (x)*(x)
+//#define PRINT(X) printf("the value of "#X" is %d\n",X)
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	PRINT(a);
+//	PRINT(b);
+//	return 0;
+//}
+#define CAT(X,Y) X##Y
 int main()
 {
-	int ret = squ(5+1);
-	printf("%d\n", ret);
+	int bit43 = 90;
+	printf("%d\n", CAT(bit, 43));
 	return 0;
 }
