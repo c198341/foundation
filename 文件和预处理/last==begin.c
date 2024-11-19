@@ -772,10 +772,13 @@ int Max(int a, int b, int c)
 {
 	return (a > b ? a : b) > c ? (a > b ? a : b) : c;
 }
+#define MAX(a, b, c) (a > b ? a : b) > c ? (a > b ? a : b) : c
 int main()
 {
 	int a = 0, b = -45, c = 50;
 	printf("%d\n", Max(a, b, c));
-	printf(¡°¡±MAX(a, b, c);
+#if !define DUBUG
+	printf("%d\n",MAX(a, b, c));
+#endif
 	return 0;
 }
