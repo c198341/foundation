@@ -776,6 +776,6 @@ int main()
 {
 	int a = 0, b = -45, c = 50;
 	printf("%d\n", Max(a, b, c));
-	printf(MAX(a, b, c);
+	printf(¡°¡±MAX(a, b, c);
 	return 0;
 }
