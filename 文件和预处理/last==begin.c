@@ -733,16 +733,49 @@
 //		printf("%d is not a leap year.\n", year);
 //	return 0;
 //}
-#define NL putchar('\n')
-#define PR(format,value) printf("value=%format\t",(value))
-#define PRINT1(f,x1) PR(f,x1);NL
-#define PRINT2(f,x1,x2) PR(f,x1);PRINT1(f,x2)
+//#define NL putchar('\n')
+//#define PR(format,value) printf("value=%format\t",(value))
+//#define PRINT1(f,x1) PR(f,x1);NL
+//#define PRINT2(f,x1,x2) PR(f,x1);PRINT1(f,x2)
+//int main()
+//{
+//	float x2 = 8, x1 = 3;
+//	float x = 5;
+//	PR(d, x);
+//	PRINT1(d, x);
+//	PRINT2(d, x1, x2);
+//	return 0;
+//}
+//#define PRINT1(a) printf("a=%6.2f\n",(a))
+//#define PRINT2(a,b) printf("a=%6.2f\tb=%6.2f\n",(a),(b))
+//#define PRINT3(a,b,c) printf("a=%6.2f\tb=%6.2f\tc=%6.2f\n",(a),(b),(c))
+//int main()
+//{
+//	double a = 1.0, b = 2.0, c = 3.0;
+//	PRINT1(a);
+//	PRINT2(a, b);
+//	PRINT3(a, b, c);
+//	return 0;
+//}
+//#include "format.h"
+//int main()
+//{
+//	int a = 1;
+//	double b = 2.0;
+//	char s[10] = "abc";
+//	PR_INT(a);
+//	PR_DOU(b);
+//	PR_CHAR(s);
+//	return 0;
+//}
+int Max(int a, int b, int c)
+{
+	return (a > b ? a : b) > c ? (a > b ? a : b) : c;
+}
 int main()
 {
-	int x2 = 8, x1 = 3;
-	int x = 5;
-	PR(d, x);
-	PRINT1(d, x);
-	PRINT2(d, x1, x2);
+	int a = 0, b = -45, c = 50;
+	printf("%d\n", Max(a, b, c));
+	printf(MAX(a, b, c);
 	return 0;
 }
