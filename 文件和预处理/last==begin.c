@@ -768,17 +768,42 @@
 //	PR_CHAR(s);
 //	return 0;
 //}
-int Max(int a, int b, int c)
-{
-	return (a > b ? a : b) > c ? (a > b ? a : b) : c;
-}
-#define MAX(a, b, c) (a > b ? a : b) > c ? (a > b ? a : b) : c
+//int Max(int a, int b, int c)
+//{
+//	return (a > b ? a : b) > c ? (a > b ? a : b) : c;
+//}
+//#define MAX(a, b, c) (a > b ? a : b) > c ? (a > b ? a : b) : c
+//int main()
+//{
+//	int a = 0, b = -45, c = 50;
+//	printf("%d\n", Max(a, b, c));
+//#if !define DUBUG
+//	printf("%d\n",MAX(a, b, c));
+//#endif
+//	return 0;
+//}
+#define SECRET
 int main()
 {
-	int a = 0, b = -45, c = 50;
-	printf("%d\n", Max(a, b, c));
-#if !define DUBUG
-	printf("%d\n",MAX(a, b, c));
+	char arr[10];
+	gets_s(arr, 9);
+	char* p = arr;
+#ifdef SECRET
+#define CHANGE 1
+#else
+#define CHANGE 0
+#endif
+	
+	puts(arr);
+#else
+	while (*p != '\0')
+	{
+		if ((*p >= 'a' && *p <= 'z') || (*p >= 'A' && *p <= 'Z'))
+			putchar(*p + 1);
+		else
+			putchar(*p);
+		p++;
+	}
 #endif
 	return 0;
 }
