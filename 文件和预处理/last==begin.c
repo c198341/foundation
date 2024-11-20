@@ -782,28 +782,41 @@
 //#endif
 //	return 0;
 //}
-#define SECRET
+//#define SECRET
+//int main()
+//{
+//	char arr[10];
+//	gets_s(arr, 9);
+//	char* p = arr;
+//#ifdef SECRET
+//#define CHANGE 1
+//#else
+//#define CHANGE 0
+//#endif
+//	if(CHANGE==1)
+//		puts(arr);
+//	else
+//		while (*p != '\0')
+//	{
+//		if ((*p >= 'a' && *p <= 'z') || (*p >= 'A' && *p <= 'Z'))
+//			putchar(*p + 1);
+//		else
+//			putchar(*p);
+//		p++;
+//	}
+//	return 0;
+//}
+struct s
+{
+	char c1;
+	int a;
+	char c2;
+};
+#define OFFSETOF(struct_name,member_name) (int)(&(((struct_name*)0)->member_name))
 int main()
 {
-	char arr[10];
-	gets_s(arr, 9);
-	char* p = arr;
-#ifdef SECRET
-#define CHANGE 1
-#else
-#define CHANGE 0
-#endif
-	
-	puts(arr);
-#else
-	while (*p != '\0')
-	{
-		if ((*p >= 'a' && *p <= 'z') || (*p >= 'A' && *p <= 'Z'))
-			putchar(*p + 1);
-		else
-			putchar(*p);
-		p++;
-	}
-#endif
+	printf("%d\n", OFFSETOF(struct s, c1));
+	printf("%d\n", OFFSETOF(struct s, a));
+	printf("%d\n", OFFSETOF(struct s, c2));
 	return 0;
 }
