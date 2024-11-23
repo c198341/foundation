@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
-#pragma once
+#pragma warning (once:4996)
+#pragma warning (once:6031)
 //#define MAX 10
 #include <stdio.h>
 //int main()
@@ -61,16 +62,17 @@
 //}
 unsigned int reverse_bits(unsigned int value)
 {
-	int* p;
-	int i = sizeof(p);
-	printf("i=%d", i);
+	void* p=0;
+	int i = sizeof(p)*8;
+	printf("i=%d\n", i);
 	int j;
-	int a=0;
-	int b=0;
+	unsigned int a=0;
+	unsigned int b=0;
 	for (j = 1; j <= i; j++)
 	{
-		a = value & (1<<(j-1));
-		b = a| 0 + b;
+		a = (value>>(j-1))& 1;
+		a=a << (i - j);
+		b = a + b;
 	}
 	return b;
 }
@@ -79,6 +81,6 @@ int main()
 	unsigned int a;
 	scanf("%d", &a);
 	a=reverse_bits(a);
-	printf("%d\n", a);
+	printf("a=%u\n", a);
 	return 0;
 }
