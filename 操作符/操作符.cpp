@@ -84,7 +84,22 @@
 //	printf("a=%u\n", a);
 //	return 0;
 //}
-int main()
+void IntBit_array(char bit_array[])
 {
 
+}
+//每个函数第1个参数，用于存储所有的位
+//第2个参数，标识需要访问的位
+void set_bit(char bit_array[], unsigned bit_number)
+//第1个函数把指定的位设置为1
+{
+
+}
+void clear_bit(char bit_array[],unsigned bit_number)
+void 
+int main()
+{
+	char bit_array[8] = { 0 };
+	printf("intitial bit_array\n");
+	IntBit_array(bit_array);
 }
