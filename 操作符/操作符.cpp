@@ -97,9 +97,11 @@ void bit_print(char bit_array[])
 void IntBit_array(char bit_array[])
 {
 	int i = 0;
+	char c;
 	for (i = 0; i < MAX; i++)
 	{
 		bit_array[i] = getchar();
+		c=getchar();
 	}
 	bit_print(bit_array);
 }
@@ -113,7 +115,7 @@ void set_bit(char bit_array[], unsigned bit_number)
 void clear_bit(char bit_array[], unsigned bit_number)
 //把指定位清零
 {
-
+	
 }
 void assign_bit(char bit_array[], unsigned bit_number, int value)
 //如果value的值为0，第3个函数把指定位清零，否则设置为1
@@ -122,16 +124,18 @@ void assign_bit(char bit_array[], unsigned bit_number, int value)
 		bit_array[bit_number - 1] = '0';
 	else
 		bit_array[bit_number - 1] = '1';
+	printf("after assign:\n");
 	bit_print(bit_array);
 }
 int test_bit(char bit_array[], unsigned bit_number)
 //如果参数中指定的位不是0，函数返回真，否则返回假
 {
-	if (bit_array[bit_number - 1] != '0')
+	if (bit_array[bit_number/MAX]&(1<<) != '0')
 		return 1;
 	else
 		return 0;
 }
+
 int main()
 {
 	char bit_array[MAX] = { 0 };
