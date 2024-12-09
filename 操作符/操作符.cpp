@@ -85,6 +85,14 @@
 //	return 0;
 //}
 #define MAX 8
+unsigned character_offset(unsigned bit_number)
+{
+	return bit_number / MAX;
+}
+unsigned bit_offset(unsigned bit_number)
+{
+	return bit_number % MAX;
+}
 void bit_print(char bit_array[])
 {
 	int i = 0;
@@ -94,51 +102,43 @@ void bit_print(char bit_array[])
 	}
 	printf("\n");
 }
-void IntBit_array(char bit_array[])
-{
-	int i = 0;
-	char c;
-	for (i = 0; i < MAX; i++)
-	{
-		bit_array[i] = getchar();
-		c=getchar();
-	}
-	bit_print(bit_array);
-}
 //每个函数第1个参数，用于存储所有的位
 //第2个参数，标识需要访问的位
 void set_bit(char bit_array[], unsigned bit_number)
 //第1个函数把指定的位设置为1
 {
-
+	bit_array[character_offset(bit_number)] |= 1 << bit_offset(bit_number);
 }
 void clear_bit(char bit_array[], unsigned bit_number)
 //把指定位清零
 {
-	
+	bit_array[character_offset(bit_number)] &= ~(1 << bit_offset(bit_number));
 }
 void assign_bit(char bit_array[], unsigned bit_number, int value)
 //如果value的值为0，第3个函数把指定位清零，否则设置为1
 {
-	if (value == 0)
-		bit_array[bit_number - 1] = '0';
+	if (value != 0)
+		set_bit(bit_array, bit_number);
 	else
-		bit_array[bit_number - 1] = '1';
+		clear_bit(bit_array, bit_number);
 	printf("after assign:\n");
 	bit_print(bit_array);
 }
 int test_bit(char bit_array[], unsigned bit_number)
 //如果参数中指定的位不是0，函数返回真，否则返回假
 {
-	if (bit_array[bit_number/MAX]&(1<<) != '0')
+	if((bit_array[character_offset(bit_number)]&(1<<bit_offset(bit_number)))!= 0)
 		return 1;
 	else
 		return 0;
 }
-
 int main()
 {
-	char bit_array[MAX] = { 0 };
-	printf("intitial bit_array:\n");
-	IntBit_array(bit_array);
+	char bit_array[MAX] = { '0','0','0','0','0','0','0','0' };
+	int value;
+	unsigned bit_number;
+	printf("input bit_number:\n");
+	scanf("%u", &bit_number);
+	value=test_bit(bit_array, bit_number);
+	assign_bit(bit_array, bit_number, value);
 }
