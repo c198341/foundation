@@ -145,13 +145,20 @@
 //}
 void* my_calloc(size_t num_elements, size_t element_size)
 {
-
+	void* p;
+	p=malloc(element_size * num_elements);
+	int i;
+	for (i = 0; i < num_elements; i++)
+	{
+		p[i] = 0;
+	}
 }
 int main()
 {
 	size_t num_elements;
 	size_t element_size;
 	scanf("%u %u", &num_elements, &element_size);
+
 	my_calloc(num_elements, element_size);
 	return 0;
 }
