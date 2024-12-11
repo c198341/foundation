@@ -143,7 +143,10 @@
 //	value=test_bit(bit_array, bit_number);
 //	assign_bit(bit_array, bit_number, value);
 //}
+void* my_calloc(size_t num_elements, size_t element_size)
+{
 
+}
 int main()
 {
 	size_t num_elements;
