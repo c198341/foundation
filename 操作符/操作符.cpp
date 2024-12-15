@@ -154,16 +154,16 @@ char* my_calloc(size_t n_elements, size_t element_size)
 		ptr =new_memory;
 		while (--n_elements >= 0)
 		{
-			*ptr++ = '\0';
-		}	
+			ptr[n_elements] = '\0';
+		}
 	}
 	return new_memory;
 }
 int main()
 {
-	size_t num_elements;
-	size_t element_size;
-	scanf("%u %u", &num_elements, &element_size);
+	size_t num_elements=9;
+	size_t element_size=8;
+	//scanf("%u %u", &num_elements, &element_size);
 	char* p=my_calloc(num_elements, element_size);
 	return 0;
 }
