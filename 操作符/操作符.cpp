@@ -143,27 +143,31 @@
 //	value=test_bit(bit_array, bit_number);
 //	assign_bit(bit_array, bit_number, value);
 //}
-char* my_calloc(unsigned n_elements, unsigned element_size)
-{
-	char* new_memory;
-	n_elements *= element_size;
-	new_memory=(char*)malloc(n_elements);
-	if (new_memory != NULL)
-	{
-		char* ptr;
-		ptr =new_memory;
-		while (--n_elements >= 0)
-		{
-			*ptr++ ='\0';
-		}
-	}
-	return new_memory;
-}
+//char* my_calloc(unsigned n_elements, unsigned element_size)
+//{
+//	char* new_memory;
+//	n_elements *= element_size;
+//	new_memory=(char*)malloc(n_elements);
+//	if (new_memory != NULL)
+//	{
+//		char* ptr;
+//		ptr =new_memory;
+//		while (--n_elements >= 0)
+//		{
+//			*ptr++ ='\0';
+//		}
+//	}
+//	return new_memory;
+//}
+//int main()
+//{
+//	unsigned num_elements=1;
+//	unsigned element_size=1;
+//	//scanf("%u %u", &num_elements, &element_size);
+//	char* p=my_calloc(num_elements, element_size);
+//	return 0;
+//}
 int main()
 {
-	unsigned num_elements=1;
-	unsigned element_size=1;
-	//scanf("%u %u", &num_elements, &element_size);
-	char* p=my_calloc(num_elements, element_size);
-	return 0;
+
 }
